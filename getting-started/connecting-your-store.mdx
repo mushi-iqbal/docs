@@ -1,0 +1,82 @@
+---
+title: "Connecting Your WooCommerce Store"
+description: "How to connect your WooCommerce store to SaleTides using OAuth."
+---
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A live WooCommerce store (WooCommerce 3.5 or later recommended)
+- Admin access to your WordPress dashboard
+- Your store's URL (e.g., `https://yourstore.com`)
+
+## Step 1 — Create your SaleTides account
+
+Go to [saletides.com](https://saletides.com) and click **Start Free Trial**. Enter your email address to begin the signup flow.
+
+<Note>
+No credit card is required for the 30-day free trial.
+</Note>
+
+## Step 2 — Enter your store URL
+
+During signup you'll be asked for your WooCommerce store URL. Enter the full URL of your store — for example, `https://yourstore.com`.
+
+SaleTides will validate the URL and confirm it is a live WooCommerce store before proceeding.
+
+**Common issues:**
+- Make sure to include `https://` (not just `yourstore.com`)
+- The URL must point to a publicly accessible store
+- WooCommerce must be active — not just WordPress
+
+## Step 3 — Authorize via WooCommerce OAuth
+
+After entering your store URL, you'll be redirected to your WordPress admin area. You'll see a WooCommerce authorization screen asking for permission to connect SaleTides.
+
+Click **Approve** to grant access. This creates a set of API keys that allow SaleTides to read your store data.
+
+<Warning>
+SaleTides requests **read-only** access to your WooCommerce store. It cannot modify orders, products, or customers.
+</Warning>
+
+## Step 4 — Initial data import
+
+Once authorized, SaleTides immediately begins importing your historical data. The import runs in the background and typically takes:
+
+| Store size | Estimated time |
+|---|---|
+| Under 1,000 orders | 2–5 minutes |
+| 1,000–10,000 orders | 5–20 minutes |
+| 10,000–50,000 orders | 20–60 minutes |
+| 50,000+ orders | 1–3 hours |
+
+You can track import progress from your dashboard. Reports will become available as data comes in — you don't need to wait for the full import to complete.
+
+## Step 5 — Webhook setup
+
+After the initial import, SaleTides automatically registers webhooks on your WooCommerce store. These webhooks send new orders, customers, products, coupons, and subscription events to SaleTides in real time as they happen.
+
+You can verify webhooks are set up by going to **WooCommerce → Settings → Advanced → Webhooks** in your WordPress admin.
+
+## What data is imported
+
+SaleTides imports the following from your WooCommerce store:
+
+- Orders (including line items, metadata, and notes)
+- Customers (including billing/shipping addresses)
+- Products and variations
+- Coupons
+- Refunds
+- Subscriptions (if WooCommerce Subscriptions is active)
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Understanding your first import" icon="database" href="/getting-started/understanding-your-first-import">
+    What to expect during and after the import
+  </Card>
+  <Card title="Navigating the dashboard" icon="gauge" href="/getting-started/navigating-the-dashboard">
+    A tour of the main dashboard
+  </Card>
+</CardGroup>

@@ -1,0 +1,52 @@
+---
+title: "Payment Methods"
+description: "How billing and payments work in SaleTides."
+---
+
+## Accepted payment methods
+
+SaleTides uses **Stripe** for payment processing. The following payment methods are accepted:
+
+- Visa
+- Mastercard
+- American Express
+- Discover
+- Other major credit and debit cards supported by Stripe
+
+## Adding a payment method
+
+Navigate to **Settings → Billing** and click **Add Payment Method**. You'll be redirected to a secure Stripe checkout page to enter your card details.
+
+Your card details are stored securely by Stripe — SaleTides never stores raw card numbers.
+
+## Billing cycle
+
+- **Monthly plans** — charged on the same date each month (your subscription start date)
+- **Annual plans** — charged once per year on your subscription start date
+
+## Invoices
+
+All invoices are available from **Settings → Billing → Billing History**. Each invoice includes:
+- Billing period
+- Plan name
+- Amount charged
+- Payment method used
+
+Invoices can be downloaded as PDF for accounting purposes.
+
+## Updating your payment method
+
+To update your card, navigate to **Settings → Billing → Payment Method** and click **Update**. Enter new card details on the Stripe page.
+
+If a payment fails (expired card, insufficient funds), SaleTides will:
+1. Retry the charge automatically over the following days
+2. Send an email notification about the failed payment
+3. Suspend access if the payment cannot be collected after the retry window
+
+## VAT / Tax
+
+If your business is VAT-registered, enter your VAT number on the Billing page. Stripe will apply the appropriate tax treatment based on your billing country.
+
+## Billing support
+
+For billing questions — disputed charges, invoice requests, or payment issues — contact support at support@saletides.com with your account email and the relevant invoice details.

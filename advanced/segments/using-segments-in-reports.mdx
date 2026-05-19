@@ -1,0 +1,66 @@
+---
+title: "Using Segments in Reports"
+description: "How to apply custom segments across SaleTides analytics pages."
+---
+
+## Where you can use segments
+
+Once a segment is saved, you can apply it in several places:
+
+### 1. Filter panel on analytics pages
+
+On any orders, customers, products, or subscriptions page, open the filter panel and select your segment from the **Segment** dropdown. All metrics, charts, and lists on that page will update to show only records matching the segment.
+
+### 2. Segment reports
+
+Navigate to **Segments → [Your Segment] → View Report** to open a dedicated report page for that segment. This shows:
+
+- Aggregated metrics for records in the segment
+- Revenue, order count, AOV, repeat rate
+- Charts scoped to the segment
+- Downloadable export
+
+Segment reports are the quickest way to answer "how does this group perform overall?"
+
+### 3. Exports
+
+Apply a segment filter on any page, then click **Export** to download only the records matching the segment. This is ideal for:
+- Exporting a customer email list for a specific group (e.g., "all customers who haven't ordered in 60 days")
+- Exporting orders for a specific product segment
+- Exporting active subscribers on a specific plan
+
+### 4. Cohort analysis
+
+On the Cohorts page, you can optionally apply a segment to run cohort analysis on a subset of customers. For example:
+- Run cohort retention only for customers acquired via organic search (UTM medium = organic)
+- Compare cohort LTV for UK vs. US customers
+
+## Practical workflow examples
+
+### "How are my UK customers performing?"
+
+1. Create a customer segment: **Billing Country = United Kingdom**
+2. Navigate to **Customers**
+3. Apply the segment in the filter panel
+4. View all customer metrics filtered to UK only
+5. Export the list for email marketing
+
+### "What is the revenue impact of my Black Friday sale?"
+
+1. Create an order segment: **Order date = November 25–30** + **Coupon used = BF2024**
+2. Navigate to **Orders → Segment Report**
+3. View total revenue, order count, and AOV for those orders
+
+### "Are customers acquired via Google Ads more valuable?"
+
+1. Create a customer segment: **UTM source = google** + **UTM medium = cpc**
+2. Apply the segment on the Cohorts page
+3. Compare LTV at Month 6 and Month 12 to your overall average
+
+## Editing and deleting segments
+
+Go to **Segments** in the sidebar to manage all saved segments. Click a segment name to edit its conditions. Click the delete icon to remove a segment.
+
+<Warning>
+Deleting a segment is permanent. Any reports or saved views that used the segment will no longer have it available. You can always recreate it.
+</Warning>

@@ -1,0 +1,55 @@
+---
+title: "Manual Import"
+description: "How to manually trigger a data import or re-sync from your WooCommerce store."
+---
+
+## When to run a manual import
+
+A manual import is useful when:
+
+- Your WooCommerce webhooks were down for a period and you need to catch up on missed data
+- You ran a large batch operation on your WooCommerce store (bulk order import, migration, etc.) and want to sync the changes immediately
+- You cleared your SaleTides data and want to start a fresh import
+- Your data looks out of date and you suspect the webhook sync has stopped working
+
+## How to trigger a manual import
+
+Navigate to **Settings → Data Management** and click **Run Import**.
+
+You can choose which entity types to import:
+
+- Orders
+- Customers
+- Products & Variations
+- Coupons
+- Refunds
+- Subscriptions *(if WooCommerce Subscriptions is active)*
+
+Select all to run a full re-import, or select specific entities if you only need to catch up on one type.
+
+## Import options
+
+### Full import
+
+A full import fetches all records of the selected types from WooCommerce from the beginning of your order history. This is the most thorough option but takes the longest.
+
+### Partial import (by date)
+
+You can specify a start date to only import data from a specific point in time. This is faster and useful when you only need to catch up on a recent gap in syncing.
+
+## Monitoring import progress
+
+After starting an import, you'll see a progress indicator on the dashboard showing:
+- Which entity is currently being imported
+- How many records have been processed
+- Estimated time remaining
+
+You can continue using the dashboard normally while the import runs in the background.
+
+## Import and existing data
+
+Manual imports use **upsert logic** — if a record already exists in SaleTides, it will be updated with the latest values from WooCommerce. No duplicate records are created. This means it is safe to run a full re-import without worrying about data duplication.
+
+## Reporting an import issue
+
+If an import gets stuck (no progress for more than 15 minutes), use the **Report Issue** button on the import progress screen. This notifies the SaleTides support team who can investigate and restart the import from the server side.

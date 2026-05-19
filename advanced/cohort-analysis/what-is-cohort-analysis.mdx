@@ -1,0 +1,75 @@
+---
+title: "What is Cohort Analysis?"
+description: "An introduction to cohort analysis and why it's one of the most powerful tools for understanding customer behavior."
+---
+
+## The problem with averages
+
+Average order value. Average repeat rate. Average LTV. These are useful starting points — but averages hide what's actually happening over time.
+
+If your average repeat rate is 25%, is that getting better or worse? Are customers you acquired last year more loyal than those from the year before? Is your latest email campaign actually improving retention, or are the numbers staying flat?
+
+Cohort analysis answers these questions.
+
+## What is a cohort?
+
+A **cohort** is a group of customers who share a common characteristic — typically the time period when they first purchased from your store.
+
+For example:
+- **January 2024 cohort** — all customers who made their first purchase in January 2024
+- **Q2 2023 cohort** — all customers who first purchased in April, May, or June 2023
+
+By tracking what these groups do *over time*, you can see how customer behavior evolves and whether it's changing.
+
+## What cohort analysis reveals
+
+### Retention trends
+
+Are customers you acquired 6 months ago still buying? What % of the January cohort made a second purchase? A third?
+
+Cohort analysis shows retention curves — the pattern of customers dropping off over time. A healthy store will have a curve that flattens (customers keep buying) rather than one that falls sharply to zero.
+
+### LTV growth
+
+Does the value of a customer grow over time? Cohort analysis lets you track the *cumulative* revenue per customer as they age — revealing the true long-term value of your customer base.
+
+### Performance over time
+
+If each successive monthly cohort has better retention than the previous one, something is working — your product, your post-purchase emails, or your customer experience is improving. Cohort analysis makes this visible.
+
+### Seasonality effects
+
+Customers acquired during a sale may have lower LTV than customers acquired organically. Cohort analysis separates these groups so you can see the true value of each acquisition source.
+
+## Cohort analysis in SaleTides
+
+SaleTides provides the following cohort reports:
+
+<CardGroup cols={2}>
+  <Card title="Retention cohorts" icon="rotate" href="/advanced/cohort-analysis/retention-cohorts">
+    See what % of each cohort returns to buy again over time
+  </Card>
+  <Card title="LTV & AOV by cohort" icon="chart-line" href="/advanced/cohort-analysis/ltv-and-aov">
+    Track cumulative lifetime value and average order value progression
+  </Card>
+</CardGroup>
+
+## How to read a cohort heatmap
+
+SaleTides displays cohort data as a **heatmap table**:
+
+```
+           Month 1  Month 2  Month 3  Month 4  Month 5
+Jan 2024    100%     32%      18%      12%       9%
+Feb 2024    100%     29%      17%      11%
+Mar 2024    100%     35%      20%
+Apr 2024    100%     31%
+May 2024    100%
+```
+
+- **Rows** = cohorts (groups of customers by acquisition month)
+- **Columns** = months since first purchase
+- **Values** = % of the cohort still purchasing at that point
+- **Color intensity** = darker = higher retention
+
+The diagonal edge of the table (bottom-right) represents the most recent data points — these will fill in as time passes.

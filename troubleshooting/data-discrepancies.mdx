@@ -1,0 +1,55 @@
+---
+title: "Data Discrepancies"
+description: "Why numbers in SaleTides may differ from your WooCommerce admin and how to reconcile them."
+---
+
+## Why numbers might look different
+
+SaleTides and your WooCommerce admin may show different numbers for the same metric. This is almost always explained by one of the following:
+
+## 1. Date range and timezone
+
+SaleTides displays dates in your configured timezone. WooCommerce admin may use UTC or a different timezone. An order placed at 11pm UTC might appear on a different calendar day in SaleTides if your timezone is UTC+2.
+
+**Fix**: Verify your [timezone setting](/settings/localization) in SaleTides matches the timezone used in your WooCommerce reports.
+
+## 2. Order status filters
+
+SaleTides defaults to showing **Completed** and **Processing** orders in most revenue reports. WooCommerce admin "Total Sales" reports may include all order statuses, including Pending and On Hold.
+
+**Fix**: Adjust the order status filter in SaleTides to match what WooCommerce is reporting. Or set it to "All Statuses" for a direct comparison.
+
+## 3. Refund handling
+
+WooCommerce reports may show gross revenue before refunds, net revenue after refunds, or a mix. SaleTides shows both Gross Revenue and Net Revenue — make sure you're comparing the same metric.
+
+**Fix**: Compare SaleTides **Net Revenue** with WooCommerce's net sales figure.
+
+## 4. Import lag
+
+If data was recently added or updated in WooCommerce, it may not yet be reflected in SaleTides (there's a brief delay for webhook processing). For very recent orders (last few minutes), check again in a moment.
+
+## 5. Partial import
+
+If the initial import hasn't completed, or if a manual import was run for a specific date range, older orders may not be in SaleTides yet.
+
+**Fix**: Check the import status from your dashboard. Run a full manual import if needed.
+
+## 6. Guest vs. registered customers
+
+WooCommerce may count guest checkouts differently than registered customers. SaleTides includes both in customer and order counts.
+
+## 7. Tax and shipping inclusion
+
+Depending on your WooCommerce configuration, "total revenue" may or may not include tax and shipping. SaleTides uses the **order total** as recorded in WooCommerce (including tax and shipping).
+
+**Fix**: Verify whether the WooCommerce metric you're comparing to includes or excludes tax/shipping.
+
+## Still seeing a discrepancy?
+
+If after checking all of the above you still see a significant unexplained difference:
+
+1. Note the specific metric, date range, and the values in both SaleTides and WooCommerce
+2. Contact support at support@saletides.com with this information
+
+Our team can investigate at the data level to identify the source of the discrepancy.

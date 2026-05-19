@@ -1,0 +1,50 @@
+---
+title: "Subscriptions Not Showing"
+description: "What to do if subscription data isn't appearing in SaleTides."
+---
+
+## Prerequisites
+
+Before diagnosing, confirm:
+
+1. **WooCommerce Subscriptions is active** on your store — go to **WordPress Admin → Plugins** and verify WooCommerce Subscriptions is installed and active.
+2. **You have at least one subscription** in your WooCommerce store — check **WooCommerce → Subscriptions**.
+
+If both are true and subscriptions still aren't showing in SaleTides, work through the steps below.
+
+## Step 1 — Verify the subscription import ran
+
+The subscription import is a separate import job from the orders import. It's possible orders imported successfully but the subscription import was skipped or failed.
+
+Check your import progress from the dashboard. If you don't see a "Subscriptions" entry in the import log, run a manual subscription import:
+
+1. Navigate to **Settings → Data Management**
+2. Select **Subscriptions**
+3. Click **Run Import**
+
+## Step 2 — Check the subscription filter
+
+On the Subscriptions page, make sure the status filter isn't hiding subscriptions. The default view may show only **Active** subscriptions — switch the filter to **All Statuses** to see if cancelled or on-hold subscriptions exist but are being filtered out.
+
+## Step 3 — Check the date range
+
+If the date range is set to a recent period (e.g., Last 30 days), older subscriptions may not appear. Set the date range to **All Time** to see all subscription records.
+
+## Step 4 — Reconnect your store
+
+If subscriptions exist in WooCommerce but didn't import, the most common cause is an API permission issue. The WooCommerce API keys SaleTides uses may not have permission to read subscriptions.
+
+Click **Reconnect Store** in Settings to re-authorize. The new authorization will include subscriptions API access if WooCommerce Subscriptions is active.
+
+## Step 5 — Run a full re-import
+
+If reconnecting doesn't help, run a full re-import for subscriptions from **Settings → Data Management**.
+
+## Still not working?
+
+Contact support at support@saletides.com with:
+- Your store URL
+- How many subscriptions you have in WooCommerce
+- The WooCommerce Subscriptions plugin version
+
+We'll investigate the API connection and import logs on our end.

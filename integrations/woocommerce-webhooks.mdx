@@ -1,0 +1,67 @@
+---
+title: "WooCommerce Webhooks"
+description: "How SaleTides uses WooCommerce webhooks and how to verify or reset them."
+---
+
+## What are WooCommerce webhooks?
+
+Webhooks are real-time HTTP notifications that WooCommerce sends to SaleTides whenever something changes on your store — a new order, an updated customer, a product change, etc.
+
+Without webhooks, SaleTides would only have data from the time of the last import. Webhooks keep your analytics current in near real-time.
+
+## How webhooks are set up
+
+When you first connect your WooCommerce store, SaleTides automatically registers all required webhooks through the WooCommerce API. You don't need to configure anything manually.
+
+Webhooks registered include:
+- `order.created`
+- `order.updated`
+- `order.deleted`
+- `customer.created`
+- `customer.updated`
+- `product.created`
+- `product.updated`
+- `product.deleted`
+- `coupon.created`
+- `coupon.updated`
+- `subscription.created` *(if WooCommerce Subscriptions is active)*
+- `subscription.updated`
+
+## Verifying webhook status
+
+1. Log in to your WordPress dashboard
+2. Navigate to **WooCommerce → Settings → Advanced → Webhooks**
+3. You should see webhooks with **SaleTides** in the name and status **Active**
+
+If all webhooks show as Active, real-time sync is working correctly.
+
+## Troubleshooting inactive webhooks
+
+If webhooks show as **Inactive** or **Disabled**:
+
+### Common causes
+
+- **API key permissions changed** — the WooCommerce API keys used by SaleTides may have been revoked or had their permissions reduced
+- **WordPress security plugin blocked** — some security plugins (Wordfence, etc.) may block outgoing webhook requests
+- **Hosting firewall rules** — some managed hosts block outgoing POST requests to external URLs
+- **WooCommerce update** — major WooCommerce updates occasionally reset webhook configurations
+
+### How to fix
+
+1. Go to **Settings → Store Settings** in SaleTides
+2. Click **Reconnect Store** to re-authorize and re-register webhooks
+3. Check your WordPress admin after a few minutes — the webhooks should show as Active again
+
+If reconnecting doesn't work, check with your WordPress hosting provider to ensure outgoing webhooks to `saletides.com` are not blocked.
+
+## Webhook security
+
+All webhook endpoints require a valid tenant identifier. Requests without a valid identifier are rejected. SaleTides also verifies webhook signatures where supported by WooCommerce.
+
+## Impact of missing webhooks
+
+If webhooks stop working, SaleTides will still have all historically imported data. However, new orders, customers, and product changes will not appear in your dashboard until:
+- A manual import is run, or
+- Webhooks are restored
+
+See [Manual import](/integrations/manual-import) for how to catch up on missed events.

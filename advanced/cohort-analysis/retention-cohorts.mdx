@@ -1,0 +1,63 @@
+---
+title: "Retention Cohorts"
+description: "Track what percentage of customers return to buy again over time, grouped by acquisition month."
+---
+
+## What retention cohorts show
+
+Retention cohorts track, for a group of customers who first purchased in a given month, what percentage came back to make another purchase in subsequent months.
+
+Navigate to **Cohorts → Returning Customers** in the sidebar.
+
+## Reading the cohort table
+
+The cohort heatmap shows:
+
+- **Rows** — each row is one cohort, identified by the month customers first purchased
+- **Column 0** — always 100% (this is the cohort itself)
+- **Column 1** — % who made a second purchase within the next period
+- **Column 2+** — % still purchasing in subsequent periods
+- **Color** — darker shading indicates higher retention
+
+### Example
+
+| Cohort | Month 0 | Month 1 | Month 2 | Month 3 |
+|---|---|---|---|---|
+| Jan 2024 | 100% | 28% | 15% | 10% |
+| Feb 2024 | 100% | 31% | 17% | 11% |
+| Mar 2024 | 100% | 35% | 19% | — |
+
+In this example, March 2024 has better Month 1 retention (35%) than January (28%), which suggests retention is improving over time.
+
+## Period granularity
+
+Toggle between **monthly** and **weekly** cohort views using the control above the chart. Monthly is best for long-term trend analysis; weekly is useful for spotting short-term changes after a specific campaign or product launch.
+
+## Cohort size
+
+The first column shows the absolute cohort size — how many customers made their first purchase in that period. This context matters: a cohort of 500 customers with 30% retention is far more significant than a cohort of 10 with 40%.
+
+## Subscription retention cohorts
+
+For stores using WooCommerce Subscriptions, the subscription retention cohort shows what % of subscribers from each month are still active in subsequent months. This is the standard **subscriber churn** view — the inverse of retention is your churn rate.
+
+## Averages row
+
+At the bottom of the cohort table, SaleTides shows an **averages row** — the weighted average retention at each period across all cohorts. Use this as your baseline when evaluating individual cohorts.
+
+## Bar chart view
+
+Switch to the **bar chart view** to compare retention at a specific period (e.g., Month 3 retention) across all cohorts. This makes it easy to see whether retention at a fixed point is trending up or down over time.
+
+## What good retention looks like
+
+There is no universal benchmark — it varies heavily by industry and product type. However, some general guidelines for ecommerce:
+
+| Retention at Month 3 | Assessment |
+|---|---|
+| < 10% | Below average — focus on post-purchase engagement |
+| 10–20% | Average for most ecommerce stores |
+| 20–30% | Good — strong repeat purchase culture |
+| 30%+ | Excellent — indicates high customer loyalty |
+
+Subscription businesses should target much higher retention (80%+ at Month 3 is common for healthy SaaS, for example).

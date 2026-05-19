@@ -1,0 +1,74 @@
+---
+title: "Understanding Your First Import"
+description: "What happens during the initial data import and what to expect when it completes."
+---
+
+## What the import does
+
+When you first connect your WooCommerce store, SaleTides imports your entire order history along with all related data: customers, products, coupons, refunds, and subscriptions. This gives every report access to your full historical dataset from day one.
+
+The import runs as a series of background jobs and processes data in batches so your store's performance is never affected.
+
+## What gets imported
+
+The import runs in this order:
+
+<Steps>
+  <Step title="Orders">
+    All WooCommerce orders are fetched first, including their status, payment method, line items, billing address, shipping address, and metadata.
+  </Step>
+  <Step title="Customers">
+    Customer records are imported and linked to their orders. Billing and shipping attributes are indexed for segmentation.
+  </Step>
+  <Step title="Products & Variations">
+    All products (simple, variable, grouped) and their variations are imported with pricing and category data.
+  </Step>
+  <Step title="Coupons">
+    All coupon codes and their usage history are imported.
+  </Step>
+  <Step title="Refunds">
+    Refund records linked to their original orders are imported.
+  </Step>
+  <Step title="Subscriptions">
+    If WooCommerce Subscriptions is active on your store, all subscription records are imported.
+  </Step>
+  <Step title="Post-processing">
+    After the main import, SaleTides runs background calculations: cohort stats, customer metrics, product sales totals, source attribution, and daily summaries.
+  </Step>
+</Steps>
+
+## Tracking import progress
+
+You can watch the import progress from your dashboard. Each entity (orders, customers, products, etc.) has its own progress indicator showing how many records have been processed.
+
+Reports become available as data comes in — you don't need to wait for the full import before exploring your analytics.
+
+## Import status indicators
+
+| Status | Meaning |
+|---|---|
+| **Running** | Import is actively fetching and processing data |
+| **Completed** | All data for this entity has been imported |
+| **Paused** | Import paused (usually due to a network or API issue — it will resume automatically) |
+| **Failed** | Import encountered an error — see [Troubleshooting imports](/troubleshooting/import-issues) |
+
+## Data accuracy
+
+SaleTides imports data directly from WooCommerce's REST API, so the numbers you see will match what is in your WooCommerce admin. If you notice a discrepancy, see [Data discrepancies](/troubleshooting/data-discrepancies).
+
+## After the import
+
+Once the import completes:
+
+- All historical reports are fully populated
+- Cohort analysis is calculated from your first order date
+- Webhooks are live, so new orders and events update automatically
+- You can start creating [Custom Segments](/advanced/segments/overview)
+
+<Note>
+Post-processing jobs (cohort calculations, customer stats, source attribution) run after the main import completes. These may take additional time for large stores. This is normal — all reports will be fully accurate once they finish.
+</Note>
+
+## Re-running an import
+
+If you need to re-sync data (for example, after a large historical data correction on your WooCommerce store), you can trigger a manual re-import from **Settings → Data Management**. See [Manual import](/integrations/manual-import) for details.

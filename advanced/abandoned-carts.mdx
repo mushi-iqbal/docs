@@ -1,0 +1,56 @@
+---
+title: "Abandoned Carts"
+description: "View and recover abandoned shopping carts from your WooCommerce store."
+---
+
+## What abandoned carts shows
+
+The **Abandoned Carts** section shows you shopping carts that were started on your store but never completed as an order. Navigate to **Abandoned Carts** in the sidebar.
+
+<Note>
+Abandoned cart tracking requires your WooCommerce store to capture guest cart data. Most WooCommerce stores do this by default when customers enter their email address during checkout.
+</Note>
+
+## Abandoned carts list
+
+| Column | Description |
+|---|---|
+| Customer | Name and email (if captured) |
+| Date | When the cart was last active |
+| Items | Number of items in the cart |
+| Cart Value | Total value of items in the cart |
+| Status | Abandoned / Recovered |
+
+Click any cart to view its full contents — which products were added, quantities, and prices.
+
+## Abandoned cart metrics
+
+| Metric | Description |
+|---|---|
+| **Total Abandoned** | Number of abandoned carts in the period |
+| **Abandoned Value** | Total value of abandoned carts |
+| **Recovery Rate** | % of abandoned carts that converted to orders |
+| **Recovered Revenue** | Revenue from recovered carts |
+
+## Sending recovery emails
+
+From any individual cart's detail page, you can send a recovery email to the customer (if their email was captured). The email is sent manually from SaleTides.
+
+<Tip>
+For automated abandoned cart recovery email sequences, use a dedicated plugin like **AutomateWoo**, **Klaviyo**, or **Mailchimp for WooCommerce**. SaleTides tracks the data; these tools handle the automation.
+</Tip>
+
+## Filtering carts
+
+- **Date range** — carts abandoned in a specific period
+- **Cart value** — carts above a specific value threshold (useful for prioritizing high-value recoveries)
+- **Status** — show only abandoned, or only recovered carts
+
+## What counts as abandoned
+
+A cart is considered abandoned when:
+1. A customer added at least one item to their cart
+2. They began the checkout process (or their email was captured)
+3. No order was placed within a set time window (typically 1–2 hours)
+
+Carts from logged-out visitors who never provided an email are not trackable.

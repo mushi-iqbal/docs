@@ -1,0 +1,79 @@
+---
+title: "Subscriptions"
+description: "Track and analyze WooCommerce Subscriptions data including MRR, churn, and retention."
+---
+
+## Requirements
+
+Subscription analytics require the **WooCommerce Subscriptions** plugin to be active on your store. SaleTides will automatically import subscription data if the plugin is detected during your initial store connection.
+
+<Note>
+Subscription analytics are available on all SaleTides plans. If you have WooCommerce Subscriptions active but don't see subscription data, run a [manual import](/integrations/manual-import) or check [troubleshooting](/troubleshooting/subscriptions-not-showing).
+</Note>
+
+## Subscriptions list
+
+Navigate to **Subscriptions** in the sidebar to see all subscription records:
+
+| Column | Description |
+|---|---|
+| Subscription # | WooCommerce subscription ID |
+| Customer | Subscriber name and email |
+| Status | Active, Cancelled, On Hold, Paused, Expired |
+| Product | Subscribed product / plan name |
+| Start Date | Subscription start date |
+| Next Payment | Next scheduled payment date |
+| Amount | Recurring payment amount |
+| Total Paid | Total amount paid to date |
+
+### Filtering subscriptions
+
+- **Status** — filter to active, cancelled, on-hold, or all subscriptions
+- **Date range** — subscriptions started or modified in a period
+- **Product** — filter to a specific subscription plan
+- **Custom segment** — apply a saved subscription segment
+
+## Subscription metrics
+
+| Metric | Description |
+|---|---|
+| **Active Subscriptions** | Currently active subscription count |
+| **MRR** | Monthly Recurring Revenue |
+| **Churn Rate** | % of subscriptions cancelled in the period |
+| **Reactivation Rate** | % of cancelled subscriptions reactivated |
+| **New Subscriptions** | Subscriptions started in the period |
+| **Cancelled Subscriptions** | Subscriptions cancelled in the period |
+
+## Subscription charts
+
+### Started vs. cancelled over time
+
+A line chart showing new subscriptions vs. cancellations over time. A widening gap indicates net subscriber growth.
+
+### Subscriptions by plan
+
+A breakdown of active subscriptions by product/plan name. Useful for understanding which plans are most popular.
+
+### Subscription events
+
+A timeline of subscription lifecycle events — starts, pauses, cancellations, resumes — showing when activity spikes.
+
+### Monthly analytics
+
+Month-by-month table of:
+- New subscriptions
+- Cancelled subscriptions
+- Net change
+- MRR
+- Churn rate
+
+## Cohort retention for subscriptions
+
+See [Cohort Analysis](/advanced/cohort-analysis/retention-cohorts) for subscription-specific retention cohorts — track what % of subscribers from each month are still active 1, 3, 6, 12 months later.
+
+## Exporting subscription data
+
+- **Active subscriptions** — export a list of all currently active subscribers (useful for email campaigns)
+- **Full report** — export all subscription records with metrics
+
+Both are available via the **Export** button on the Subscriptions page.

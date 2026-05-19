@@ -1,0 +1,53 @@
+---
+title: "Localization"
+description: "Configure timezone, date format, currency, and language settings for your SaleTides dashboard."
+---
+
+## Overview
+
+SaleTides supports full localization — configure your dashboard to show dates, times, and currency values exactly as you prefer. Navigate to **Settings → Localization** to update these settings.
+
+## Timezone
+
+Set your preferred timezone for all date/time displays in the dashboard. This affects:
+- Order date and time display
+- Chart x-axis labels
+- Date range calculations ("Today", "This month", etc.)
+- Export file timestamps
+
+Select your timezone from the dropdown. Changes take effect immediately.
+
+<Note>
+Timezone affects how your data is *displayed*, not when it was recorded. Your WooCommerce store records orders in its own timezone; SaleTides converts all times to your configured timezone for display.
+</Note>
+
+## Date format
+
+Choose how dates are displayed throughout the dashboard:
+
+| Format | Example |
+|---|---|
+| MM/DD/YYYY | 12/25/2024 |
+| DD/MM/YYYY | 25/12/2024 |
+| YYYY-MM-DD | 2024-12-25 |
+
+## Currency
+
+Set your preferred display currency. SaleTides displays currency values using this currency symbol and formatting. For example:
+- USD: `$1,234.56`
+- EUR: `€1.234,56`
+- GBP: `£1,234.56`
+
+<Note>
+Currency display is cosmetic — it applies the selected currency symbol to your revenue data. SaleTides does not convert between currencies. If your WooCommerce store accepts multiple currencies, all values are shown in your store's base currency.
+</Note>
+
+## Language
+
+SaleTides supports multiple interface languages. Select your preferred language from the dropdown. The dashboard interface labels, menus, and buttons will update to the selected language.
+
+Currently supported languages include English and additional languages. If your language is not listed, contact support.
+
+## Saving changes
+
+Click **Save Settings** after making any localization changes. Changes apply immediately to your current session and all future sessions for your account.

@@ -1,0 +1,74 @@
+---
+title: "Acquisition Sources"
+description: "Understand where your customers come from with referral, UTM, and landing page attribution."
+---
+
+## What acquisition sources track
+
+SaleTides tracks where customers come from when they place their first order. This includes:
+
+- **Referral source** — the website that referred the customer
+- **Landing page** — the first page the customer visited on your store
+- **UTM parameters** — campaign, source, medium, term, and content values
+
+This lets you see which marketing channels are driving the most customers — and more importantly, which channels drive the most *valuable* customers.
+
+## Accessing source reports
+
+Navigate to **Customers → Acquisition** or **Sources** in the sidebar.
+
+## Referral sources
+
+The **Sources** report shows a ranked list of referring domains — the websites that sent customers to your store before their first order.
+
+| Column | Description |
+|---|---|
+| Source | Referring domain (e.g., google.com, facebook.com) |
+| Customers | Number of new customers attributed to this source |
+| Orders | Total orders from these customers |
+| Revenue | Total revenue from these customers |
+| AOV | Average order value |
+| LTV | Average lifetime value |
+
+<Tip>
+Revenue per customer is often more valuable than customer count. A source that sends 10 high-LTV customers may outperform one that sends 100 one-time buyers.
+</Tip>
+
+## Landing page attribution
+
+The **Source by Landing Page** report shows which pages on your store customers first landed on before converting.
+
+This helps you identify:
+- Which blog posts or product pages attract buyers
+- Which paid landing pages convert best
+- Which category pages drive the most first purchases
+
+## UTM attribution
+
+The **Source by UTM** report breaks down acquisition by UTM parameters from your marketing campaigns.
+
+Available UTM dimensions:
+
+| UTM Parameter | Example values |
+|---|---|
+| `utm_source` | google, facebook, newsletter |
+| `utm_medium` | cpc, organic, email |
+| `utm_campaign` | black-friday, spring-sale |
+| `utm_term` | keyword tracked |
+| `utm_content` | specific ad or link variant |
+
+### How UTM data is captured
+
+SaleTides reads UTM parameters from the WooCommerce order metadata. WooCommerce stores that use UTM-tracking plugins (such as PixelYourSite, WC UTM Tracker, or similar) will have this data available automatically.
+
+## Device and browser sources
+
+The **Devices** and **Browsers** reports break down orders by:
+- Operating system (Windows, macOS, iOS, Android, etc.)
+- Browser (Chrome, Safari, Firefox, etc.)
+
+Useful for understanding your audience's device preferences and optimizing your mobile vs. desktop experience.
+
+## Attribution model
+
+SaleTides uses **first-touch attribution** — the source is attributed to the customer's very first order. This gives you a clear picture of what channel originally acquired each customer.

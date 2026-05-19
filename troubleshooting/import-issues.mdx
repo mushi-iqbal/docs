@@ -1,0 +1,51 @@
+---
+title: "Import Issues"
+description: "Diagnose and fix common import problems in SaleTides."
+---
+
+## Quick reference
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Import stuck for 15+ min | API timeout, credentials issue | Reconnect store or report issue |
+| Orders missing from dashboard | Date filter, status filter | Check active filters |
+| Import shows 0 records | API connection broken | Reconnect store |
+| Import completed but no data | Wrong store URL connected | Disconnect and reconnect correct store |
+| Import very slow | Large order history | Normal — wait or contact support if 6+ hours |
+
+## Step-by-step diagnosis
+
+### 1. Check the connection status
+
+Go to **Settings → Store Settings**. If the connection shows anything other than **Active**, click **Reconnect Store** and go through the WooCommerce OAuth flow again.
+
+### 2. Check the import progress screen
+
+Navigate to your dashboard home page. If an import is in progress, you'll see a progress indicator. Note which entity type is stuck and at what percentage.
+
+### 3. Check WooCommerce API
+
+Try accessing your store's WooCommerce API directly: `https://yourstore.com/wp-json/wc/v3/orders`
+
+If you see a JSON response, the API is working. If you see an error or a login page, there may be a WordPress or hosting issue blocking API access.
+
+### 4. Check for recent WooCommerce or WordPress changes
+
+- Was WooCommerce recently updated? Major updates occasionally reset API credentials.
+- Was a security plugin (Wordfence, iThemes Security) recently installed or updated? These sometimes block REST API access.
+- Was the WordPress install migrated to a new host?
+
+### 5. Report the issue
+
+If none of the above resolves it, use the **Report Issue** button on the import progress screen. This is the fastest way to get a support team member to investigate.
+
+## Detailed troubleshooting guides
+
+<CardGroup cols={2}>
+  <Card title="WooCommerce Webhooks" icon="webhook" href="/integrations/woocommerce-webhooks">
+    Verify and fix webhook configuration
+  </Card>
+  <Card title="Manual Import" icon="rotate" href="/integrations/manual-import">
+    Trigger a fresh import from WooCommerce
+  </Card>
+</CardGroup>

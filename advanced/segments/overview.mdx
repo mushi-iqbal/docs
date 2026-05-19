@@ -1,0 +1,60 @@
+---
+title: "Custom Segments Overview"
+description: "Create reusable filters for any combination of order, customer, product, or subscription criteria."
+---
+
+## What are custom segments?
+
+Segments are saved, reusable filters you build from any combination of your WooCommerce data attributes. Once created, you can apply a segment to any report, chart, or export to see analytics for just that group.
+
+Unlike one-off filters, segments are saved to your account and stay up-to-date automatically as new data comes in.
+
+## Segment types
+
+SaleTides supports four types of segments:
+
+<CardGroup cols={2}>
+  <Card title="Order segments" icon="cart-shopping">
+    Filter by order attributes: status, payment method, date, country, value, coupon used, etc.
+  </Card>
+  <Card title="Customer segments" icon="users">
+    Filter by customer attributes: location, registration date, order count, lifetime value, etc.
+  </Card>
+  <Card title="Product segments" icon="box">
+    Filter by product attributes: category, price range, name, SKU, etc.
+  </Card>
+  <Card title="Subscription segments" icon="rotate">
+    Filter by subscription attributes: status, plan, start date, renewal amount, etc.
+  </Card>
+</CardGroup>
+
+## What you can do with segments
+
+Once you've created a segment, you can:
+
+1. **Apply it as a filter** on any orders, customers, products, or subscription report page
+2. **Run a segment report** — a dedicated aggregated analytics view for that segment
+3. **Export segment data** — download all records matching the segment to CSV or Excel
+4. **Use it in cohort analysis** — filter cohort views to a specific segment
+
+## Segment library
+
+Navigate to **Segments** in the sidebar to see all your saved segments, organized by type. From here you can:
+- View and edit existing segments
+- Delete segments you no longer need
+- Create new segments
+
+## How segments stay current
+
+Segments use dynamic filtering — they don't capture a static list of records at creation time. When you apply a segment, SaleTides queries your current data against the segment's conditions. New orders, customers, or products that match the conditions are automatically included.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Creating a segment" icon="plus" href="/advanced/segments/creating-a-segment">
+    Step-by-step guide to building your first segment
+  </Card>
+  <Card title="Using segments in reports" icon="chart-bar" href="/advanced/segments/using-segments-in-reports">
+    How to apply segments across SaleTides analytics
+  </Card>
+</CardGroup>

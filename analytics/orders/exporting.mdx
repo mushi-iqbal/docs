@@ -1,0 +1,53 @@
+---
+title: "Exporting Orders"
+description: "Export your WooCommerce order data to CSV or Excel from SaleTides."
+---
+
+## How to export
+
+From the **Orders** page, click the **Export** button in the top right. You'll be prompted to select:
+
+- **File format** — CSV or Excel (.xlsx)
+- **Date range** — the export respects your currently active date range and filters
+
+The file will download directly to your browser.
+
+## What is included in the export
+
+The orders export includes the following columns:
+
+| Column | Description |
+|---|---|
+| Order ID | WooCommerce order number |
+| Date | Order date (in your configured timezone) |
+| Status | Order status |
+| Customer Name | Billing first and last name |
+| Customer Email | Billing email address |
+| Billing Country | Billing country |
+| Payment Method | Payment gateway used |
+| Items | Number of line items |
+| Subtotal | Order subtotal before tax/shipping |
+| Tax | Tax amount |
+| Shipping | Shipping amount |
+| Total | Gross order total |
+| Refunded | Amount refunded |
+| Net Revenue | Total minus refunds |
+| Coupon | Coupon code applied (if any) |
+
+## Filtering before export
+
+All active filters are applied to the export. For example, if you have filtered to **Completed** orders from the **Last 30 days** in **United States**, the export will contain exactly those orders.
+
+This makes it easy to export targeted datasets — for example, all orders for a specific product, or all orders from a particular customer segment.
+
+## Segment exports
+
+If you want to export orders matching a [Custom Segment](/advanced/segments/overview), apply the segment filter first, then click Export.
+
+## Large exports
+
+For stores with a large order history, exports may take a moment to generate. The file will download automatically when ready. There is no limit on the number of rows you can export.
+
+<Note>
+Export files are generated on demand and are not stored on SaleTides servers. If you need to re-download an export, simply run it again.
+</Note>

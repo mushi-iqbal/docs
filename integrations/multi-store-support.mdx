@@ -1,0 +1,60 @@
+---
+title: "Multi-Store Support"
+description: "Connect and manage multiple WooCommerce stores from a single SaleTides account."
+---
+
+## Overview
+
+SaleTides supports connecting multiple WooCommerce stores to a single account. Each store has its own independent analytics dashboard, data, and settings.
+
+Multi-store is available on the **Growth** (up to 10 stores) and **Pro** (unlimited stores) plans.
+
+## Adding a second store
+
+1. Navigate to **Settings → Store Settings**
+2. Click **Add Store**
+3. Enter the URL of the new WooCommerce store
+4. You'll be redirected to the WooCommerce OAuth authorization page for that store
+5. Click **Approve** to grant access
+6. SaleTides begins importing data for the new store
+
+Each store goes through the same initial import process as your first store.
+
+## Switching between stores
+
+Use the **store switcher** in the top navigation bar to move between your connected stores. All analytics pages update immediately to show data for the selected store.
+
+Your dashboard layout, widgets, segments, and settings are configured independently per store.
+
+## Store limits by plan
+
+| Plan | Stores |
+|---|---|
+| Solo | 1 |
+| Growth | Up to 10 |
+| Pro | Unlimited |
+
+If you're on Solo and need to connect a second store, you'll need to upgrade to Growth.
+
+## Disconnecting a store
+
+To remove a store from your account:
+1. Switch to the store you want to remove
+2. Navigate to **Settings → Store Settings**
+3. Click **Disconnect Store**
+
+<Warning>
+Disconnecting a store removes all its data from SaleTides permanently, including historical analytics, segments, and settings. This cannot be undone.
+</Warning>
+
+## Per-store users
+
+User accounts are scoped to the SaleTides account, not individual stores. If a user has permission to access your account, they can switch to any of your connected stores. You can restrict access to specific sections (orders, customers, etc.) via [user permissions](/settings/user-management), but not to specific stores.
+
+## Per-store billing
+
+All connected stores are included under your single SaleTides subscription. You are not charged per store — only the total number of stores against your plan limit matters.
+
+## Common use case: agency management
+
+SaleTides is well-suited for agencies managing analytics for multiple client stores. Use one SaleTides account with Pro to connect all client stores, and create separate user accounts for each client with appropriate permissions.

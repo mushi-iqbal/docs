@@ -1,0 +1,63 @@
+---
+title: "Troubleshooting Imports"
+description: "What to do when your SaleTides import is stuck, slow, or showing errors."
+---
+
+## Import appears stuck
+
+If your import progress hasn't moved in 15+ minutes:
+
+### Step 1 — Check WooCommerce API accessibility
+
+SaleTides imports data via the WooCommerce REST API. If your store is temporarily unavailable or the API is rate-limiting requests, the import will pause.
+
+Verify your store is accessible by visiting your store URL in a browser.
+
+### Step 2 — Check WooCommerce API credentials
+
+If the WooCommerce API keys used by SaleTides have been revoked or changed, imports will fail silently.
+
+Go to **Settings → Store Settings** in SaleTides and check if the connection shows **Active**. If it shows an error, click **Reconnect Store** to re-authorize.
+
+### Step 3 — Report the issue
+
+Use the **Report Issue** button on the import progress screen. This sends an alert to the SaleTides support team who can investigate the stuck job and restart it from the server side.
+
+---
+
+## Import completed but data looks incomplete
+
+### Orders are missing
+
+- Check the **date range** on your orders page — it may be filtered to a recent window
+- Verify the order status filter — some views exclude pending/failed orders by default
+- Check if the missing orders fall within the import date range you specified (if you ran a partial import)
+
+### Customers are missing
+
+Customers are linked to orders during import. If an order was imported but its customer is not showing up:
+- The customer may not have a WordPress account (guest checkout). Guest orders are imported but show limited customer profile data.
+- Run a customer-specific manual import from **Settings → Data Management**
+
+### Products are missing
+
+Products must have at least one sale to appear in most product reports. A product with no orders will not appear in analytics but will appear if you're viewing the full product list.
+
+---
+
+## Import is very slow
+
+Large stores (50,000+ orders) can take 1–3 hours for a full import. This is normal. The import runs in the background and you can use the dashboard while it's in progress.
+
+If the import has been running for more than 6 hours without completing, contact support.
+
+---
+
+## Getting help
+
+If you can't resolve an import issue using the steps above:
+
+1. Click **Report Issue** on the import progress screen
+2. Email support@saletides.com with your store URL and a description of the issue
+
+Include the approximate time the issue started and which entity type (orders, customers, etc.) appears affected.

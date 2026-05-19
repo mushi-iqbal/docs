@@ -1,0 +1,72 @@
+---
+title: "LTV & AOV by Cohort"
+description: "Track cumulative lifetime value and average order value over time for each customer cohort."
+---
+
+## Lifetime Value (LTV) cohorts
+
+The **Lifetime Value** cohort report shows the cumulative revenue generated per customer from each acquisition cohort over time.
+
+Navigate to **Cohorts → Lifetime Value** in the sidebar.
+
+### How to read it
+
+Each cell shows the **average cumulative revenue per customer** at that point in their lifecycle:
+
+| Cohort | Month 0 | Month 1 | Month 3 | Month 6 | Month 12 |
+|---|---|---|---|---|---|
+| Jan 2024 | $48 | $62 | $71 | $89 | $134 |
+| Feb 2024 | $52 | $69 | $80 | $101 | — |
+| Mar 2024 | $45 | $58 | $68 | — | — |
+
+- **Month 0** = average first-order value
+- **Month 1** = average cumulative spend after the first repeat purchase period
+- **Month 12** = average total spend per customer after 12 months
+
+### What this tells you
+
+- Are customers spending more or less over time compared to earlier cohorts?
+- What is the LTV at 6 months? 12 months? This informs how much you can afford to spend on acquisition.
+- Which cohorts have the highest LTV — can you trace this to a specific campaign, channel, or product?
+
+## Average Order Value (AOV) by cohort
+
+The **AOV by cohort** report shows how the average order value changes as customers age within each cohort.
+
+This answers: "Do customers tend to spend more per order as they become more familiar with your store, or do they spend less?"
+
+### Typical patterns
+
+- **Increasing AOV** — customers gain confidence and buy more per order over time. Healthy signal.
+- **Flat AOV** — customers consistently spend the same amount. Neutral.
+- **Decreasing AOV** — customers may be cherry-picking deals or downgrading. Worth investigating.
+
+## Orders per customer by cohort
+
+The **Orders per Customer** report shows the cumulative average order count per customer over time.
+
+| Cohort | Month 1 | Month 3 | Month 6 | Month 12 |
+|---|---|---|---|---|
+| Jan 2024 | 1.0 | 1.28 | 1.45 | 1.72 |
+| Feb 2024 | 1.0 | 1.31 | 1.49 | — |
+
+A rising number means customers are making more purchases over time — a positive signal for customer loyalty.
+
+## Sales over time by cohort
+
+The **Sales over time** report breaks down monthly revenue contributed by each cohort. This shows:
+- How much of your current revenue comes from recently acquired customers vs. older cohorts
+- Whether your older cohorts are still active contributors
+- Whether the revenue base is diversifying across many cohorts (resilient) or concentrated in recent acquisitions (fragile)
+
+## Using LTV data for acquisition decisions
+
+Cohort LTV data directly informs your customer acquisition cost (CAC) decisions:
+
+```
+If Month-12 LTV = $134 per customer
+And your gross margin = 50%
+Then max acceptable CAC = $134 × 50% = $67
+```
+
+If you're currently spending more than $67 to acquire a customer, you'll be unprofitable on that cohort.

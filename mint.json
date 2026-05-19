@@ -1,0 +1,160 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "SaleTides Help Center",
+  "logo": {
+    "dark": "/images/logo-dark.svg",
+    "light": "/images/logo-light.svg"
+  },
+  "favicon": "/images/favicon.ico",
+  "colors": {
+    "primary": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#5b21b6",
+    "anchors": {
+      "from": "#7c3aed",
+      "to": "#a78bfa"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "saletides.com",
+      "url": "https://saletides.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Start Free Trial",
+    "url": "https://saletides.com/signup"
+  },
+  "tabs": [],
+  "anchors": [
+    {
+      "name": "saletides.com",
+      "icon": "globe",
+      "url": "https://saletides.com"
+    },
+    {
+      "name": "Pricing",
+      "icon": "credit-card",
+      "url": "https://saletides.com/pricing"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/what-is-saletides",
+        "getting-started/connecting-your-store",
+        "getting-started/understanding-your-first-import",
+        "getting-started/navigating-the-dashboard"
+      ]
+    },
+    {
+      "group": "Analytics",
+      "pages": [
+        {
+          "group": "Orders",
+          "pages": [
+            "analytics/orders/overview",
+            "analytics/orders/filters-and-date-ranges",
+            "analytics/orders/reports",
+            "analytics/orders/exporting"
+          ]
+        },
+        {
+          "group": "Customers",
+          "pages": [
+            "analytics/customers/overview",
+            "analytics/customers/customer-groups",
+            "analytics/customers/retention-and-repeat-orders",
+            "analytics/customers/acquisition-sources"
+          ]
+        },
+        {
+          "group": "Products",
+          "pages": [
+            "analytics/products/overview",
+            "analytics/products/variations",
+            "analytics/products/frequently-bought-together"
+          ]
+        },
+        "analytics/revenue",
+        "analytics/refunds",
+        "analytics/coupons",
+        "analytics/subscriptions"
+      ]
+    },
+    {
+      "group": "Advanced Features",
+      "pages": [
+        {
+          "group": "Cohort Analysis",
+          "pages": [
+            "advanced/cohort-analysis/what-is-cohort-analysis",
+            "advanced/cohort-analysis/retention-cohorts",
+            "advanced/cohort-analysis/ltv-and-aov"
+          ]
+        },
+        {
+          "group": "Custom Segments",
+          "pages": [
+            "advanced/segments/overview",
+            "advanced/segments/creating-a-segment",
+            "advanced/segments/using-segments-in-reports"
+          ]
+        },
+        "advanced/abandoned-carts",
+        "advanced/traffic-sources",
+        "advanced/custom-dashboard-widgets"
+      ]
+    },
+    {
+      "group": "Settings & Configuration",
+      "pages": [
+        "settings/store-settings",
+        "settings/user-management",
+        "settings/localization",
+        "settings/email-reminders",
+        "settings/data-management"
+      ]
+    },
+    {
+      "group": "Billing & Plans",
+      "pages": [
+        "billing/plan-comparison",
+        "billing/free-trial",
+        "billing/upgrading-and-downgrading",
+        "billing/payment-methods"
+      ]
+    },
+    {
+      "group": "Integrations & Data Sync",
+      "pages": [
+        "integrations/how-data-syncs",
+        "integrations/woocommerce-webhooks",
+        "integrations/manual-import",
+        "integrations/multi-store-support",
+        "integrations/troubleshooting-imports"
+      ]
+    },
+    {
+      "group": "Troubleshooting",
+      "pages": [
+        "troubleshooting/import-issues",
+        "troubleshooting/data-discrepancies",
+        "troubleshooting/subscriptions-not-showing",
+        "troubleshooting/contacting-support"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/saletides",
+    "github": "https://github.com/saletides"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search documentation..."
+  }
+}
