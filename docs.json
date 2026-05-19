@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "SaleTides Help Center",
   "colors": {
-    "primary": "#7c3aed",
-    "light": "#a78bfa",
-    "dark": "#5b21b6"
+    "primary": "#2284A6",
+    "light": "#43BDE8",
+    "dark": "#1A5F6F"
   },
   "favicon": "/favicon.svg",
   "logo": {
