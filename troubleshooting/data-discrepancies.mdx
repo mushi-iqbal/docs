@@ -3,53 +3,76 @@ title: "Data Discrepancies"
 description: "Why numbers in SaleTides may differ from your WooCommerce admin and how to reconcile them."
 ---
 
-## Why numbers might look different
+<Note>
+  In most cases, a discrepancy between SaleTides and WooCommerce is explained by one of the reasons below. Work through them before contacting support.
+</Note>
 
-SaleTides and your WooCommerce admin may show different numbers for the same metric. This is almost always explained by one of the following:
+## Common causes
 
-## 1. Date range and timezone
+<AccordionGroup>
+  <Accordion title="1. Timezone mismatch">
+    SaleTides displays dates in your [configured timezone](/settings/localization). WooCommerce admin may use UTC or a different timezone. An order placed at 11pm UTC could appear on a different calendar day in SaleTides if your timezone is UTC+2.
 
-SaleTides displays dates in your configured timezone. WooCommerce admin may use UTC or a different timezone. An order placed at 11pm UTC might appear on a different calendar day in SaleTides if your timezone is UTC+2.
+    **Fix:** Go to **Settings → Localization** and confirm your timezone matches the one used in your WooCommerce reports.
+  </Accordion>
 
-**Fix**: Verify your [timezone setting](/settings/localization) in SaleTides matches the timezone used in your WooCommerce reports.
+  <Accordion title="2. Order status filter">
+    SaleTides defaults to showing **Completed** and **Processing** orders in most revenue reports. WooCommerce's "Total Sales" includes all statuses by default — including Pending, On Hold, and Failed.
 
-## 2. Order status filters
+    **Fix:** Change the order status filter in SaleTides to **All Statuses** and compare again.
+  </Accordion>
 
-SaleTides defaults to showing **Completed** and **Processing** orders in most revenue reports. WooCommerce admin "Total Sales" reports may include all order statuses, including Pending and On Hold.
+  <Accordion title="3. Gross vs. net revenue">
+    WooCommerce may show gross revenue (before refunds) or net (after refunds) depending on the report. SaleTides shows both — make sure you're comparing the same metric.
 
-**Fix**: Adjust the order status filter in SaleTides to match what WooCommerce is reporting. Or set it to "All Statuses" for a direct comparison.
+    **Fix:** Compare SaleTides **Net Revenue** with WooCommerce's net sales figure, or Gross Revenue with Gross Sales.
+  </Accordion>
 
-## 3. Refund handling
+  <Accordion title="4. Import not complete">
+    If the initial import hasn't fully completed, older orders may be missing from SaleTides.
 
-WooCommerce reports may show gross revenue before refunds, net revenue after refunds, or a mix. SaleTides shows both Gross Revenue and Net Revenue — make sure you're comparing the same metric.
+    **Fix:** Check import status from your dashboard home. If incomplete, run a full [manual import](/integrations/manual-import).
+  </Accordion>
 
-**Fix**: Compare SaleTides **Net Revenue** with WooCommerce's net sales figure.
+  <Accordion title="5. Recent data lag">
+    Very recent orders (last few minutes) may not yet be processed through the webhook pipeline.
 
-## 4. Import lag
+    **Fix:** Wait a minute and refresh — this resolves itself automatically.
+  </Accordion>
 
-If data was recently added or updated in WooCommerce, it may not yet be reflected in SaleTides (there's a brief delay for webhook processing). For very recent orders (last few minutes), check again in a moment.
+  <Accordion title="6. Tax and shipping inclusion">
+    WooCommerce's revenue metric may or may not include tax and shipping depending on your report settings. SaleTides uses the **full order total** as recorded in WooCommerce (tax + shipping included).
 
-## 5. Partial import
+    **Fix:** Check whether the WooCommerce metric you're comparing to includes or excludes tax and shipping.
+  </Accordion>
 
-If the initial import hasn't completed, or if a manual import was run for a specific date range, older orders may not be in SaleTides yet.
+  <Accordion title="7. Guest customers counted differently">
+    WooCommerce may handle guest checkouts differently in its built-in reports. SaleTides includes both guest and registered customer orders in all counts.
+  </Accordion>
+</AccordionGroup>
 
-**Fix**: Check the import status from your dashboard. Run a full manual import if needed.
+## Checklist before contacting support
 
-## 6. Guest vs. registered customers
-
-WooCommerce may count guest checkouts differently than registered customers. SaleTides includes both in customer and order counts.
-
-## 7. Tax and shipping inclusion
-
-Depending on your WooCommerce configuration, "total revenue" may or may not include tax and shipping. SaleTides uses the **order total** as recorded in WooCommerce (including tax and shipping).
-
-**Fix**: Verify whether the WooCommerce metric you're comparing to includes or excludes tax/shipping.
+<Steps>
+  <Step title="Confirm timezone settings match">
+    **Settings → Localization** — make sure your timezone is correct.
+  </Step>
+  <Step title="Set order status filter to All Statuses">
+    Remove any status filter and compare totals again.
+  </Step>
+  <Step title="Check you're comparing the same metric">
+    Gross Revenue vs. Gross Sales. Net Revenue vs. Net Sales. Don't mix them.
+  </Step>
+  <Step title="Verify the import completed">
+    Dashboard home → check there are no import warnings or incomplete progress bars.
+  </Step>
+</Steps>
 
 ## Still seeing a discrepancy?
 
-If after checking all of the above you still see a significant unexplained difference:
+If after working through the above you still see a significant unexplained difference, contact us:
 
-1. Note the specific metric, date range, and the values in both SaleTides and WooCommerce
-2. Contact support at support@saletides.com with this information
+- Note the **specific metric**, **date range**, and the **exact values** in both SaleTides and WooCommerce
+- Email **support@saletides.com** with this information
 
-Our team can investigate at the data level to identify the source of the discrepancy.
+We can investigate at the data level and identify the source.

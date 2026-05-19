@@ -5,110 +5,124 @@ description: "Step-by-step guide to building custom segments in SaleTides."
 
 ## How to create a segment
 
-Navigate to **Segments** in the sidebar and click **Create Segment**, or click **Save as Segment** from any filter panel on a report page.
+Navigate to **Segments** in the sidebar and click **Create Segment**. Or click **Save as Segment** from any filter panel on a report page to save your current filters as a reusable segment.
 
-## Step 1 — Choose the segment type
+<Frame>
+  <img src="/images/create-segment.png" alt="Create segment screen" />
+</Frame>
 
-Select what type of records this segment will filter:
+## Step-by-step
 
-- **Orders** — filter WooCommerce orders
-- **Customers** — filter customer records
-- **Products** — filter products and variations
-- **Subscriptions** — filter subscription records
+<Steps>
+  <Step title="Choose the segment type">
+    Select what type of records this segment will filter:
 
-## Step 2 — Add conditions
+    <CardGroup cols={2}>
+      <Card title="Orders" icon="cart-shopping">
+        Filter WooCommerce orders by status, payment method, value, date, country, and more
+      </Card>
+      <Card title="Customers" icon="users">
+        Filter customers by location, registration date, order count, lifetime value, and more
+      </Card>
+      <Card title="Products" icon="box">
+        Filter products by category, price range, name, and SKU
+      </Card>
+      <Card title="Subscriptions" icon="rotate">
+        Filter subscriptions by status, plan, start date, and billing amount
+      </Card>
+    </CardGroup>
+  </Step>
 
-Add one or more conditions. Each condition has three parts:
+  <Step title="Add conditions">
+    Each condition has three parts:
 
-```
-[Attribute]   [Operator]   [Value]
-Country       is           United States
-Total spent   greater than $500
-Order count   between      3 and 10
-```
+    ```
+    [Attribute]     [Operator]      [Value]
+    Country         is              United States
+    Total spent     greater than    $500
+    Order count     between         3 and 10
+    ```
 
-### Available attributes by segment type
+    Click **Add Condition** to add more. All conditions use **AND logic** — a record must match every condition to be included.
+  </Step>
 
-**Order segment attributes:**
+  <Step title="Name and save">
+    Give your segment a clear, descriptive name. Click **Save Segment**.
 
-| Attribute | Example |
-|---|---|
-| Order status | is Completed |
-| Payment method | is Stripe |
-| Billing country | is United States |
-| Billing state | is California |
-| Order total | is greater than $100 |
-| Order date | is in the last 30 days |
-| Coupon used | is (any coupon) |
-| Contains product | is [Product Name] |
+    <Tip>Use names that describe the customer, not the filter — e.g. "High-Value UK Repeat Customers" not "country=UK AND value>500".</Tip>
+  </Step>
+</Steps>
 
-**Customer segment attributes:**
+## Available conditions by type
 
-| Attribute | Example |
-|---|---|
-| Billing country | is United Kingdom |
-| Billing state | is Texas |
-| Billing city | is London |
-| First order date | is before January 2024 |
-| Last order date | is in the last 90 days |
-| Total order count | is greater than 5 |
-| Lifetime value | is greater than $500 |
-| WooCommerce role | is Wholesale Customer |
+<Tabs>
+  <Tab title="Order segment">
+    | Attribute | Example |
+    |---|---|
+    | Order status | is Completed |
+    | Payment method | is Stripe |
+    | Billing country | is United States |
+    | Billing state | is California |
+    | Order total | is greater than $100 |
+    | Order date | is in the last 30 days |
+    | Coupon used | contains any coupon |
+    | Contains product | is [Product Name] |
+  </Tab>
+  <Tab title="Customer segment">
+    | Attribute | Example |
+    |---|---|
+    | Billing country | is United Kingdom |
+    | Billing city | is London |
+    | First order date | is before January 2024 |
+    | Last order date | is in the last 90 days |
+    | Total order count | is greater than 5 |
+    | Lifetime value | is greater than $500 |
+    | WooCommerce role | is Wholesale Customer |
+  </Tab>
+  <Tab title="Product segment">
+    | Attribute | Example |
+    |---|---|
+    | Product name | contains "Bundle" |
+    | SKU | starts with "BLK-" |
+    | Category | is Apparel |
+    | Price | is greater than $50 |
+  </Tab>
+  <Tab title="Subscription segment">
+    | Attribute | Example |
+    |---|---|
+    | Status | is Active |
+    | Subscription product | is [Plan Name] |
+    | Start date | is before January 2024 |
+    | Recurring amount | is greater than $50 |
+    | Billing period | is Monthly |
+  </Tab>
+</Tabs>
 
-**Product segment attributes:**
+## Example segments to get you started
 
-| Attribute | Example |
-|---|---|
-| Product name | contains "Bundle" |
-| SKU | starts with "BLK-" |
-| Category | is Apparel |
-| Price | is greater than $50 |
+<AccordionGroup>
+  <Accordion title="High-value repeat customers">
+    - Customer: Total order count **greater than** 3
+    - Customer: Lifetime value **greater than** $300
 
-**Subscription segment attributes:**
+    *Use this to identify your VIP customers for loyalty campaigns.*
+  </Accordion>
+  <Accordion title="New customers this quarter">
+    - Customer: First order date **is in the last** 90 days
+    - Customer: Total order count **equals** 1
 
-| Attribute | Example |
-|---|---|
-| Status | is Active |
-| Subscription product | is [Plan Name] |
-| Start date | is before January 2024 |
-| Recurring amount | is greater than $50 |
-| Billing period | is Monthly |
+    *Use this to target first-time buyers with a second-purchase offer.*
+  </Accordion>
+  <Accordion title="Large orders via PayPal">
+    - Order: Payment method **is** PayPal
+    - Order: Total **greater than** $200
 
-## Step 3 — Combine conditions
+    *Use this to understand high-value PayPal buyer behaviour.*
+  </Accordion>
+  <Accordion title="Active monthly subscribers">
+    - Subscription: Status **is** Active
+    - Subscription: Billing period **is** Monthly
 
-Multiple conditions use **AND logic** by default — a record must match all conditions to be included.
-
-For example:
-- Country = United States **AND**
-- Total spent > $500 **AND**
-- Order count > 3
-
-This gives you "high-value US repeat customers."
-
-## Step 4 — Name and save
-
-Give your segment a descriptive name — for example, "High-Value UK Repeat Customers" or "Completed Orders with Stripe - Last 90 Days." Click **Save Segment**.
-
-Your segment is now available across all analytics pages.
-
-## Example segments to get started
-
-**High-value repeat customers**
-- Customer: Total order count > 3
-- Customer: Lifetime value > $300
-
-**New customers this quarter**
-- Customer: First order date is in the last 90 days
-- Customer: Total order count = 1
-
-**Large orders via PayPal**
-- Order: Payment method = PayPal
-- Order: Total > $200
-
-**Active subscribers on monthly plan**
-- Subscription: Status = Active
-- Subscription: Billing period = Monthly
-
-**Products in the Apparel category priced over $50**
-- Product: Category = Apparel
-- Product: Price > 50
+    *Use this to export a list of all active monthly subscribers.*
+  </Accordion>
+</AccordionGroup>

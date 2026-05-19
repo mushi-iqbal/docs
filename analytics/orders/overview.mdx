@@ -3,85 +3,110 @@ title: "Orders Overview"
 description: "Understand your WooCommerce orders with detailed analytics, charts, and breakdowns."
 ---
 
+<Frame>
+  <img src="/images/orders-overview.png" alt="Orders page overview" />
+</Frame>
+
 ## What the Orders section shows
 
-The **Orders** section gives you a complete view of every order your store has received. It breaks down into two main views:
+The **Orders** section gives you a complete view of every order your store has received, split into two views:
 
-- **Orders list** — a searchable, filterable table of all orders
-- **Order reports** — aggregated analytics and charts
+<CardGroup cols={2}>
+  <Card title="Orders List" icon="list">
+    A searchable, filterable table of every order — click any row to see the full order detail
+  </Card>
+  <Card title="Order Reports" icon="chart-bar">
+    Aggregated analytics and charts — trends, distributions, and breakdowns
+  </Card>
+</CardGroup>
 
-## Orders list
+## Key metrics
 
-The orders table displays all orders with the following columns:
-
-| Column | Description |
-|---|---|
-| Order # | WooCommerce order ID |
-| Date | Order placement date/time |
-| Customer | Customer name and email |
-| Status | Current order status |
-| Payment Method | How the order was paid |
-| Items | Number of line items |
-| Total | Order gross total |
-
-### Searching and filtering
-
-Use the search bar to find orders by order number, customer name, or email. Use the filter panel to narrow by:
-
-- **Date range**
-- **Order status** (completed, processing, on-hold, cancelled, refunded, etc.)
-- **Payment method**
-- **Country**
-- **Product** — orders containing a specific product
-- **Custom segment** — apply a saved segment filter
-
-### Order details
-
-Click any order to view its full detail page:
-
-- Line items with product names, quantities, and prices
-- Customer billing and shipping addresses
-- Payment method and transaction details
-- Order notes (from WooCommerce)
-- Order metadata
-- Linked refunds (if any)
-
-## Order metrics
-
-At the top of the Orders page, four key metrics are always visible:
+These four metrics appear at the top of every orders view:
 
 | Metric | What it measures |
 |---|---|
 | **Total Orders** | Number of orders in the selected date range |
-| **Total Revenue** | Gross revenue (before refunds) |
+| **Total Revenue** | Gross revenue before refunds |
 | **Average Order Value** | Revenue ÷ order count |
 | **Repeat Rate** | % of orders from customers who ordered before |
 
+## Orders list
+
+<Frame>
+  <img src="/images/orders-list.png" alt="Orders list table" />
+</Frame>
+
+The orders table shows every order with: order number, date, customer, status, payment method, item count, and total.
+
+### Searching
+
+Use the search bar to find orders by order number, customer name, or email address.
+
+### Filtering
+
+<Tabs>
+  <Tab title="By status">
+    Filter to specific WooCommerce order statuses:
+    - **Completed** — paid and fulfilled
+    - **Processing** — paid, awaiting fulfillment
+    - **On Hold** — awaiting payment confirmation
+    - **Pending** — awaiting payment
+    - **Cancelled** — cancelled before fulfillment
+    - **Refunded** — fully refunded
+    - **Failed** — failed payment
+
+    <Tip>Most revenue reports default to Completed + Processing. Adjust if your workflow uses different statuses.</Tip>
+  </Tab>
+  <Tab title="By attribute">
+    - **Payment method** — Stripe, PayPal, bank transfer, etc.
+    - **Country** — billing country
+    - **Product** — orders containing a specific product
+    - **Date range** — use the date picker at the top right
+  </Tab>
+  <Tab title="By segment">
+    Apply any saved [Custom Segment](/advanced/segments/overview) to filter to a specific group of orders — for example, all high-value orders from UK customers in the last 90 days.
+  </Tab>
+</Tabs>
+
+### Order detail page
+
+Click any order to see:
+
+- Line items with product names, quantities, and prices
+- Billing and shipping addresses
+- Payment method and transaction details
+- Order notes and metadata
+- Linked refunds
+
+<Frame>
+  <img src="/images/order-detail.png" alt="Order detail page" />
+</Frame>
+
 ## Order charts
 
-The **Orders charts** page provides deeper visual breakdowns:
+Navigate to **Orders → Charts** for visual breakdowns:
 
-- **Orders over time** — daily/weekly/monthly bar or line chart
-- **Revenue over time** — gross revenue trend
-- **Orders by status** — stacked chart showing status distribution
-- **Orders by country** — geographic map and table
-- **New vs. returning customers** — split of first-time vs. repeat buyers
-- **Orders by day of week** — which days perform best
-- **Orders by hour** — which hours see the most activity
-- **Order value distribution** — histogram of order sizes
-- **Item count distribution** — histogram of items per order
+<AccordionGroup>
+  <Accordion title="Revenue & orders over time">
+    Line or bar charts showing gross revenue and order volume by day, week, or month. Toggle granularity using the controls above the chart.
+  </Accordion>
+  <Accordion title="Orders by day of week & hour">
+    Which days and hours see the most orders? Use this to time promotions and plan staffing.
+  </Accordion>
+  <Accordion title="New vs. returning customers">
+    The split between first-time buyers and repeat customers over time. A growing returning customer share indicates healthy retention.
+  </Accordion>
+  <Accordion title="Order value distribution">
+    A histogram showing how orders are spread across price ranges — where does most of your volume sit?
+  </Accordion>
+  <Accordion title="Items per order distribution">
+    How many line items are typically in an order? Are customers buying single items or filling their cart?
+  </Accordion>
+</AccordionGroup>
 
 ## Exporting orders
 
-You can export your order data at any time. See [Exporting Orders](/analytics/orders/exporting).
+Click **Export** on the Orders page to download your order data as CSV or Excel. All active filters are applied to the export.
 
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Filters & date ranges" icon="filter" href="/analytics/orders/filters-and-date-ranges">
-    Learn how to slice your order data
-  </Card>
-  <Card title="Order reports" icon="chart-bar" href="/analytics/orders/reports">
-    Dive into aggregated order analytics
-  </Card>
-</CardGroup>
+[Full export guide →](/analytics/orders/exporting)

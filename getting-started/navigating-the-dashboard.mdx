@@ -3,77 +3,103 @@ title: "Navigating the Dashboard"
 description: "A tour of the SaleTides dashboard — where everything lives and how to get around."
 ---
 
-## Dashboard overview
-
-After logging in, you land on your main **Dashboard**. This is your home base — a customizable summary of your store's performance with key metrics and charts.
+<Frame>
+  <img src="/images/dashboard-overview.png" alt="SaleTides main dashboard" />
+</Frame>
 
 ## Sidebar navigation
 
-The left sidebar gives you access to every section of SaleTides:
+The left sidebar gives you access to every section of SaleTides.
 
-| Section | What you'll find |
-|---|---|
-| **Dashboard** | Your customizable overview with widgets and charts |
-| **Orders** | Full order list, order details, and order reports |
-| **Customers** | Customer directory, groups, retention, and acquisition |
-| **Products** | Product performance, variations, and category reports |
-| **Revenue** | Revenue breakdowns by country, payment method, and more |
-| **Refunds** | All refunds with trends and metrics |
-| **Coupons** | Coupon usage stats and segment reports |
-| **Subscriptions** | Subscription list, metrics, and cohort analysis *(feature-gated)* |
-| **Cohorts** | Retention cohorts, LTV, and order frequency analysis |
-| **Segments** | Create and manage custom segments |
-| **Abandoned Carts** | Browse and recover abandoned shopping carts |
-| **Sources** | Traffic source attribution (referrers, UTM, landing pages) |
-| **Settings** | Store settings, users, billing, and localization |
+<Tabs>
+  <Tab title="Analytics">
+    | Section | What you'll find |
+    |---|---|
+    | **Dashboard** | Customizable overview with widgets and charts |
+    | **Orders** | Full order list, details, and reports |
+    | **Customers** | Directory, groups, retention, and acquisition |
+    | **Products** | Performance, variations, and category reports |
+    | **Revenue** | Breakdowns by country, payment method, and more |
+    | **Refunds** | All refunds with trends and metrics |
+    | **Coupons** | Usage stats and segment reports |
+    | **Subscriptions** | Subscription list, MRR, and churn |
+  </Tab>
+  <Tab title="Advanced">
+    | Section | What you'll find |
+    |---|---|
+    | **Cohorts** | Retention cohorts, LTV, and order frequency |
+    | **Segments** | Create and manage custom segments |
+    | **Abandoned Carts** | Browse and recover abandoned carts |
+    | **Sources** | Traffic attribution — referrers, UTM, landing pages |
+  </Tab>
+  <Tab title="Account">
+    | Section | What you'll find |
+    |---|---|
+    | **Settings** | Store settings, users, and localization |
+    | **Billing** | Plan, payment method, and invoices |
+    | **Profile** | Name, avatar, and password |
+  </Tab>
+</Tabs>
 
 ## The main dashboard
 
-The dashboard is made up of **widgets** — individual cards you can add, remove, reorder, and configure.
+<Frame>
+  <img src="/images/dashboard-widgets.png" alt="Dashboard widgets" />
+</Frame>
 
-Default widgets include:
-- **Revenue over time** — line chart of gross revenue
-- **Orders over time** — chart of order volume
-- **New customers** — new vs. returning customer trend
-- **Top products** — best-selling products by revenue
-- **Order summary by status** — breakdown of order statuses
-- **Orders by country** — geographic breakdown
+The dashboard is made up of **widgets** — individual metric cards and charts you can fully customize.
 
-### Customizing widgets
+**Default widgets include:**
+- Revenue over time
+- Orders over time
+- New vs. returning customers
+- Top products by revenue
+- Orders by status
+- Orders by country
 
-Click **Add Widget** (top right of the dashboard) to add new widgets. Each widget has a title and can be configured for specific date ranges or metrics.
-
-To reorder widgets, drag them by their handle. To remove a widget, click the **×** icon on the widget card.
-
-To restore the default layout, click **Reset Widgets**.
+<Tip>
+  Click **Add Widget** to add new metrics. Drag widgets by their top edge to reorder. Click × to remove any widget.
+</Tip>
 
 ## Date range selector
 
-Every analytics page includes a **date range picker** at the top right. You can select:
+<Frame>
+  <img src="/images/date-range-picker.png" alt="Date range picker" />
+</Frame>
 
-- Pre-built ranges: Today, Yesterday, Last 7 days, Last 30 days, This month, Last month, Last 90 days, This year, Last year
-- **Custom range**: pick any start and end date
+Every page has a **date range picker** in the top right. The selected range applies to all metrics and charts on that page.
 
-The selected date range applies to all charts and metrics on that page.
+| Range | Description |
+|---|---|
+| Today | Current calendar day |
+| Yesterday | Previous day |
+| Last 7 / 30 days | Rolling window ending today |
+| This / Last month | Calendar month |
+| Last 90 days | Rolling 90-day window |
+| This / Last year | Full calendar year |
+| All time | Your entire order history |
+| Custom | Any specific start and end date |
 
 ## Filters
 
-Most analytics pages include a filter panel. Common filters include:
+Most analytics pages include a filter panel. Use filters to narrow your data without creating a full segment.
 
-- **Order status** (completed, processing, refunded, etc.)
-- **Payment method**
-- **Country**
-- **Product or category**
-- **Customer segment** (custom segments you've created)
+<Tabs>
+  <Tab title="Common filters">
+    - **Order status** — completed, processing, refunded, cancelled, etc.
+    - **Payment method** — Stripe, PayPal, bank transfer, etc.
+    - **Country** — billing country
+    - **Product** — orders containing a specific product
+  </Tab>
+  <Tab title="Segment filter">
+    Apply any saved [Custom Segment](/advanced/segments/overview) to filter the entire page to a specific group — for example, "High-value UK customers" or "Orders via Stripe over $200".
+  </Tab>
+</Tabs>
 
 ## Switching stores
 
-If you have multiple WooCommerce stores connected, use the **store switcher** in the top navigation to switch between them. Each store has its own independent dataset and dashboard.
+If you have multiple WooCommerce stores connected, use the **store switcher** in the top navigation to move between them. Each store has its own independent data and dashboard.
 
-## User menu
-
-Click your avatar in the top right to access:
-- **Profile** — update your name and avatar
-- **Settings** — store configuration and user management
-- **Billing** — your current plan and payment details
-- **Logout**
+<Frame>
+  <img src="/images/store-switcher.png" alt="Store switcher" />
+</Frame>

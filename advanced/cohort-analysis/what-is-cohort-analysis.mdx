@@ -1,75 +1,88 @@
 ---
 title: "What is Cohort Analysis?"
-description: "An introduction to cohort analysis and why it's one of the most powerful tools for understanding customer behavior."
+description: "An introduction to cohort analysis and why it's the most powerful tool for understanding customer retention and lifetime value."
 ---
 
 ## The problem with averages
 
-Average order value. Average repeat rate. Average LTV. These are useful starting points — but averages hide what's actually happening over time.
+Your overall repeat rate is 25%. Is that good or bad? Getting better or worse? Are customers you acquired last year more loyal than those from two years ago?
 
-If your average repeat rate is 25%, is that getting better or worse? Are customers you acquired last year more loyal than those from the year before? Is your latest email campaign actually improving retention, or are the numbers staying flat?
-
-Cohort analysis answers these questions.
+Averages hide the answer. Cohort analysis reveals it.
 
 ## What is a cohort?
 
-A **cohort** is a group of customers who share a common characteristic — typically the time period when they first purchased from your store.
+A **cohort** is a group of customers who share a common starting point — typically the month they made their first purchase.
 
-For example:
-- **January 2024 cohort** — all customers who made their first purchase in January 2024
-- **Q2 2023 cohort** — all customers who first purchased in April, May, or June 2023
+<Frame>
+  <img src="/images/cohort-heatmap.png" alt="Cohort retention heatmap" />
+</Frame>
 
-By tracking what these groups do *over time*, you can see how customer behavior evolves and whether it's changing.
-
-## What cohort analysis reveals
-
-### Retention trends
-
-Are customers you acquired 6 months ago still buying? What % of the January cohort made a second purchase? A third?
-
-Cohort analysis shows retention curves — the pattern of customers dropping off over time. A healthy store will have a curve that flattens (customers keep buying) rather than one that falls sharply to zero.
-
-### LTV growth
-
-Does the value of a customer grow over time? Cohort analysis lets you track the *cumulative* revenue per customer as they age — revealing the true long-term value of your customer base.
-
-### Performance over time
-
-If each successive monthly cohort has better retention than the previous one, something is working — your product, your post-purchase emails, or your customer experience is improving. Cohort analysis makes this visible.
-
-### Seasonality effects
-
-Customers acquired during a sale may have lower LTV than customers acquired organically. Cohort analysis separates these groups so you can see the true value of each acquisition source.
-
-## Cohort analysis in SaleTides
-
-SaleTides provides the following cohort reports:
-
-<CardGroup cols={2}>
-  <Card title="Retention cohorts" icon="rotate" href="/advanced/cohort-analysis/retention-cohorts">
-    See what % of each cohort returns to buy again over time
-  </Card>
-  <Card title="LTV & AOV by cohort" icon="chart-line" href="/advanced/cohort-analysis/ltv-and-aov">
-    Track cumulative lifetime value and average order value progression
-  </Card>
-</CardGroup>
+By tracking what each group does *over time*, you can see whether retention is improving, which acquisition periods produced your best customers, and exactly when customers tend to stop buying.
 
 ## How to read a cohort heatmap
 
-SaleTides displays cohort data as a **heatmap table**:
+SaleTides displays cohort data as a color-coded table:
 
 ```
-           Month 1  Month 2  Month 3  Month 4  Month 5
+           Month 0  Month 1  Month 2  Month 3  Month 6
 Jan 2024    100%     32%      18%      12%       9%
-Feb 2024    100%     29%      17%      11%
-Mar 2024    100%     35%      20%
-Apr 2024    100%     31%
-May 2024    100%
+Feb 2024    100%     29%      17%      11%       —
+Mar 2024    100%     35%      20%       —        —
 ```
 
-- **Rows** = cohorts (groups of customers by acquisition month)
-- **Columns** = months since first purchase
-- **Values** = % of the cohort still purchasing at that point
-- **Color intensity** = darker = higher retention
+<CardGroup cols={3}>
+  <Card title="Rows" icon="arrow-down">
+    Each row is one cohort — customers who first purchased in that month
+  </Card>
+  <Card title="Columns" icon="arrow-right">
+    Each column is months since their first purchase
+  </Card>
+  <Card title="Color" icon="palette">
+    Darker = higher retention. Lighter = more customers have dropped off
+  </Card>
+</CardGroup>
 
-The diagonal edge of the table (bottom-right) represents the most recent data points — these will fill in as time passes.
+The diagonal edge of the table (bottom-right) represents the most recent data — these cells fill in as time passes.
+
+## What cohort analysis reveals
+
+<AccordionGroup>
+  <Accordion title="Is my retention improving over time?">
+    Compare the Month 3 column across rows. If each new row is darker than the previous one, your retention is improving — customers acquired recently are staying longer than those acquired earlier.
+  </Accordion>
+  <Accordion title="When do customers typically stop buying?">
+    Look across any row. The drop-off between Month 0 → Month 1 is usually the steepest. If you can improve that single transition, you'll have a disproportionate impact on overall LTV.
+  </Accordion>
+  <Accordion title="Which acquisition period produced my best customers?">
+    Find the row with the darkest shading in later columns. That cohort has the best long-term retention — worth investigating what was different about that period (campaign, product launch, promotion, etc.).
+  </Accordion>
+  <Accordion title="How much is a new customer actually worth?">
+    The LTV cohort tracks cumulative revenue per customer over time. At Month 12, you'll see the average total spend per customer acquired in each period — the number that tells you how much you can afford to spend on acquisition.
+  </Accordion>
+</AccordionGroup>
+
+## Cohort reports in SaleTides
+
+<CardGroup cols={2}>
+  <Card title="Retention Cohorts" icon="rotate" href="/advanced/cohort-analysis/retention-cohorts">
+    What % of each cohort returns to buy again month by month
+  </Card>
+  <Card title="LTV & AOV by Cohort" icon="chart-line" href="/advanced/cohort-analysis/ltv-and-aov">
+    Cumulative revenue per customer and AOV progression over time
+  </Card>
+</CardGroup>
+
+## What good retention looks like
+
+<Note>
+  There is no universal benchmark — it varies heavily by product type, price point, and purchase frequency. Use these as rough guides only.
+</Note>
+
+| Retention at Month 3 | Assessment |
+|---|---|
+| Under 10% | Below average — focus on post-purchase engagement |
+| 10–20% | Average for most ecommerce stores |
+| 20–30% | Good — strong repeat purchase culture |
+| 30%+ | Excellent — high customer loyalty |
+
+Subscription businesses should expect much higher retention (80%+ at Month 3 is typical for healthy SaaS).
