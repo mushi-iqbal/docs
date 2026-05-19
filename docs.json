@@ -1,92 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "SaleTides Help Center",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#5b21b6"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/components",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "Agent ready",
-            "pages": [
-              "agent-ready/prompt",
-              "agent-ready/visibility",
-              "agent-ready/contextual",
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -94,33 +15,149 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "saletides.com",
+        "href": "https://saletides.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Start Free Trial",
+      "href": "https://saletides.com/signup"
     }
   },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "saletides.com",
+          "href": "https://saletides.com",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Pricing",
+          "href": "https://saletides.com/pricing",
+          "icon": "credit-card"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "getting-started/what-is-saletides",
+              "getting-started/connecting-your-store",
+              "getting-started/understanding-your-first-import",
+              "getting-started/navigating-the-dashboard"
+            ]
+          },
+          {
+            "group": "Orders",
+            "pages": [
+              "analytics/orders/overview",
+              "analytics/orders/filters-and-date-ranges",
+              "analytics/orders/reports",
+              "analytics/orders/exporting"
+            ]
+          },
+          {
+            "group": "Customers",
+            "pages": [
+              "analytics/customers/overview",
+              "analytics/customers/customer-groups",
+              "analytics/customers/retention-and-repeat-orders",
+              "analytics/customers/acquisition-sources"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "analytics/products/overview",
+              "analytics/products/variations",
+              "analytics/products/frequently-bought-together"
+            ]
+          },
+          {
+            "group": "More Analytics",
+            "pages": [
+              "analytics/revenue",
+              "analytics/refunds",
+              "analytics/coupons",
+              "analytics/subscriptions"
+            ]
+          },
+          {
+            "group": "Cohort Analysis",
+            "pages": [
+              "advanced/cohort-analysis/what-is-cohort-analysis",
+              "advanced/cohort-analysis/retention-cohorts",
+              "advanced/cohort-analysis/ltv-and-aov"
+            ]
+          },
+          {
+            "group": "Custom Segments",
+            "pages": [
+              "advanced/segments/overview",
+              "advanced/segments/creating-a-segment",
+              "advanced/segments/using-segments-in-reports"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "advanced/abandoned-carts",
+              "advanced/traffic-sources",
+              "advanced/custom-dashboard-widgets"
+            ]
+          },
+          {
+            "group": "Settings & Configuration",
+            "pages": [
+              "settings/store-settings",
+              "settings/user-management",
+              "settings/localization",
+              "settings/email-reminders",
+              "settings/data-management"
+            ]
+          },
+          {
+            "group": "Billing & Plans",
+            "pages": [
+              "billing/plan-comparison",
+              "billing/free-trial",
+              "billing/upgrading-and-downgrading",
+              "billing/payment-methods"
+            ]
+          },
+          {
+            "group": "Integrations & Data Sync",
+            "pages": [
+              "integrations/how-data-syncs",
+              "integrations/woocommerce-webhooks",
+              "integrations/manual-import",
+              "integrations/multi-store-support",
+              "integrations/troubleshooting-imports"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/import-issues",
+              "troubleshooting/data-discrepancies",
+              "troubleshooting/subscriptions-not-showing",
+              "troubleshooting/contacting-support"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/saletides"
     }
   }
 }
