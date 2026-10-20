@@ -1,0 +1,42 @@
+---
+title: "Connect Claude or ChatGPT"
+description: "Ask about your store from inside Claude or ChatGPT. Connect once; read-only; revoke any time."
+---
+
+If you already use Claude or ChatGPT, you can ask about your store there. SaleTides becomes a connector the assistant can use: it reads your analytics (read-only) and never changes anything in your store.
+
+## Connecting
+
+Only the store owner can turn this on.
+
+<Steps>
+  <Step title="Open the assistant in SaleTides">
+    Click the assistant button at the bottom right, then **Use in Claude / ChatGPT**.
+  </Step>
+  <Step title="Turn on access">
+    Click **Turn on access**. This lets an assistant read your store analytics. Individual orders and customers stay private unless you allow them in Settings.
+  </Step>
+  <Step title="Add SaleTides to your assistant">
+    Your connection URL is `https://saletides.com/mcp`.
+
+    <Tabs>
+      <Tab title="Claude">
+        1. Open Claude **Customize → Connectors** (SaleTides opens it for you with **Copy URL & open Claude**).
+        2. Click **Add custom connector**, name it **SaleTides** and paste the URL.
+        3. Click **Connect**, then **Authorize** on the SaleTides screen.
+      </Tab>
+      <Tab title="ChatGPT">
+        1. Open ChatGPT **Settings → Apps & Connectors** (SaleTides opens it for you with **Copy URL & open ChatGPT**).
+        2. Click **Create**. If you don't see it, turn on **Developer mode** under Advanced settings.
+        3. Name it **SaleTides**, paste the URL, click **Connect**, then **Authorize** on the SaleTides screen.
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Ask away">
+    SaleTides shows when the connection is made. Ask in Claude or ChatGPT, for example "Compare my revenue this month with last month".
+  </Step>
+</Steps>
+
+## Managing connections
+
+**Settings → AI Assistant** lists the assistants connected to your store. **Revoke** disconnects one; **Turn off access** disconnects them all. The same setting decides whether assistants may see individual customers and orders.

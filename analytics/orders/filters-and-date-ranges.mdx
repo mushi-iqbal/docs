@@ -1,87 +1,50 @@
 ---
-title: "Filters & Date Ranges"
-description: "How to use filters and date ranges to slice your order data in SaleTides."
+title: "Filters and date ranges"
+description: "Narrow any list with Smart Filters, save combinations, and compare with an earlier period."
 ---
 
 ## Date ranges
 
-Every analytics page in SaleTides has a **date range picker** in the top right corner. The date range you select applies to all metrics, charts, and lists on that page.
+Pick a preset or a custom range at the top of the page. On the Orders list the range applies to the date each order was placed, in your store's timezone. See [Finding your way around](/getting-started/navigating-the-dashboard#dates-and-comparisons) for comparisons.
 
-### Built-in ranges
+## Smart Filters
 
-| Range | Description |
+<Frame caption="Orders that include a product from the Subscriptions category">
+  <img src="/images/smart-filter.png" alt="A Smart Filter row: Product Category, Includes, Subscriptions" />
+</Frame>
+
+<Steps>
+  <Step title="Type what to filter by">
+    In the Smart Filter box, type a field (for example "category", "country" or "coupon") and pick it, or click a **Quick add** chip.
+  </Step>
+  <Step title="Choose a condition and value">
+    Conditions depend on the field: equals, contains, starts with, greater than, between, includes, is empty and so on. Fields with a fixed set of values (status, country, category, payment method) offer a list.
+  </Step>
+  <Step title="Search & Filter">
+    Add more rows to narrow further; every row must match. The cards and the count follow.
+  </Step>
+</Steps>
+
+### Some useful filters
+
+| To see | Filter |
 |---|---|
-| Today | Current calendar day |
-| Yesterday | Previous calendar day |
-| Last 7 days | Rolling 7-day window ending today |
-| Last 30 days | Rolling 30-day window ending today |
-| This month | From the 1st of the current month |
-| Last month | Full previous calendar month |
-| Last 90 days | Rolling 90-day window |
-| This year | From January 1st of the current year |
-| Last year | Full previous calendar year |
-| All time | Your entire order history |
+| Failed payments this month | Status is Failed |
+| Orders from one category | Product Category includes Coffee (sub-categories are included) |
+| Big orders | Order Total greater than 200 |
+| A campaign's orders | UTM Campaign equals black_friday |
+| Coupon orders | Coupon Code is not empty |
+| Orders from returning customers | Customer Type is Returning Customer |
+| Orders with one product | Order Products includes Classic Hoodie |
 
-### Custom date range
+## Saved filters
 
-Select **Custom** to pick any specific start and end date. Dates are shown in your configured timezone (see [Localization settings](/settings/localization)).
+<Frame>
+  <img src="/images/saved-filters.png" alt="Saved Filters: each saved filter with its orders, gross sales, items, average order value and items per order" />
+</Frame>
 
-## Order filters
-
-The filter panel on the Orders page lets you narrow your data by multiple criteria simultaneously.
-
-### Order status
-
-Filter to specific WooCommerce order statuses:
-
-- **Completed** — fully paid and fulfilled orders
-- **Processing** — paid but not yet fulfilled
-- **On Hold** — awaiting payment confirmation
-- **Pending** — awaiting payment
-- **Cancelled** — cancelled before fulfillment
-- **Refunded** — fully refunded orders
-- **Failed** — failed payment attempts
-
-<Tip>
-Most revenue analytics default to **Completed** and **Processing** orders only. Adjust the status filter if your workflow uses different statuses.
-</Tip>
-
-### Payment method
-
-Filter to orders paid with a specific payment method (Stripe, PayPal, bank transfer, etc.). The available values come from your actual WooCommerce payment data.
-
-### Country
-
-Filter to orders from a specific billing country. Useful for regional performance analysis.
-
-### Product
-
-Filter to orders that contain a specific product. Start typing a product name to search.
-
-### Custom segment
-
-Apply any saved [Custom Segment](/advanced/segments/overview) to filter orders by a complex combination of criteria. For example, a segment for "high-value repeat customers from the UK."
-
-## Combining filters
-
-All filters work together. For example, you can filter to:
-- **Completed** orders
-- In the **Last 30 days**
-- From **United States**
-- Containing **Product X**
-
-This gives you exact results for that combination.
+Click **Save Filter** to keep a combination. **Saved Filters** lists them with their totals side by side, and **Load a Saved Filter** applies one to the list. See [Saved filters](/advanced/segments/overview).
 
 ## Clearing filters
 
-Click **Reset Filters** or remove individual filters by clicking their × to go back to the unfiltered view.
-
-## Segments vs. filters
-
-| | Filters | Segments |
-|---|---|---|
-| **Scope** | One-time, on this page | Saved, reusable across pages |
-| **Complexity** | Simple attribute picks | Multi-condition logic |
-| **Persistence** | Resets on page load | Saved to your account |
-
-Use filters for quick one-off analysis. Use [Segments](/advanced/segments/creating-a-segment) when you want a reusable filter you'll apply regularly.
+**Clear Filters** removes every row and shows all orders in your dates again.

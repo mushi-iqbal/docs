@@ -1,78 +1,46 @@
 ---
-title: "Data Discrepancies"
-description: "Why numbers in SaleTides may differ from your WooCommerce admin and how to reconcile them."
+title: "Numbers don't match?"
+description: "Why SaleTides' figures can differ from WooCommerce, Metorik or your payment provider, and how to check."
 ---
 
-<Note>
-  In most cases, a discrepancy between SaleTides and WooCommerce is explained by one of the reasons below. Work through them before contacting support.
-</Note>
+Most differences come from counting different things. Check these first.
 
 ## Common causes
 
 <AccordionGroup>
-  <Accordion title="1. Timezone mismatch">
-    SaleTides displays dates in your [configured timezone](/settings/localization). WooCommerce admin may use UTC or a different timezone. An order placed at 11pm UTC could appear on a different calendar day in SaleTides if your timezone is UTC+2.
-
-    **Fix:** Go to **Settings → Localization** and confirm your timezone matches the one used in your WooCommerce reports.
+  <Accordion title="Different order statuses">
+    SaleTides' sales figures count the statuses chosen in **Settings → Store Settings → Sales Reporting** (Completed and Processing by default), plus orders refunded since. WooCommerce Analytics and Metorik have their own settings; if one includes On hold or Failed orders and the other doesn't, totals differ. The **Orders** list shows every status; its cards are not sales figures.
   </Accordion>
-
-  <Accordion title="2. Order status filter">
-    SaleTides defaults to showing **Completed** and **Processing** orders in most revenue reports. WooCommerce's "Total Sales" includes all statuses by default — including Pending, On Hold, and Failed.
-
-    **Fix:** Change the order status filter in SaleTides to **All Statuses** and compare again.
+  <Accordion title="Refunds counted on a different date">
+    SaleTides takes a refund off net sales on the date it was **issued**. A report that removes it from the original order's date will show different monthly figures, though totals over a long period agree.
   </Accordion>
-
-  <Accordion title="3. Gross vs. net revenue">
-    WooCommerce may show gross revenue (before refunds) or net (after refunds) depending on the report. SaleTides shows both — make sure you're comparing the same metric.
-
-    **Fix:** Compare SaleTides **Net Revenue** with WooCommerce's net sales figure, or Gross Revenue with Gross Sales.
+  <Accordion title="Gross and net mean different things">
+    Gross sales are order totals **before** coupons and store credit, including tax and shipping. Net sales take off discounts, tax, shipping and refunds. The ⓘ on every card says exactly what it counts; the [glossary](/metrics/glossary) has them all.
   </Accordion>
-
-  <Accordion title="4. Import not complete">
-    If the initial import hasn't fully completed, older orders may be missing from SaleTides.
-
-    **Fix:** Check import status from your dashboard home. If incomplete, run a full [manual import](/integrations/manual-import).
+  <Accordion title="Timezone">
+    SaleTides uses your store's timezone (Settings → Store Settings). An order at 11:30pm can fall on a different day in a tool set to UTC.
   </Accordion>
-
-  <Accordion title="5. Recent data lag">
-    Very recent orders (last few minutes) may not yet be processed through the webhook pipeline.
-
-    **Fix:** Wait a minute and refresh — this resolves itself automatically.
+  <Accordion title="Guests counted as one customer per email">
+    SaleTides groups a guest's orders by email, so customer counts can be lower than tools that count every guest order as a new customer.
   </Accordion>
-
-  <Accordion title="6. Tax and shipping inclusion">
-    WooCommerce's revenue metric may or may not include tax and shipping depending on your report settings. SaleTides uses the **full order total** as recorded in WooCommerce (tax + shipping included).
-
-    **Fix:** Check whether the WooCommerce metric you're comparing to includes or excludes tax and shipping.
+  <Accordion title="A product in several categories">
+    On the Categories report a product in two categories counts in both, so categories can add up to more than your product sales.
   </Accordion>
-
-  <Accordion title="7. Guest customers counted differently">
-    WooCommerce may handle guest checkouts differently in its built-in reports. SaleTides includes both guest and registered customer orders in all counts.
+  <Accordion title="Free trial import limit">
+    During the trial, only your newest 50,000 orders are imported, so all-time figures for very large stores are partial until you subscribe.
+  </Accordion>
+  <Accordion title="Payment provider totals">
+    Stripe or PayPal payouts differ from sales: they're net of fees, grouped by payout date, and include only their own payments.
   </Accordion>
 </AccordionGroup>
 
 ## Checklist before contacting support
 
-<Steps>
-  <Step title="Confirm timezone settings match">
-    **Settings → Localization** — make sure your timezone is correct.
-  </Step>
-  <Step title="Set order status filter to All Statuses">
-    Remove any status filter and compare totals again.
-  </Step>
-  <Step title="Check you're comparing the same metric">
-    Gross Revenue vs. Gross Sales. Net Revenue vs. Net Sales. Don't mix them.
-  </Step>
-  <Step title="Verify the import completed">
-    Dashboard home → check there are no import warnings or incomplete progress bars.
-  </Step>
-</Steps>
+- Same date range and timezone in both tools.
+- Same order statuses counted.
+- Gross against gross, or net against net.
+- One order you can see in WooCommerce but not in SaleTides, if any.
 
-## Still seeing a discrepancy?
+## Still different?
 
-If after working through the above you still see a significant unexplained difference, contact us:
-
-- Note the **specific metric**, **date range**, and the **exact values** in both SaleTides and WooCommerce
-- Email **support@saletides.com** with this information
-
-We can investigate at the data level and identify the source.
+Email [support@saletides.com](mailto:support@saletides.com) with the report, the dates and the two figures, and an order number that differs if you have one. We'll trace it.

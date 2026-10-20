@@ -1,61 +1,34 @@
 ---
-title: "User Management"
-description: "Add and manage team members who can access your SaleTides dashboard."
+title: "Team members"
+description: "Invite people to your store's dashboard and choose which areas each can see."
 ---
 
-## Overview
+Open **Manage Users** from the menu under your name. Only the store owner can manage users.
 
-SaleTides allows you to create multiple user accounts within your dashboard, each with their own login credentials. This is useful for giving team members, analysts, or agencies access to your store analytics without sharing your main account credentials.
+## Adding a team member
 
-Navigate to **Settings → Users** to manage users.
+<Steps>
+  <Step title="Click Add User">Enter their name, email and a password for them.</Step>
+  <Step title="Choose what they can see">Tick only the areas they need, or leave every area unticked for full access.</Step>
+  <Step title="Save">They sign in at your store's SaleTides address with that email and password.</Step>
+</Steps>
 
-## Adding a user
+## Areas
 
-Click **Create User** and fill in:
-
-- **Name** — the user's display name
-- **Email** — their login email address
-- **Password** — initial password (they can change it after logging in)
-- **Permissions** — what areas of the dashboard they can access
-
-Click **Save** to create the user. They can now log in at your SaleTides subdomain (`yourstore.saletides.com`) using the credentials you provided.
-
-## User permissions
-
-When creating or editing a user, you can configure which sections they can access:
-
-| Permission | What it grants |
+| Area | Includes |
 |---|---|
-| **Dashboard** | View the main dashboard |
-| **Orders** | View order data and reports |
-| **Customers** | View customer data |
-| **Products** | View product analytics |
-| **Revenue** | View revenue reports |
-| **Refunds** | View refund data |
-| **Coupons** | View coupon analytics |
-| **Subscriptions** | View subscription data |
-| **Cohorts** | View cohort analysis |
-| **Segments** | Create and manage segments |
-| **Settings** | Access settings (typically admin only) |
+| Dashboard | The dashboard and its widgets |
+| Orders | Orders, order pages and order exports |
+| Refunds | The refunds list |
+| Subscriptions | Subscriptions and their pages |
+| Customers | Customers and their profiles |
+| Products | Products, categories, variations, stock and top sellers |
+| Coupons | Coupons and their pages |
+| Reports | The Reports menu |
+| Cohorts | The cohort reports |
 
-## Activating and deactivating users
+Only the owner can open Settings, Billing and Manage Users, switch or add stores, and connect AI assistants.
 
-Users can be temporarily deactivated without being deleted. A deactivated user cannot log in until reactivated. This is useful for offboarding team members while preserving audit history.
+## Changing access
 
-To deactivate a user: click their name in the user list and toggle **Active** to off.
-
-## Changing a user's password
-
-Click a user's name → **Edit** → enter a new password and save. You can also send the user a password reset link from the edit page.
-
-## Deleting a user
-
-Click a user's name → **Delete**. Deleted users cannot be recovered. Their historical activity and any segments or settings they created remain in place.
-
-<Warning>
-You cannot delete your own account from the user management page. To delete your entire SaleTides account, use the **Delete Account** option in [Data Management](/settings/data-management).
-</Warning>
-
-## Your own profile
-
-To update your own name, avatar, or password, click your avatar in the top right → **Profile**. Your email address cannot be changed from the dashboard — contact support if you need to update it.
+**Edit Permissions** changes a team member's areas. You can also change their password, **deactivate** them to block sign-in straight away (they're signed out on their next click), or delete them.

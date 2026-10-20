@@ -1,71 +1,31 @@
 ---
 title: "Refunds"
-description: "Track and analyze refunds across your WooCommerce store."
+description: "Refunds by the date they were issued: how many, how much, why, where, and which went back through the payment gateway."
 ---
 
-## Refunds overview
+SaleTides dates every refund by when it was **issued**, not when the order was placed. A refund in March for a January order appears in March's refunds and comes off March's net sales; January stays as reported.
 
-The **Refunds** section gives you a complete view of all refunds issued on your store. Navigate to **Refunds** in the sidebar.
+## Refunds report
 
-## Refund metrics
+<Frame>
+  <img src="/images/refunds-report.png" alt="Refunds report: refunds, refunded amount, average refund and refunds over time" />
+</Frame>
 
-| Metric | Description |
-|---|---|
-| **Total Refunds** | Number of refund records in the selected period |
-| **Refunded Amount** | Total value refunded |
-| **Refund Rate** | Refunded amount as a % of gross revenue |
-| **Avg Refund Amount** | Average value per refund |
+**Reports → Refunds** shows the number of refunds, the amount paid back and the average refund, compared with your comparison period, and a chart of refunds over time. Below it:
+
+- **By Reason**: refunds grouped by the reason entered in WooCommerce.
+- **By Location**: refunds by billing or shipping country, city, state or ZIP, or by shipping company.
 
 ## Refunds list
 
-The refunds table shows all refunds with:
+<Frame>
+  <img src="/images/refunds-list.png" alt="The refunds list: order, customer, email, amount, reason, date refunded and gateway" />
+</Frame>
 
-| Column | Description |
-|---|---|
-| Order # | Linked WooCommerce order |
-| Date | Date refund was issued |
-| Customer | Customer name and email |
-| Reason | Refund reason (if recorded in WooCommerce) |
-| Amount | Refund amount |
-| Status | Refund status |
+**Refunds** in the menu (below Orders) lists every refund issued in your dates: the order, customer, amount, reason, date and whether it went back through the payment gateway. The cards show refunds, refunded amount (including any tax and shipping refunded), average refund and **Gateway Refunds**: those paid back to the original payment. The rest were refunded manually, for example in cash or store credit.
 
-Click any row to view the linked order details.
-
-## Filtering refunds
-
-- **Date range** — refunds issued in a specific period
-- **Amount range** — refunds above or below a threshold
-- **Customer** — search by customer name or email
-- **Payment method** — see refunds by payment gateway
-
-## Refund trends
-
-The **Trends** chart shows your refund count and amount over time. Use this to:
-- Spot spikes in refund activity (may indicate a product issue or fulfillment problem)
-- Track whether your refund rate is improving or worsening
-- Compare refund behavior across time periods
-
-## Refunds by payment method
-
-A breakdown of refunds grouped by the payment method used on the original order. Useful for understanding if certain gateways have higher refund rates.
-
-## Monthly analytics
-
-The monthly refund report shows month-by-month:
-- Total refunds issued
-- Total amount refunded
-- Refund rate as % of gross revenue
+Filter refunds with the Smart Filter (amount, reason, date, order status, product, country, payment and 20+ more fields), save filters and export to CSV.
 
 ## Why your refund rate matters
 
-A high or rising refund rate can indicate:
-- Product quality issues
-- Misleading product descriptions
-- Fulfillment or shipping problems
-- Customer satisfaction issues
-
-SaleTides tracks trends so you can catch problems early.
-
-## Exporting refund data
-
-Click **Export** to download the refunds list as CSV or Excel.
+The dashboard's **Refund Rate** widget shows the share of orders placed in the period that were refunded, fully or partly. A rising rate points to product, sizing or delivery problems; **By Reason** usually tells you which.

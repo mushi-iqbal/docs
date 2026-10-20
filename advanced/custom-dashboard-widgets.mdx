@@ -1,74 +1,45 @@
 ---
-title: "Custom Dashboard Widgets"
-description: "Customize your SaleTides dashboard with widgets showing the metrics you care about most."
+title: "Dashboard widgets"
+description: "Add, rearrange and remove dashboard widgets, or build your own from orders of any type and status."
 ---
-
-## What are widgets?
-
-Widgets are the individual metric cards and charts that make up your main dashboard. SaleTides gives you full control over which widgets appear, how they're arranged, and what they're titled.
-
-Navigate to your **Dashboard** to manage widgets.
-
-## Default widgets
-
-When you first log in, your dashboard comes with a default set of widgets:
-
-- Revenue over time
-- Orders over time
-- New vs. returning customers
-- Top products by revenue
-- Orders by status (summary)
-- Orders by country (summary)
 
 ## Adding a widget
 
-Click **Add Widget** in the top right of the dashboard. A panel will appear with available widget types. Select the widget you want to add and configure it:
+<Frame>
+  <img src="/images/dashboard-add-widget.png" alt="The Add New Widget window building an Orders by type and status widget" />
+</Frame>
 
-- **Title** — custom label for this widget
-- **Type** — the metric or chart type
-- **Date range** — optional override (otherwise inherits the global date range)
+<Steps>
+  <Step title="Click Add Widget">At the top right of the dashboard.</Step>
+  <Step title="Pick a widget">Widgets already on your dashboard are marked **(on dashboard)**.</Step>
+  <Step title="Name it if you like, and click Add Widget">It appears at the end of its section.</Step>
+</Steps>
 
-Click **Save** to add the widget to your dashboard.
+## Available widgets
 
-## Available widget types
-
-| Widget | What it shows |
+| Group | Widgets |
 |---|---|
-| Revenue chart | Gross revenue trend over time |
-| Orders chart | Order count trend over time |
-| New customers | New customer acquisition over time |
-| Returning customers | Repeat customer trend |
-| Order summary by status | Pie or bar chart of order statuses |
-| Orders by country | Geographic breakdown of orders |
-| Top products | Best-selling products by revenue |
-| Refund rate | Refund rate trend |
-| AOV trend | Average order value over time |
-| Total revenue | Single metric card |
-| Total orders | Single metric card |
-| Total customers | Single metric card |
+| Orders | Sales Orders, Gross Sales, Net Sales, Sales chart, Average Order Value, Items Sold, Monthly sales target, Refund Rate, Failed Orders, Recent Orders, Cancelled Orders, Order Renewals, Order Summary by Status, Order Summary by Country |
+| Customers | Total Customers, New Customers, Returning Customer Rate, Customer Lifetime Value, Top Customers |
+| Products | Top Selling Products, Sales by Category, Low / Out of Stock |
+| Marketing | Top Coupons |
+| Subscriptions | Active Subscriptions, New Subscriptions, Churned Subscriptions, MRR, Recent Subscriptions |
 
-## Editing a widget
+## Build your own: orders by type and status
 
-Hover over any widget to reveal the **Edit** (pencil) icon. Click it to update the widget's title or settings, then save.
+**Orders by type & status** counts exactly the orders you want. Choose:
 
-## Reordering widgets
+- **Show**: the number of orders, their value, or a list of them.
+- **Order types**: regular orders, subscription sign-ups, renewals, resubscriptions and subscription switches.
+- **Statuses**: any mix, for example Failed and On hold to watch payment problems, or Processing to see what's waiting to ship.
 
-Click and drag any widget by its handle (top edge) to reorder it on the dashboard. The new order is saved automatically.
+## Arranging your dashboard
 
-## Deleting a widget
+Click **Customize** to turn on Customize mode. Then:
 
-Hover over any widget to reveal the **Delete** (×) icon. Click it to remove the widget from your dashboard.
+- **Drag** a widget by its handle to move it.
+- **Edit** a widget to rename it or change how many rows a list shows.
+- **Remove** a widget with ✕.
+- **Reset** brings back the default layout. It only appears in Customize mode, because it replaces your arrangement.
 
-Deleted widgets can be re-added at any time via **Add Widget** — no data is lost.
-
-## Resetting to defaults
-
-Click **Reset Widgets** to restore the default dashboard layout. This removes any custom widgets and resets the order to the original defaults.
-
-<Warning>
-Resetting widgets removes all your custom additions and ordering. This cannot be undone.
-</Warning>
-
-## Per-store dashboards
-
-If you have multiple WooCommerce stores connected, each store has its own independent dashboard. Widgets are configured separately per store.
+Click **Customize** again when you're done.

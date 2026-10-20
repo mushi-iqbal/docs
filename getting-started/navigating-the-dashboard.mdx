@@ -1,105 +1,64 @@
 ---
-title: "Navigating the Dashboard"
-description: "A tour of the SaleTides dashboard — where everything lives and how to get around."
+title: "Finding your way around"
+description: "The menu, and the controls every report shares: dates, comparisons, the ⓘ on each card, columns, filters and exports."
 ---
 
-<Frame>
-  <img src="/images/dashboard-overview.png" alt="SaleTides main dashboard" />
-</Frame>
+## The menu
 
-## Sidebar navigation
+The menu on the left groups the reports:
 
-The left sidebar gives you access to every section of SaleTides.
-
-<Tabs>
-  <Tab title="Analytics">
-    | Section | What you'll find |
-    |---|---|
-    | **Dashboard** | Customizable overview with widgets and charts |
-    | **Orders** | Full order list, details, and reports |
-    | **Customers** | Directory, groups, retention, and acquisition |
-    | **Products** | Performance, variations, and category reports |
-    | **Revenue** | Breakdowns by country, payment method, and more |
-    | **Refunds** | All refunds with trends and metrics |
-    | **Coupons** | Usage stats and segment reports |
-    | **Subscriptions** | Subscription list, MRR, and churn |
-  </Tab>
-  <Tab title="Advanced">
-    | Section | What you'll find |
-    |---|---|
-    | **Cohorts** | Retention cohorts, LTV, and order frequency |
-    | **Segments** | Create and manage custom segments |
-    | **Abandoned Carts** | Browse and recover abandoned carts |
-    | **Sources** | Traffic attribution — referrers, UTM, landing pages |
-  </Tab>
-  <Tab title="Account">
-    | Section | What you'll find |
-    |---|---|
-    | **Settings** | Store settings, users, and localization |
-    | **Billing** | Plan, payment method, and invoices |
-    | **Profile** | Name, avatar, and password |
-  </Tab>
-</Tabs>
-
-## The main dashboard
-
-<Frame>
-  <img src="/images/dashboard-widgets.png" alt="Dashboard widgets" />
-</Frame>
-
-The dashboard is made up of **widgets** — individual metric cards and charts you can fully customize.
-
-**Default widgets include:**
-- Revenue over time
-- Orders over time
-- New vs. returning customers
-- Top products by revenue
-- Orders by status
-- Orders by country
-
-<Tip>
-  Click **Add Widget** to add new metrics. Drag widgets by their top edge to reorder. Click × to remove any widget.
-</Tip>
-
-## Date range selector
-
-<Frame>
-  <img src="/images/date-range-picker.png" alt="Date range picker" />
-</Frame>
-
-Every page has a **date range picker** in the top right. The selected range applies to all metrics and charts on that page.
-
-| Range | Description |
+| Menu | What's there |
 |---|---|
-| Today | Current calendar day |
-| Yesterday | Previous day |
-| Last 7 / 30 days | Rolling window ending today |
-| This / Last month | Calendar month |
-| Last 90 days | Rolling 90-day window |
-| This / Last year | Full calendar year |
-| All time | Your entire order history |
-| Custom | Any specific start and end date |
+| **Dashboard** | Your key numbers and widgets you choose |
+| **Reports** | Sales: Revenue, Orders, Order Sources, Refunds, Discounts & Store Credit, Devices. Customers: Customer Groups, Customer Retention, Customer Sources. Subscriptions: Subscriptions, Subscription Plans, Lifecycle, Retention, Events, Active Subscriptions |
+| **Orders** | Every order, with filters, saved filters and exports |
+| **Refunds** | Every refund, by the date it was issued |
+| **Subscriptions** | Every subscription (with WooCommerce Subscriptions) |
+| **Customers** | Every customer and their profile |
+| **Products** | Products, Categories, Variations, Stock and Top Selling Products |
+| **Coupons** | Every coupon and what it did |
+| **Cohorts** | Returning Customers, By Order Counts, Orders per Customer, Average Order Value, Lifetime Value, Orders Over Time, Sales Over Time and Subscription Cohorts |
 
-## Filters
+The search bar at the top finds orders, customers and products by name, email or number; press <kbd>/</kbd> to jump to it. The store switcher next to it moves between your stores.
 
-Most analytics pages include a filter panel. Use filters to narrow your data without creating a full segment.
+## Dates and comparisons
 
-<Tabs>
-  <Tab title="Common filters">
-    - **Order status** — completed, processing, refunded, cancelled, etc.
-    - **Payment method** — Stripe, PayPal, bank transfer, etc.
-    - **Country** — billing country
-    - **Product** — orders containing a specific product
-  </Tab>
-  <Tab title="Segment filter">
-    Apply any saved [Custom Segment](/advanced/segments/overview) to filter the entire page to a specific group — for example, "High-value UK customers" or "Orders via Stripe over $200".
-  </Tab>
-</Tabs>
+<Frame caption="The date picker: presets on the left, or pick any range">
+  <img src="/images/date-range-picker.png" alt="The date picker open, with presets like Today, Last 30 Days and This Month next to a two-month calendar" />
+</Frame>
 
-## Switching stores
+Every report has a date picker with presets (Today, Yesterday, Last 7/30/90 Days, This Month, Last Month, Year to Date, Last Year, All Time) or a custom range. Dates follow your store's timezone.
 
-If you have multiple WooCommerce stores connected, use the **store switcher** in the top navigation to move between them. Each store has its own independent data and dashboard.
+Next to it, choose what to compare with:
+
+- **vs previous period**: the period just before (last month for "This Month", yesterday at this time for "Today", the same number of days before for a custom range).
+- **vs same period last year**: the same dates a year earlier.
+- **No comparison**.
+
+Cards then show the change and the earlier figure, for example **▲ 12.5% vs previous period · was $9,960**. Green means better and red worse; for refunds and failed orders a rise is red.
+
+## What a number means
 
 <Frame>
-  <img src="/images/store-switcher.png" alt="Store switcher" />
+  <img src="/images/metric-info.png" alt="The ⓘ next to Gross Sales open, explaining the metric with a Learn more link" />
 </Frame>
+
+Hover or tap the <Icon icon="circle-info" /> next to a card's title to see what it counts. Every definition is also in the [Metrics glossary](/metrics/glossary).
+
+## Columns
+
+<Frame caption="Customize Columns: tick the columns you want and drag to reorder">
+  <img src="/images/customize-columns.png" alt="The Customize Columns panel on the Orders list, with numbered markers on the button, a column and Save" />
+</Frame>
+
+The Orders, Customers, Products and Subscriptions lists let you choose their columns: click **Customize Columns** (1), tick the ones you want and drag them into order (2), then **Save** (3). Your choice is kept for you; teammates keep their own. **Reset to Default** brings back the original layout.
+
+## Smart Filters and saved filters
+
+Lists have a **Smart Filter**: type what you want to filter by (status, country, product, category, coupon and 30+ more), pick a condition and a value, and click **Search & Filter**. Combine as many as you need. The cards above the list follow your filters.
+
+Save a combination with **Save Filter** and reuse it from **Saved Filters**, which also shows each saved filter's totals side by side. See [Saved filters](/advanced/segments/overview).
+
+## Exports
+
+**Export** on a list sends a CSV of what you're looking at (your dates, search and filters) to your email, usually within a few minutes. Download links work for 48 hours. See [Exporting](/analytics/orders/exporting).

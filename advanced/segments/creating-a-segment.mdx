@@ -1,128 +1,33 @@
 ---
-title: "Creating a Segment"
-description: "Step-by-step guide to building custom segments in SaleTides."
+title: "Creating a saved filter"
+description: "Build a Smart Filter, check the results, and save it with a name."
 ---
 
-## How to create a segment
-
-Navigate to **Segments** in the sidebar and click **Create Segment**. Or click **Save as Segment** from any filter panel on a report page to save your current filters as a reusable segment.
-
-<Frame>
-  <img src="/images/create-segment.png" alt="Create segment screen" />
-</Frame>
-
-## Step-by-step
-
 <Steps>
-  <Step title="Choose the segment type">
-    Select what type of records this segment will filter:
-
-    <CardGroup cols={2}>
-      <Card title="Orders" icon="cart-shopping">
-        Filter WooCommerce orders by status, payment method, value, date, country, and more
-      </Card>
-      <Card title="Customers" icon="users">
-        Filter customers by location, registration date, order count, lifetime value, and more
-      </Card>
-      <Card title="Products" icon="box">
-        Filter products by category, price range, name, and SKU
-      </Card>
-      <Card title="Subscriptions" icon="rotate">
-        Filter subscriptions by status, plan, start date, and billing amount
-      </Card>
-    </CardGroup>
+  <Step title="Open the list">Orders, Customers, Products, Variations, Subscriptions, Coupons or Refunds.</Step>
+  <Step title="Add your conditions">
+    Type a field in the **Smart Filter** box (or click a **Quick add** chip), choose a condition and a value. Add as many rows as you need; every row must match.
   </Step>
-
-  <Step title="Add conditions">
-    Each condition has three parts:
-
-    ```
-    [Attribute]     [Operator]      [Value]
-    Country         is              United States
-    Total spent     greater than    $500
-    Order count     between         3 and 10
-    ```
-
-    Click **Add Condition** to add more. All conditions use **AND logic** — a record must match every condition to be included.
-  </Step>
-
-  <Step title="Name and save">
-    Give your segment a clear, descriptive name. Click **Save Segment**.
-
-    <Tip>Use names that describe the customer, not the filter — e.g. "High-Value UK Repeat Customers" not "country=UK AND value>500".</Tip>
-  </Step>
+  <Step title="Check the results">Click **Search & Filter** and look at the list and cards.</Step>
+  <Step title="Save">Click **Save Filter**, give it a clear name like "UK repeat buyers" and save.</Step>
 </Steps>
 
-## Available conditions by type
+<Frame>
+  <img src="/images/smart-filter.png" alt="A Smart Filter on the Orders list with Product Category includes Subscriptions, and the Save Filter button" />
+</Frame>
 
-<Tabs>
-  <Tab title="Order segment">
-    | Attribute | Example |
-    |---|---|
-    | Order status | is Completed |
-    | Payment method | is Stripe |
-    | Billing country | is United States |
-    | Billing state | is California |
-    | Order total | is greater than $100 |
-    | Order date | is in the last 30 days |
-    | Coupon used | contains any coupon |
-    | Contains product | is [Product Name] |
-  </Tab>
-  <Tab title="Customer segment">
-    | Attribute | Example |
-    |---|---|
-    | Billing country | is United Kingdom |
-    | Billing city | is London |
-    | First order date | is before January 2024 |
-    | Last order date | is in the last 90 days |
-    | Total order count | is greater than 5 |
-    | Lifetime value | is greater than $500 |
-    | WooCommerce role | is Wholesale Customer |
-  </Tab>
-  <Tab title="Product segment">
-    | Attribute | Example |
-    |---|---|
-    | Product name | contains "Bundle" |
-    | SKU | starts with "BLK-" |
-    | Category | is Apparel |
-    | Price | is greater than $50 |
-  </Tab>
-  <Tab title="Subscription segment">
-    | Attribute | Example |
-    |---|---|
-    | Status | is Active |
-    | Subscription product | is [Plan Name] |
-    | Start date | is before January 2024 |
-    | Recurring amount | is greater than $50 |
-    | Billing period | is Monthly |
-  </Tab>
-</Tabs>
+To change a saved filter, load it, adjust the conditions, save it under a new name and delete the old one.
 
-## Example segments to get you started
+## Ideas to start with
 
-<AccordionGroup>
-  <Accordion title="High-value repeat customers">
-    - Customer: Total order count **greater than** 3
-    - Customer: Lifetime value **greater than** $300
-
-    *Use this to identify your VIP customers for loyalty campaigns.*
-  </Accordion>
-  <Accordion title="New customers this quarter">
-    - Customer: First order date **is in the last** 90 days
-    - Customer: Total order count **equals** 1
-
-    *Use this to target first-time buyers with a second-purchase offer.*
-  </Accordion>
-  <Accordion title="Large orders via PayPal">
-    - Order: Payment method **is** PayPal
-    - Order: Total **greater than** $200
-
-    *Use this to understand high-value PayPal buyer behaviour.*
-  </Accordion>
-  <Accordion title="Active monthly subscribers">
-    - Subscription: Status **is** Active
-    - Subscription: Billing period **is** Monthly
-
-    *Use this to export a list of all active monthly subscribers.*
-  </Accordion>
-</AccordionGroup>
+| List | Saved filter | Conditions |
+|---|---|---|
+| Orders | Subscription orders | Product Category includes Subscriptions |
+| Orders | Failed payments | Order Status is Failed |
+| Orders | Big orders | Order Total greater than 150 |
+| Orders | Campaign orders | UTM Campaign equals spring_sale |
+| Customers | VIPs | Total Spent greater than 500 |
+| Customers | Lapsed buyers | Order Count greater than 1, Last Order before a date three months ago |
+| Customers | Clothing buyers | Bought from Category includes Clothing |
+| Products | Low stock sellers | Stock Status is instock, Stock Quantity less than 5 |
+| Subscriptions | Annual plans | Billing Period equals year |

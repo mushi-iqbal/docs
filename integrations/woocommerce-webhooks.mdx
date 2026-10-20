@@ -1,67 +1,29 @@
 ---
-title: "WooCommerce Webhooks"
-description: "How SaleTides uses WooCommerce webhooks and how to verify or reset them."
+title: "WooCommerce webhooks"
+description: "The webhooks SaleTides adds to your store, how to check them, and what to do if they stop."
 ---
 
-## What are WooCommerce webhooks?
+## What they are
 
-Webhooks are real-time HTTP notifications that WooCommerce sends to SaleTides whenever something changes on your store — a new order, an updated customer, a product change, etc.
+A webhook is a message WooCommerce sends when something changes, like a new order. SaleTides adds webhooks for orders, customers, products, coupons and subscriptions (created, updated and deleted) when you connect your store. Each message is signed with a secret, so SaleTides only accepts genuine messages from your store.
 
-Without webhooks, SaleTides would only have data from the time of the last import. Webhooks keep your analytics current in near real-time.
+## Checking them
 
-## How webhooks are set up
+In WordPress, go to **WooCommerce → Settings → Advanced → Webhooks**. You'll see webhooks named for SaleTides with status **Active**, delivering to `saletides.com`.
 
-When you first connect your WooCommerce store, SaleTides automatically registers all required webhooks through the WooCommerce API. You don't need to configure anything manually.
+## If a webhook is disabled
 
-Webhooks registered include:
-- `order.created`
-- `order.updated`
-- `order.deleted`
-- `customer.created`
-- `customer.updated`
-- `product.created`
-- `product.updated`
-- `product.deleted`
-- `coupon.created`
-- `coupon.updated`
-- `subscription.created` *(if WooCommerce Subscriptions is active)*
-- `subscription.updated`
+WooCommerce disables a webhook after several failed deliveries in a row, for example while your server was overloaded. You don't need to do anything: SaleTides checks its webhooks every hour and turns them back on, and its 15-minute check catches the orders in between.
 
-## Verifying webhook status
+If they keep being disabled:
 
-1. Log in to your WordPress dashboard
-2. Navigate to **WooCommerce → Settings → Advanced → Webhooks**
-3. You should see webhooks with **SaleTides** in the name and status **Active**
+- A security plugin or firewall may block outgoing requests to `saletides.com`. Allow them.
+- Your hosting may limit outgoing requests or background tasks (WP-Cron). Ask your host.
 
-If all webhooks show as Active, real-time sync is working correctly.
+## If webhooks are missing
 
-## Troubleshooting inactive webhooks
+SaleTides' hourly check recreates any that were deleted. If you delete them, changes still arrive through the 15-minute check in the meantime.
 
-If webhooks show as **Inactive** or **Disabled**:
+## Security
 
-### Common causes
-
-- **API key permissions changed** — the WooCommerce API keys used by SaleTides may have been revoked or had their permissions reduced
-- **WordPress security plugin blocked** — some security plugins (Wordfence, etc.) may block outgoing webhook requests
-- **Hosting firewall rules** — some managed hosts block outgoing POST requests to external URLs
-- **WooCommerce update** — major WooCommerce updates occasionally reset webhook configurations
-
-### How to fix
-
-1. Go to **Settings → Store Settings** in SaleTides
-2. Click **Reconnect Store** to re-authorize and re-register webhooks
-3. Check your WordPress admin after a few minutes — the webhooks should show as Active again
-
-If reconnecting doesn't work, check with your WordPress hosting provider to ensure outgoing webhooks to `saletides.com` are not blocked.
-
-## Webhook security
-
-All webhook endpoints require a valid tenant identifier. Requests without a valid identifier are rejected. SaleTides also verifies webhook signatures where supported by WooCommerce.
-
-## Impact of missing webhooks
-
-If webhooks stop working, SaleTides will still have all historically imported data. However, new orders, customers, and product changes will not appear in your dashboard until:
-- A manual import is run, or
-- Webhooks are restored
-
-See [Manual import](/integrations/manual-import) for how to catch up on missed events.
+SaleTides' API access is read and write so it can manage its own webhooks. It doesn't change your orders, products, customers or settings.

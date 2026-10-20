@@ -1,62 +1,41 @@
 ---
 title: "Coupons"
-description: "Track coupon usage, revenue impact, and promotion performance in SaleTides."
+description: "Every coupon in your store and what it did in your dates: uses, discount given and the sales it brought."
 ---
 
-## Coupons overview
+<Frame>
+  <img src="/images/coupons.png" alt="Coupons: coupons used, orders with coupons, discount given and sales, above the coupons list" />
+</Frame>
 
-The **Coupons** section shows you how every coupon code has been used, how much revenue it drove, and how much discount was issued. Navigate to **Coupons** in the sidebar.
+**Coupons** lists your WooCommerce coupons with what each did in orders placed in your dates (in your sales statuses): orders, discount given and sales, next to its settings (amount, type, lifetime uses, expiry).
 
-## Coupons list
+## The cards
 
-| Column | Description |
+| Card | What it is |
 |---|---|
-| Coupon Code | The coupon code |
-| Type | Discount type (%, fixed cart, fixed product) |
-| Amount | Discount value |
-| Uses | Number of times the coupon was used |
-| Orders | Number of orders using this coupon |
-| Revenue | Total revenue from orders using this coupon |
-| Discount Given | Total discount amount issued |
-| Customers | Unique customers who used this coupon |
+| Coupons Used | Different coupon codes used on at least one order |
+| Orders with Coupons | Each order counted once, however many coupons it used |
+| Discount Given | What these coupons took off |
+| Sales | Order totals (after discounts) of the orders that used them |
 
-## Coupon detail page
+Tick **Only coupons used in these dates** to hide coupons nobody used. Filter coupons by code, amount, status, discount type, dates, usage and more with the Smart Filter, save filters, and export to CSV.
 
-Click any coupon to view:
-- Usage trend over time
-- All orders that used this coupon
-- Revenue and discount breakdown
-- Customer list for this coupon
+## A coupon's page
 
-## Coupon segments
+<Frame>
+  <img src="/images/coupon-detail.png" alt="A coupon's page: its settings, usage statistics and a chart of uses over time" />
+</Frame>
 
-Create custom [coupon segments](/advanced/segments/overview) to filter coupon data by criteria — for example:
-- Coupons with more than 50 uses
-- Coupons used in a specific date range
-- Coupons with a discount amount above 20%
+Click a coupon to see:
 
-## Coupon segment reports
+- **Coupon usage statistics**: first and last use, discount given, sales generated and orders, with a chart over time.
+- **Products most frequently purchased with the coupon.**
+- **Orders using this coupon**, each linked to the order.
+- **Coupon conditions**: product and category restrictions, minimum and maximum spend, usage limits, email restrictions and expiry.
+- **Used by**: the customers who used it.
 
-Run a **Segment Report** on a coupon segment to see aggregated metrics for the orders that used coupons in your segment. Useful for analyzing the revenue impact of a category of promotions.
+## Ideas
 
-## Use cases
-
-### Promotion ROI
-
-Compare revenue generated vs. discount given for each coupon to understand whether a promotion was profitable.
-
-### Coupon abuse detection
-
-Identify coupons being used far more than intended, or by customers who should not have access to them.
-
-### Influencer / affiliate tracking
-
-If you give unique coupon codes to influencers or affiliates, SaleTides shows you exactly how much revenue each code drives.
-
-### Repeat purchase incentives
-
-Track whether coupons given to new customers drive meaningful repeat purchases.
-
-## Exporting coupon data
-
-Click **Export** to download the coupon list as CSV or Excel. Export a segment report by applying a coupon segment and clicking **Export Segment Report**.
+- Compare a launch coupon's sales with the discount it cost.
+- Find coupons that are used but restricted to the wrong products.
+- Save "Coupon Code is not empty" as a filter on the Orders list to follow discounted orders over time.

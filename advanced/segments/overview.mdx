@@ -1,60 +1,28 @@
 ---
-title: "Custom Segments Overview"
-description: "Create reusable filters for any combination of order, customer, product, or subscription criteria."
+title: "Saved filters"
+description: "Save any combination of Smart Filters, reuse it in a click, and compare saved filters side by side."
 ---
 
-## What are custom segments?
+A **saved filter** (sometimes called a segment) is a set of Smart Filter conditions you keep, like "Orders from the Subscriptions category" or "Customers who spent over $500 and haven't ordered in 90 days".
 
-Segments are saved, reusable filters you build from any combination of your WooCommerce data attributes. Once created, you can apply a segment to any report, chart, or export to see analytics for just that group.
+## Where you can use them
 
-Unlike one-off filters, segments are saved to your account and stay up-to-date automatically as new data comes in.
+Orders, Customers, Products, Variations, Subscriptions, Coupons and Refunds each have their own saved filters.
 
-## Segment types
+## What you can do
 
-SaleTides supports four types of segments:
+- **Load** one from **Load a Saved Filter** above the list. The list, cards and export follow it, so it's quick to check a group every week.
+- **Compare** them on the **Saved Filters** tab, which lists each saved filter with its totals side by side: for orders, orders, gross sales, items, average order value and items per order.
+- **Export** a saved filter's records, or the comparison table, to CSV.
+- **Delete** one with the bin icon.
 
-<CardGroup cols={2}>
-  <Card title="Order segments" icon="cart-shopping">
-    Filter by order attributes: status, payment method, date, country, value, coupon used, etc.
-  </Card>
-  <Card title="Customer segments" icon="users">
-    Filter by customer attributes: location, registration date, order count, lifetime value, etc.
-  </Card>
-  <Card title="Product segments" icon="box">
-    Filter by product attributes: category, price range, name, SKU, etc.
-  </Card>
-  <Card title="Subscription segments" icon="rotate">
-    Filter by subscription attributes: status, plan, start date, renewal amount, etc.
-  </Card>
-</CardGroup>
+## How saved filters stay current
 
-## What you can do with segments
+A saved filter keeps its **conditions**, not a list of records. Every time you load it, it finds whatever matches now, in the dates you've picked. A customer who spends past your threshold appears in "Big spenders" the next time you look.
 
-Once you've created a segment, you can:
-
-1. **Apply it as a filter** on any orders, customers, products, or subscription report page
-2. **Run a segment report** — a dedicated aggregated analytics view for that segment
-3. **Export segment data** — download all records matching the segment to CSV or Excel
-4. **Use it in cohort analysis** — filter cohort views to a specific segment
-
-## Segment library
-
-Navigate to **Segments** in the sidebar to see all your saved segments, organized by type. From here you can:
-- View and edit existing segments
-- Delete segments you no longer need
-- Create new segments
-
-## How segments stay current
-
-Segments use dynamic filtering — they don't capture a static list of records at creation time. When you apply a segment, SaleTides queries your current data against the segment's conditions. New orders, customers, or products that match the conditions are automatically included.
-
-## Next steps
+Saved filters are shared by everyone on the store.
 
 <CardGroup cols={2}>
-  <Card title="Creating a segment" icon="plus" href="/advanced/segments/creating-a-segment">
-    Step-by-step guide to building your first segment
-  </Card>
-  <Card title="Using segments in reports" icon="chart-bar" href="/advanced/segments/using-segments-in-reports">
-    How to apply segments across SaleTides analytics
-  </Card>
+  <Card title="Creating a saved filter" icon="plus" href="/advanced/segments/creating-a-segment">Step by step, with examples.</Card>
+  <Card title="Using saved filters" icon="table-columns" href="/advanced/segments/using-segments-in-reports">Workflows that make the most of them.</Card>
 </CardGroup>

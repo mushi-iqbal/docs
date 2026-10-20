@@ -1,81 +1,51 @@
 ---
-title: "Customers Overview"
-description: "Explore your customer base with SaleTides — profiles, segments, retention, and acquisition analytics."
+title: "Customers"
+description: "The customers who joined in your dates, what they've spent over their lifetime, and each customer's full profile."
 ---
 
-## What the Customers section covers
+<Frame>
+  <img src="/images/customers-overview.png" alt="Customers: customers, total spent, average LTV, total orders, orders per customer, average order value, items and active subscriptions" />
+</Frame>
 
-The **Customers** section gives you a complete view of everyone who has ever ordered from your store. It includes:
+**Customers** lists the customers who **joined** in your dates (placed their first order in them), with what they've done over their whole lifetime since. Pick "All Time" to see everyone.
 
-- A searchable customer directory
-- Individual customer profile pages
-- Aggregated customer analytics and reports
-- Retention and repeat purchase analysis
-- Acquisition source attribution
+<Note>
+  **Guest checkouts are grouped by email.** WooCommerce gives every guest order the same customer number, so SaleTides groups a guest's orders into one profile per email address. If that guest later registers with the same email, their guest orders join their account.
+</Note>
 
-## Customer directory
+## The cards
 
-The customers list shows all customers with the following columns:
-
-| Column | Description |
+| Card | What it is |
 |---|---|
-| Customer | Name and email address |
-| Location | Billing country and city |
-| First Order | Date of their first purchase |
-| Last Order | Date of their most recent purchase |
-| Orders | Total number of orders |
-| Total Spent | Lifetime revenue from this customer |
-| AOV | Average order value |
+| Customers | Customers who joined in your dates and match your search and filters |
+| Total Spent | Their lifetime spend in your sales statuses, less refunds |
+| Average LTV | Total spent per customer |
+| Total Orders, Orders per Customer | Their lifetime orders, in total and per customer |
+| Average Order Value | Total spent per order |
+| Items Purchased, Items per Order | Units in their orders |
+| Active Subscriptions | Active subscriptions these customers hold today |
 
-### Searching customers
+Filter customers with the Smart Filter (spend, order count, country, role, first and last order, products bought, categories bought from and more), choose columns, save filters and export. **Bought from Category** includes the category's sub-categories, so "Clothing" finds everyone who bought a hoodie or a T-shirt.
 
-Use the search bar to find customers by name or email address.
+## A customer's profile
 
-### Filtering customers
+<Frame>
+  <img src="/images/customer-profile.png" alt="A customer's profile: total orders, total spent, average order value, last order, unique products, timeline and products purchased" />
+</Frame>
 
-Filter by:
-- **Country** — billing or shipping country
-- **Date range** — customers who ordered in a specific window
-- **Custom segment** — apply a saved customer segment
+Click a customer to see:
 
-## Customer profile pages
+- **Totals**: orders, total spent, average order value, last order and unique products.
+- **Customer timeline**: their orders and subscription events in order.
+- **Products purchased**: everything they've bought.
+- **Billing and shipping addresses.**
+- **Subscription history** (with WooCommerce Subscriptions).
+- **Customer orders**: every order, searchable, with its relationship to a subscription.
 
-Click any customer to view their full profile:
+## Next
 
-- **Order history** — all orders with dates, statuses, and totals
-- **Metrics** — lifetime value, order count, AOV, first/last order dates
-- **Billing & shipping addresses**
-- **Customer notes** (from WooCommerce)
-
-## Customer metrics
-
-At the top of the Customers page:
-
-| Metric | What it measures |
-|---|---|
-| **Total Customers** | Unique customers in the selected range |
-| **New Customers** | First-time buyers in the selected range |
-| **Returning Customers** | Customers who ordered more than once |
-| **Average LTV** | Average lifetime revenue per customer |
-| **Repeat Rate** | % of customers who have ordered more than once |
-
-## Exporting customers
-
-Click **Export** to download your customer list as CSV or Excel. The export includes name, email, location, order count, total spent, first order date, and last order date.
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Customer groups" icon="layer-group" href="/analytics/customers/customer-groups">
-    Analyze customers grouped by attributes
-  </Card>
-  <Card title="Retention & repeat orders" icon="rotate" href="/analytics/customers/retention-and-repeat-orders">
-    Track repeat purchase behavior
-  </Card>
-  <Card title="Acquisition sources" icon="signal" href="/analytics/customers/acquisition-sources">
-    See where your customers come from
-  </Card>
-  <Card title="Custom segments" icon="sliders" href="/advanced/segments/overview">
-    Build segments for any customer group
-  </Card>
+<CardGroup cols={3}>
+  <Card title="Customer groups" icon="layer-group" href="/analytics/customers/customer-groups">By first product, role or country.</Card>
+  <Card title="Retention" icon="rotate" href="/analytics/customers/retention-and-repeat-orders">Who came back, and how soon.</Card>
+  <Card title="Sources" icon="signs-post" href="/analytics/customers/acquisition-sources">Where new customers came from.</Card>
 </CardGroup>

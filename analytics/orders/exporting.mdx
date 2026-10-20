@@ -1,53 +1,32 @@
 ---
-title: "Exporting Orders"
-description: "Export your WooCommerce order data to CSV or Excel from SaleTides."
+title: "Exporting"
+description: "Download a CSV of exactly what you're looking at, emailed to you within minutes."
 ---
 
 ## How to export
 
-From the **Orders** page, click the **Export** button in the top right. You'll be prompted to select:
+<Steps>
+  <Step title="Set up the list">Pick your dates, search and Smart Filters. The export follows them.</Step>
+  <Step title="Click Export">The button shows how many rows you'll get, for example **Export 245 Orders**.</Step>
+  <Step title="Check your email">A download link arrives within a few minutes. It works for 48 hours.</Step>
+</Steps>
 
-- **File format** — CSV or Excel (.xlsx)
-- **Date range** — the export respects your currently active date range and filters
+## What you can export
 
-The file will download directly to your browser.
-
-## What is included in the export
-
-The orders export includes the following columns:
-
-| Column | Description |
+| From | The CSV has |
 |---|---|
-| Order ID | WooCommerce order number |
-| Date | Order date (in your configured timezone) |
-| Status | Order status |
-| Customer Name | Billing first and last name |
-| Customer Email | Billing email address |
-| Billing Country | Billing country |
-| Payment Method | Payment gateway used |
-| Items | Number of line items |
-| Subtotal | Order subtotal before tax/shipping |
-| Tax | Tax amount |
-| Shipping | Shipping amount |
-| Total | Gross order total |
-| Refunded | Amount refunded |
-| Net Revenue | Total minus refunds |
-| Coupon | Coupon code applied (if any) |
+| Orders | One row per order: order number, customer, total, date, status and origin |
+| Customers | One row per customer with their totals |
+| Products | One row per product with its sales; the Products tab you're on (All, One-off, Subscriptions) applies |
+| Subscriptions, Coupons, Refunds | One row per record |
+| Saved filters | Each saved filter's totals |
+| Dashboard lists | Recent orders, top products, top customers and others: use **Export** on the widget |
+| Categories | Instantly from **Export CSV** on the Categories report |
 
-## Filtering before export
-
-All active filters are applied to the export. For example, if you have filtered to **Completed** orders from the **Last 30 days** in **United States**, the export will contain exactly those orders.
-
-This makes it easy to export targeted datasets — for example, all orders for a specific product, or all orders from a particular customer segment.
-
-## Segment exports
-
-If you want to export orders matching a [Custom Segment](/advanced/segments/overview), apply the segment filter first, then click Export.
+<Note>
+  The Orders CSV has the six columns above, whatever columns you've chosen on screen.
+</Note>
 
 ## Large exports
 
-For stores with a large order history, exports may take a moment to generate. The file will download automatically when ready. There is no limit on the number of rows you can export.
-
-<Note>
-Export files are generated on demand and are not stored on SaleTides servers. If you need to re-download an export, simply run it again.
-</Note>
+Big exports are built in the background in chunks, so even hundreds of thousands of rows are fine; they may take a little longer to arrive. If no email comes within 15 minutes, check your spam folder, then [contact support](/troubleshooting/contacting-support).

@@ -1,74 +1,50 @@
 ---
-title: "Understanding Your First Import"
-description: "What happens during the initial data import and what to expect when it completes."
+title: "Your first import"
+description: "Your last 30 days arrive first so the dashboard opens in minutes; older history fills in behind it."
 ---
 
-## What the import does
+## Recent orders first
 
-When you first connect your WooCommerce store, SaleTides imports your entire order history along with all related data: customers, products, coupons, refunds, and subscriptions. This gives every report access to your full historical dataset from day one.
+When you connect a store, SaleTides imports your **last 30 days of orders first**. As soon as they're in, your dashboard opens, usually within a few minutes. Your older orders, customers, products and other data keep importing in the background.
 
-The import runs as a series of background jobs and processes data in batches so your store's performance is never affected.
+While that happens, a banner at the top of the app says so:
+
+> Your last 30 days are ready. Older orders are still importing (12,400 of 50,000), so reports further back fill in as they arrive.
+
+Reports covering the last 30 days are complete straight away. Reports that reach further back, like last year's comparisons or cohorts, fill in as the older orders arrive. The banner disappears once everything is in.
+
+When your dashboard opens you'll also get a welcome email with a link to it.
+
+## How long it takes
+
+How soon the dashboard opens depends on how many orders you took in the last 30 days:
+
+| Orders in the last 30 days | Dashboard opens in about |
+|---|---|
+| A few hundred | 1–2 minutes |
+| A few thousand | 3–5 minutes |
+| 50,000 | 15–20 minutes |
+
+Older history then imports at roughly 1,200 orders a minute. SaleTides fetches 100 orders at a time and paces its requests so your store stays responsive for shoppers; a slow store server makes everything take longer.
 
 ## What gets imported
 
-The import runs in this order:
-
-<Steps>
-  <Step title="Orders">
-    All WooCommerce orders are fetched first, including their status, payment method, line items, billing address, shipping address, and metadata.
-  </Step>
-  <Step title="Customers">
-    Customer records are imported and linked to their orders. Billing and shipping attributes are indexed for segmentation.
-  </Step>
-  <Step title="Products & Variations">
-    All products (simple, variable, grouped) and their variations are imported with pricing and category data.
-  </Step>
-  <Step title="Coupons">
-    All coupon codes and their usage history are imported.
-  </Step>
-  <Step title="Refunds">
-    Refund records linked to their original orders are imported.
-  </Step>
-  <Step title="Subscriptions">
-    If WooCommerce Subscriptions is active on your store, all subscription records are imported.
-  </Step>
-  <Step title="Post-processing">
-    After the main import, SaleTides runs background calculations: cohort stats, customer metrics, product sales totals, source attribution, and daily summaries.
-  </Step>
-</Steps>
-
-## Tracking import progress
-
-You can watch the import progress from your dashboard. Each entity (orders, customers, products, etc.) has its own progress indicator showing how many records have been processed.
-
-Reports become available as data comes in — you don't need to wait for the full import before exploring your analytics.
-
-## Import status indicators
-
-| Status | Meaning |
+| Data | Notes |
 |---|---|
-| **Running** | Import is actively fetching and processing data |
-| **Completed** | All data for this entity has been imported |
-| **Paused** | Import paused (usually due to a network or API issue — it will resume automatically) |
-| **Failed** | Import encountered an error — see [Troubleshooting imports](/troubleshooting/import-issues) |
+| Orders | With line items, notes, refunds and order attribution (source, UTM, device) |
+| Customers | Registered customers; guest orders are grouped into one profile per email |
+| Products | Products, variations and categories |
+| Coupons | Settings and every use in your orders |
+| Subscriptions | With WooCommerce Subscriptions: subscriptions and their renewal orders |
 
-## Data accuracy
+<Note>
+  During the free trial, SaleTides imports your **most recent 50,000 orders**. When you subscribe, the rest of your history follows automatically.
+</Note>
 
-SaleTides imports data directly from WooCommerce's REST API, so the numbers you see will match what is in your WooCommerce admin. If you notice a discrepancy, see [Data discrepancies](/troubleshooting/data-discrepancies).
+## Tracking progress
+
+Until your recent orders are in, the import page shows each part's progress and an estimate of the time left. If something stops, it shows why and lets you retry; only the missing pages are fetched again.
 
 ## After the import
 
-Once the import completes:
-
-- All historical reports are fully populated
-- Cohort analysis is calculated from your first order date
-- Webhooks are live, so new orders and events update automatically
-- You can start creating [Custom Segments](/advanced/segments/overview)
-
-<Note>
-Post-processing jobs (cohort calculations, customer stats, source attribution) run after the main import completes. These may take additional time for large stores. This is normal — all reports will be fully accurate once they finish.
-</Note>
-
-## Re-running an import
-
-If you need to re-sync data (for example, after a large historical data correction on your WooCommerce store), you can trigger a manual re-import from **Settings → Data Management**. See [Manual import](/integrations/manual-import) for details.
+New and changed orders arrive within seconds through WooCommerce webhooks, and SaleTides checks your store every 15 minutes for anything missed. You don't need to import again. If you ever do, see [Manual import](/integrations/manual-import).

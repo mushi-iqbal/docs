@@ -1,77 +1,54 @@
 ---
-title: "Products Overview"
-description: "Analyze product performance, sales trends, and category breakdowns in SaleTides."
+title: "Products"
+description: "What each product sold in your dates, one-off and subscription products side by side, and each product's full detail."
 ---
 
-## What the Products section covers
+<Frame>
+  <img src="/images/products-overview.png" alt="Products: product sales, items sold, products sold and average item price, above the products list with type and category columns" />
+</Frame>
 
-The **Products** section gives you a full picture of how every product in your WooCommerce catalog performs — what sells, what doesn't, how variations compare, and how products drive customer behavior.
+**Products** lists your products with their **Net Sold** (units) and **Net Sales** (line totals after discounts) in your dates, from orders in your sales statuses. Variations count toward their product; see [Variations](/analytics/products/variations) for each one.
 
-## Products list
+## The cards
 
-Navigate to **Products** to see all products with the following columns:
-
-| Column | Description |
+| Card | What it is |
 |---|---|
-| Product | Name and SKU |
-| Category | WooCommerce product category |
-| Orders | Number of orders containing this product |
-| Units Sold | Total quantity sold |
-| Revenue | Total gross revenue from this product |
-| Avg Price | Average selling price |
-| Repeat Rate | % of buyers who ordered this product more than once |
+| Product Sales | Line totals after discounts, excluding tax and shipping |
+| Items Sold | Units sold |
+| Products Sold | Products with at least one sale |
+| Average Item Price | Product sales per unit |
 
-### Searching and filtering
+The cards follow your search, filters and tab.
 
-Search by product name or SKU. Filter by:
-- **Category** — WooCommerce product category
-- **Date range** — performance in a specific period
-- **Custom segment** — apply a product segment
+## One-off and subscription products
 
-### Product detail page
+<Frame>
+  <img src="/images/product-type-tabs.png" alt="The All products, One-off and Subscriptions tabs" />
+</Frame>
 
-Click any product to view:
-- Sales trend chart (revenue and units over time)
-- All orders containing this product
-- Which customers bought this product
-- Frequently bought together products
-- Variation breakdown (for variable products)
+If you sell with WooCommerce Subscriptions, three tabs appear above the cards: **All products**, **One-off** and **Subscriptions**. The list, the cards and the export follow the tab you choose, and it stays selected when you change the dates.
 
-## Product metrics
+Subscription products also carry a **Subscription** badge next to their name, and the **Type** column shows every product's type in plain words: Simple, Variable, Subscription, Variable subscription, Grouped, External.
 
-| Metric | What it measures |
-|---|---|
-| **Total Products** | Number of products with at least one sale |
-| **Units Sold** | Total quantity sold across all products |
-| **Gross Revenue** | Total revenue from product sales |
-| **Top Product** | Best-performing product by revenue |
+## Columns and filters
 
-## Top products report
+The default columns are product, type, date created, net sold and net sales. **Customize Columns** adds SKU, prices, stock, status, featured, on sale, rating, categories and more.
 
-The **Top Products** view ranks all products by revenue for the selected period. Useful for:
-- Identifying your best sellers
-- Spotting seasonal trends in specific products
-- Comparing product performance across time periods
+The Smart Filter covers 30+ fields, including category, type, price, stock status, first and last order dates and sales. **Type** and **Category** offer a list to choose from.
 
-## Product categories
+## A product's page
 
-Group and filter products by WooCommerce category. The category report shows:
-- Revenue per category
-- Orders per category
-- Units sold per category
-- AOV for category purchases
+<Frame>
+  <img src="/images/product-detail.png" alt="A product's page: price, net orders, net sold and net revenue, with its variations" />
+</Frame>
 
-## Exporting product data
+Click a product to see, for your dates:
 
-Click **Export** to download product data as CSV or Excel. The export includes product name, SKU, category, orders, units sold, revenue, and AOV.
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Variations" icon="list" href="/analytics/products/variations">
-    Analyze individual product variations
-  </Card>
-  <Card title="Frequently bought together" icon="link" href="/analytics/products/frequently-bought-together">
-    Discover cross-sell opportunities
-  </Card>
-</CardGroup>
+- **Totals**: price, net orders, net sold and net revenue.
+- **Variations**: each variation's units sold, and for subscription products its active subscriptions and MRR.
+- **Sales statistics**: a chart by day, week or month, with average order value, units per order and the best period.
+- **Spending by hour and by day of the week.**
+- **Sales by customer**, and **Sales analytics** grouped by billing or shipping location, order status or payment method.
+- **Subscriptions** that include it (subscription products only).
+- **[Frequently bought with](/analytics/products/frequently-bought-together)**: what else is in its orders.
+- **Core details**: type, stock, prices, rating, tax, shipping and categories. Each category links to its [category page](/analytics/products/categories).

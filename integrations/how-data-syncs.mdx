@@ -1,107 +1,41 @@
 ---
-title: "How Data Syncs"
-description: "Understand how SaleTides keeps your WooCommerce data up to date — initial import and real-time webhooks."
+title: "How data syncs"
+description: "Webhooks deliver changes within seconds, a check every 15 minutes catches anything missed, and webhooks are repaired automatically."
 ---
 
-## Two sync mechanisms
+SaleTides keeps your data current three ways.
 
-SaleTides uses two complementary methods to keep your data current:
+## 1. The first import
 
-<CardGroup cols={2}>
-  <Card title="Initial Import" icon="database">
-    A one-time bulk import of your full WooCommerce history when you first connect your store
-  </Card>
-  <Card title="Real-time Webhooks" icon="bolt">
-    Event-driven updates that fire automatically as new orders, customers, and products arrive
-  </Card>
-</CardGroup>
+When you connect, SaleTides imports your history through the WooCommerce REST API: your last 30 days of orders first, then everything else. See [Your first import](/getting-started/understanding-your-first-import).
 
-## Initial import
+## 2. Webhooks, within seconds
 
-When you first connect your WooCommerce store, SaleTides fetches your entire order history along with all related data. The import runs in batches in the background and never affects your store's performance.
+SaleTides registers WooCommerce webhooks on your store, so WooCommerce tells it the moment something changes:
 
-<Frame>
-  <img src="/images/import-progress.png" alt="Import progress screen" />
-</Frame>
+| Data | Changes sent |
+|---|---|
+| Orders | Created, updated, deleted |
+| Customers | Created, updated, deleted |
+| Products | Created, updated, deleted |
+| Coupons | Created, updated, deleted |
+| Subscriptions | Created, updated, deleted |
 
-See [Understanding your first import](/getting-started/understanding-your-first-import) for full details on what gets imported and how long it takes.
+A new order usually appears in SaleTides within seconds. A status change (Processing to Completed, or a refund) updates it the same way.
 
-## Real-time webhooks
+## 3. A check every 15 minutes
 
-After the initial import, SaleTides automatically registers webhooks on your WooCommerce store. Webhooks are instant HTTP notifications — whenever something happens on your store, WooCommerce notifies SaleTides in seconds.
+Webhooks can be lost: a store under load, a plugin that blocks outgoing requests, a server restart. So every 15 minutes SaleTides asks your store for orders changed since its last check and imports anything it hasn't seen. If a webhook was lost, the order still arrives within about 15 minutes.
 
-### What triggers a webhook update
+Every hour it also checks its webhooks on your store. WooCommerce switches off a webhook after repeated delivery failures; SaleTides switches it back on.
 
-<Tabs>
-  <Tab title="Orders">
-    | Event | Trigger |
-    |---|---|
-    | Order created | Customer places an order |
-    | Order updated | Status changes, order is edited |
-    | Order deleted | Order is deleted in WooCommerce |
-  </Tab>
-  <Tab title="Customers">
-    | Event | Trigger |
-    |---|---|
-    | Customer created | New account registered |
-    | Customer updated | Profile or address changes |
-  </Tab>
-  <Tab title="Products">
-    | Event | Trigger |
-    |---|---|
-    | Product created | New product published |
-    | Product updated | Price, stock, or details change |
-    | Product deleted | Product removed |
-  </Tab>
-  <Tab title="Subscriptions">
-    | Event | Trigger |
-    |---|---|
-    | Subscription created | New subscription started |
-    | Subscription updated | Status changes (cancel, pause, resume) |
-  </Tab>
-</Tabs>
+## What isn't synced in real time
 
-### How fast is it?
+- **Product categories** and **refund details** come with the import and with each order or product change, not on their own.
+- **Changes to your WooCommerce settings** (timezone, currency) are read when you connect. Change them in [SaleTides settings](/settings/store-settings) too.
 
-Webhook events are processed within a few seconds of the event occurring on your store. A new order placed on WooCommerce will appear in your SaleTides dashboard almost instantly.
+## When syncing pauses
 
-## Data flow
+If your trial ends without a plan, or a subscription ends, syncing pauses and the webhooks are switched off. When your plan is active again they're switched back on and SaleTides catches up on everything that changed meanwhile.
 
-```
-Customer places order on your WooCommerce store
-                    ↓
-WooCommerce fires webhook → SaleTides API endpoint
-                    ↓
-         Order saved to SaleTides database
-                    ↓
-      Customer stats & metrics recalculated
-                    ↓
-        Dashboard updates automatically
-```
-
-## Verifying webhooks are active
-
-<Steps>
-  <Step title="Open your WordPress admin">
-    Log in to your WordPress dashboard.
-  </Step>
-  <Step title="Navigate to webhooks">
-    Go to **WooCommerce → Settings → Advanced → Webhooks**.
-  </Step>
-  <Step title="Check the status">
-    You should see webhooks with **SaleTides** in the name, all showing status **Active**.
-
-  </Step>
-</Steps>
-
-If webhooks show as Inactive or are missing, see [WooCommerce Webhooks troubleshooting](/integrations/woocommerce-webhooks).
-
-## What is NOT synced in real time
-
-<Note>
-  These items are updated on a background schedule (typically within a few minutes) rather than instantly via webhook:
-  - Cohort calculations
-  - Customer attribute groupings
-  - Source / UTM attribution
-  - Daily summary metrics
-</Note>
+**Settings → Store Connection** shows when SaleTides last heard from your store.

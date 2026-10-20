@@ -1,71 +1,45 @@
 ---
 title: "What is SaleTides?"
-description: "SaleTides is a WooCommerce analytics platform that turns your store data into clear, actionable insights."
+description: "Analytics built only for WooCommerce: what it tracks, how it stays up to date and who it's for."
 ---
 
-## Overview
+SaleTides is an analytics app for WooCommerce stores. It imports your store's orders, customers, products, coupons, refunds and subscriptions, keeps them in sync, and turns them into reports that answer everyday questions: what's selling, who's coming back, what you gave away in discounts, and how your subscriptions are doing.
 
-SaleTides is a dedicated analytics platform built exclusively for WooCommerce stores. It connects directly to your WooCommerce site, imports your historical data, and gives you a real-time dashboard of everything happening in your store — from revenue trends and customer behavior to product performance and subscription metrics.
-
-Unlike generic analytics tools, every report, chart, and metric in SaleTides is purpose-built for ecommerce. You don't need to configure anything — connect your store and your data is ready in minutes.
-
-## What SaleTides tracks
+## What it covers
 
 <CardGroup cols={2}>
-  <Card title="Orders & Revenue" icon="cart-shopping">
-    Track every order, payment, and refund. Understand where revenue comes from, how it trends over time, and which segments drive the most value.
-  </Card>
-  <Card title="Customers" icon="users">
-    Build a complete picture of your customers — who they are, where they come from, how often they buy, and how long they stay.
-  </Card>
-  <Card title="Products" icon="box">
-    See which products sell, which don't, and how variations perform. Discover what customers buy together.
-  </Card>
-  <Card title="Subscriptions" icon="rotate">
-    For stores running WooCommerce Subscriptions — track MRR, churn, renewals, and subscriber retention.
-  </Card>
+  <Card title="Sales" icon="chart-line">Gross and net sales, refunds by the date they were issued, discounts and store credit, tax and shipping, and new against returning customers.</Card>
+  <Card title="Orders" icon="receipt">Every order with 30+ filter fields, saved filters, custom columns and CSV exports.</Card>
+  <Card title="Customers" icon="users">Profiles that group a guest's orders by email, lifetime value, groups, retention and acquisition sources.</Card>
+  <Card title="Products" icon="box">Product and category sales, best sellers, variations, stock levels and stock alerts.</Card>
+  <Card title="Subscriptions" icon="arrows-rotate">For WooCommerce Subscriptions: MRR, ARR, signups, renewals, churn, plans and cohorts.</Card>
+  <Card title="Cohorts" icon="table-cells">Retention, lifetime value and order value by the month customers first ordered.</Card>
 </CardGroup>
-
-## Key capabilities
-
-- **Custom Segments** — Filter any report by any combination of order, customer, or product attributes
-- **Cohort Analysis** — Track customer retention, LTV, and order frequency over time by signup cohort
-- **Traffic Sources** — See which referrers, landing pages, and UTM campaigns drive your best customers
-- **Abandoned Carts** — View and recover abandoned shopping carts
-- **Data Exports** — Export any dataset to CSV or Excel at any time
-- **Multi-store** — Connect and switch between multiple WooCommerce stores from one account
-- **Real-time sync** — Data updates automatically via WooCommerce webhooks
 
 ## How it works
 
-```
-Your WooCommerce Store
-        ↓
-  SaleTides connects via WooCommerce REST API
-        ↓
-  Historical data is imported (orders, customers, products, etc.)
-        ↓
-  Webhooks keep data up-to-date in real time
-        ↓
-  Your SaleTides dashboard — always current
-```
+<Steps>
+  <Step title="You approve SaleTides in WooCommerce">
+    SaleTides asks your store for API access through WooCommerce's own approval screen. There are no keys to copy.
+  </Step>
+  <Step title="Your history is imported">
+    The last 30 days come first so your dashboard opens quickly; the rest of your history follows in the background.
+  </Step>
+  <Step title="It stays in sync">
+    New and changed orders arrive within seconds through WooCommerce webhooks, and SaleTides checks your store every 15 minutes for anything missed.
+  </Step>
+</Steps>
 
-## Who SaleTides is for
+## How the numbers are counted
 
-SaleTides is designed for WooCommerce store owners, marketing teams, and analysts who want:
+- **Sales statuses.** Sales figures count the order statuses you choose in **Settings → Store Settings → Sales Reporting** (Completed and Processing by default).
+- **Refunds count when they're issued.** An order refunded next month stays a sale this month, and the refund comes off next month's net sales. That way a refund never changes a month you've already reported.
+- **Your timezone and week.** Dates follow your store's timezone, and weeks start on the day you choose.
 
-- A dedicated analytics tool (not a generic dashboard you have to configure yourself)
-- Cohort and retention analysis without spreadsheets
-- Customer segmentation without an expensive CRM
-- Subscription metrics without a separate tool
+Every card has an <Icon icon="circle-info" /> that explains its number; the [Metrics glossary](/metrics/glossary) lists them all.
 
-## Next steps
+## Who it's for
 
-<CardGroup cols={2}>
-  <Card title="Connect your store" icon="plug" href="/getting-started/connecting-your-store">
-    Set up the WooCommerce connection in minutes
-  </Card>
-  <Card title="View pricing" icon="credit-card" href="/billing/plan-comparison">
-    Every feature on every plan — pricing based on usage
-  </Card>
-</CardGroup>
+SaleTides is built for WooCommerce store owners and the people who run stores for them: from a single shop to agencies with many stores on one account.
+
+<Card title="Connect your store" icon="plug" href="/getting-started/connecting-your-store">Start your 30-day free trial. No credit card needed.</Card>

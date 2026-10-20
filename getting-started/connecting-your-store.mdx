@@ -1,113 +1,49 @@
 ---
-title: "Connecting Your WooCommerce Store"
-description: "How to connect your WooCommerce store to SaleTides using OAuth — takes about 2 minutes."
+title: "Connecting your store"
+description: "Sign up, enter your store's address and approve SaleTides in WooCommerce."
 ---
 
 ## Before you begin
 
-<AccordionGroup>
-  <Accordion title="What do I need?">
-    - A live WooCommerce store (WooCommerce 3.5 or later)
-    - Admin access to your WordPress dashboard
-    - Your store's public URL (e.g. `https://yourstore.com`)
-  </Accordion>
-  <Accordion title="Does SaleTides need write access to my store?">
-    No. SaleTides requests **read-only** access via the WooCommerce REST API. It cannot create, modify, or delete any orders, products, or customers on your store.
-  </Accordion>
-  <Accordion title="Does my store need to be publicly accessible?">
-    Yes. SaleTides needs to reach your WooCommerce REST API over the internet. Stores on `localhost` or behind a VPN will not work.
-  </Accordion>
-</AccordionGroup>
+- WooCommerce installed on a site you can sign in to as an administrator.
+- Your site reachable over the internet (a site behind a login wall or on your own computer can't be connected).
+- Pretty permalinks turned on in **WordPress → Settings → Permalinks** (anything except "Plain"), so the WooCommerce REST API works.
 
-## Step-by-step setup
+## Step by step
 
 <Steps>
-  <Step title="Create your SaleTides account">
-    Go to [saletides.com](https://saletides.com) and click **Start Free Trial**. Enter your email address to begin.
-
-    <Note>No credit card required for the 30-day free trial.</Note>
+  <Step title="Your details">
+    At [saletides.com/signup](https://saletides.com/signup), enter your name, email and a password. Your 30-day free trial starts here; no credit card is needed.
   </Step>
-
-  <Step title="Enter your WooCommerce store URL">
-    Enter the full URL of your store — for example, `https://yourstore.com`.
-
-    <Frame>
-      <img src="/images/onboarding-store-url.png" alt="Enter store URL screen" />
-    </Frame>
-
-    SaleTides validates the URL and confirms it is a live WooCommerce store before proceeding.
-
-    **Common mistakes to avoid:**
-    - Missing `https://` — always include the full protocol
-    - Entering a page URL — use your root domain, not `/shop` or `/products`
-    - Store is in maintenance mode — disable it temporarily during setup
+  <Step title="Connect your store">
+    Enter your store's root address (for example `https://mystore.com`) and choose your SaleTides address: letters, numbers and hyphens, up to 63 characters. It becomes your dashboard's URL, like `mystore.saletides.com`.
   </Step>
-
-  <Step title="Authorize via WooCommerce OAuth">
-    You'll be redirected to your WordPress admin with a WooCommerce authorization screen. Click **Approve**.
-
-    This creates read-only API credentials that SaleTides uses to import your data. Your store data is never modified.
+  <Step title="Approve SaleTides in WooCommerce">
+    You're taken to your store's WooCommerce approval screen. Sign in if asked and click **Approve**. SaleTides asks for read and write access: read to import your data, write so it can set up the webhooks that keep it in sync. It never changes your orders, products or customers.
   </Step>
-
-  <Step title="Wait for the initial import">
-    SaleTides immediately begins importing your historical data in the background.
-
-    | Store size | Estimated time |
-    |---|---|
-    | Under 1,000 orders | 2–5 minutes |
-    | 1,000–10,000 orders | 5–20 minutes |
-    | 10,000–50,000 orders | 20–60 minutes |
-    | 50,000+ orders | 1–3 hours |
-
-    <Tip>You don't need to wait for the full import — reports become available as data comes in.</Tip>
-  </Step>
-
-  <Step title="Webhooks are set up automatically">
-    After the import, SaleTides registers webhooks on your WooCommerce store so new orders, customers, and product updates appear in real time.
-
-    Verify them at **WordPress Admin → WooCommerce → Settings → Advanced → Webhooks**.
+  <Step title="Your dashboard opens">
+    The import starts straight away. You'll see its progress until your last 30 days of orders are in, then your dashboard opens. [What happens during the import →](/getting-started/understanding-your-first-import)
   </Step>
 </Steps>
 
+<Frame caption="The import page while your store's data arrives">
+  <img src="/images/import-progress.png" alt="Import progress for orders, customers, products and coupons" />
+</Frame>
+
 ## What gets imported
 
-<CardGroup cols={2}>
-  <Card title="Orders" icon="cart-shopping">
-    All orders including line items, billing/shipping addresses, payment method, and notes
-  </Card>
-  <Card title="Customers" icon="users">
-    All customer records linked to their orders
-  </Card>
-  <Card title="Products & Variations" icon="box">
-    All products, categories, and variations with pricing data
-  </Card>
-  <Card title="Coupons" icon="tag">
-    All coupon codes and usage history
-  </Card>
-  <Card title="Refunds" icon="rotate-left">
-    All refunds linked to their original orders
-  </Card>
-  <Card title="Subscriptions" icon="rotate">
-    All subscription records if WooCommerce Subscriptions is active
-  </Card>
-</CardGroup>
+Orders (with their line items, notes and refunds), customers, products and variations, product categories, coupons, and, if you use WooCommerce Subscriptions, subscriptions with their renewals.
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="I get an error when entering my store URL">
-    - Make sure the URL includes `https://`
-    - Confirm your store is publicly accessible (not in maintenance mode)
-    - Verify WooCommerce is active, not just WordPress
-    - Check that your server allows outgoing REST API requests
+  <Accordion title="The approval page shows an error or a blank page">
+    A security plugin or firewall may be blocking `/wc-auth/`. Allow it for SaleTides, check your permalinks aren't set to "Plain", and try again.
   </Accordion>
-  <Accordion title="The WooCommerce OAuth screen didn't appear">
-    The WooCommerce REST API may be disabled. Go to **WooCommerce → Settings → Advanced → REST API** and enable it.
+  <Accordion title="I approved but came back to an error">
+    Your store may be blocking requests from our servers. Ask your host to allow requests to `/wp-json/wc/v3/`, then try again or [contact support](/troubleshooting/contacting-support).
   </Accordion>
-  <Accordion title="I approved access but the import isn't starting">
-    Refresh your SaleTides dashboard and wait 2 minutes. If still not started, go to **Settings → Store Settings** and click **Reconnect Store**.
-  </Accordion>
-  <Accordion title="The import has been running for a very long time">
-    Large stores (50,000+ orders) can take 1–3 hours — this is normal. If it has been running for more than 6 hours without progress, click **Report Issue** on the import screen or email support@saletides.com.
+  <Accordion title="I want to connect another store">
+    Add it from the store switcher in the top bar. See [Multi-store support](/integrations/multi-store-support).
   </Accordion>
 </AccordionGroup>

@@ -1,64 +1,52 @@
 ---
-title: "Revenue Analytics"
-description: "Understand your revenue in depth — by country, payment method, product, and more."
+title: "Revenue"
+description: "Net revenue after discounts, tax, shipping and refunds, how it's made up, and how it splits by period, place, payment, campaign and category."
 ---
 
-## Revenue overview
+<Frame>
+  <img src="/images/revenue-overview.png" alt="The Revenue report: net revenue, gross sales, orders, average order net, discounts, taxes, shipping, refunds and new against returning customer revenue" />
+</Frame>
 
-The **Revenue** section gives you a dedicated view of your store's revenue broken down by multiple dimensions. Navigate to **Revenue** in the sidebar.
+**Reports → Revenue** shows what your sales orders brought in. It counts orders in your sales statuses, plus orders refunded since, in the period they were placed.
 
-## Revenue metrics
+## The cards
 
-| Metric | Description |
+| Card | What it is |
 |---|---|
-| **Gross Revenue** | Total order value before refunds |
-| **Net Revenue** | Gross revenue minus refunds |
-| **Refund Amount** | Total amount refunded |
-| **Refund Rate** | Refunds as a % of gross revenue |
+| Net Revenue | Gross sales minus discounts, tax, shipping, and refunds issued in the period |
+| Gross Sales | Order totals before coupons and store credit |
+| Orders | Sales orders placed |
+| Average Order Net | Net revenue per order |
+| Discounts | Coupons and store credit |
+| Taxes, Shipping | Charged on these orders |
+| Refunds | Issued in the period, whenever the order was placed. **View refunded orders** opens them |
+| New / Returning Customer Revenue | Net revenue from first-time and from repeat customers |
+
+Refunds come off net revenue in the period they're issued, the way Metorik and WooCommerce Analytics count them: a refund never changes a month you've already reported.
 
 ## Revenue over time
 
-The primary chart shows gross and net revenue over time. Toggle between daily, weekly, and monthly granularity to spot trends at different scales.
+The chart shows gross sales, net revenue and orders by day, week or month; drag across it to zoom in. The **Revenue Breakdown** tab has the same figures as a table, one row per period, with a CSV export.
 
-Use the date range picker to compare specific periods — for example, this month vs. last month, or this year vs. last year.
+## Revenue Grouping
 
-## Revenue breakdowns
+<Frame caption="Revenue grouped by product category">
+  <img src="/images/revenue-grouping.png" alt="Revenue Grouping by Product Category: orders, net revenue, average net revenue, gross sales and average gross sales for each category" />
+</Frame>
 
-### By country
+Group the period's revenue by:
 
-A ranked table and map showing which countries generate the most revenue. Includes:
-- Gross revenue per country
-- Number of orders
-- Average order value
-- % of total revenue
+| Group | Options |
+|---|---|
+| Billing | Country, state, city, ZIP |
+| Shipping | Country, state, city, ZIP, company |
+| Order | Status, payment method, currency, created via, order type |
+| Customer | Customer role |
+| UTM / Attribution | Campaign, source, medium, content, term, device type |
+| Product | Product category |
 
-### By state / region
+Each row shows orders, net revenue, average net revenue, gross sales and average gross sales. Click an order count to see those orders.
 
-Drill down within a country to see revenue by state or region (available for US, UK, Canada, Australia, and other countries with regional data).
-
-### By city
-
-For stores with concentrated local markets, city-level breakdown shows which cities drive the most revenue.
-
-### By payment method
-
-See which payment gateways (Stripe, PayPal, bank transfer, etc.) are used for what share of revenue. Useful for understanding payment preferences and optimizing checkout.
-
-### By product
-
-Revenue attributed to each product. This is the same data as the [Products overview](/analytics/products/overview) but framed from a revenue perspective.
-
-### By category
-
-Revenue aggregated by WooCommerce product category.
-
-## Filtering revenue
-
-Apply any standard filter (date range, country, order status, custom segment) to narrow the revenue analysis. For example:
-- Revenue from **completed** orders only
-- Revenue from customers in the **US** using **Stripe**
-- Revenue from orders matching your "High-Value Customers" segment
-
-## Exporting revenue data
-
-Click **Export** to download the currently visible revenue breakdown as CSV or Excel.
+<Note>
+  An order's products can belong to several categories, so **Product Category** works from order lines instead: a category's revenue is its products' line totals (after discounts for net, before for gross), and its orders are those with something from the category. Sub-categories are listed under their parent ("Clothing › Hoodies"), and the parent includes them. Click a category to open its [category page](/analytics/products/categories).
+</Note>

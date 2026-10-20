@@ -1,51 +1,25 @@
 ---
-title: "Import Issues"
-description: "Diagnose and fix common import problems in SaleTides."
+title: "Import issues"
+description: "A quick guide to imports that are slow, stuck or incomplete."
 ---
 
-## Quick reference
-
-| Symptom | Likely cause | Fix |
+| What you see | Most likely cause | Fix |
 |---|---|---|
-| Import stuck for 15+ min | API timeout, credentials issue | Reconnect store or report issue |
-| Orders missing from dashboard | Date filter, status filter | Check active filters |
-| Import shows 0 records | API connection broken | Reconnect store |
-| Import completed but no data | Wrong store URL connected | Disconnect and reconnect correct store |
-| Import very slow | Large order history | Normal — wait or contact support if 6+ hours |
+| Still on the import page after 30 minutes | A large store, or a slow store server | Wait while the counts rise; [how long it takes](/getting-started/understanding-your-first-import#how-long-it-takes) |
+| An import marked **stuck** | No progress for 15 minutes | SaleTides restarts it automatically; or click **Retry** |
+| **Blocking our requests (HTTP 403)** | Firewall or security plugin | Allow SaleTides' requests, then **Retry** |
+| **REST API key is invalid** | Key deleted or permissions changed | Check the key, or contact support |
+| Fewer orders than WooCommerce | Free trial (newest 50,000), sales statuses, or dates | See [Data discrepancies](/troubleshooting/data-discrepancies) |
+| No subscriptions | WooCommerce Subscriptions not detected | See [Subscriptions not showing](/troubleshooting/subscriptions-not-showing) |
 
 ## Step-by-step diagnosis
 
-### 1. Check the connection status
+<Steps>
+  <Step title="Is the store reachable?">Open your store's address in a private browser window. If it's down or behind a login, imports can't run.</Step>
+  <Step title="Is the API key there?">**WooCommerce → Settings → Advanced → REST API** should list a SaleTides key with Read/Write access.</Step>
+  <Step title="Is something blocking requests?">Check your security plugin's and Cloudflare's blocked-request logs for SaleTides.</Step>
+  <Step title="Retry">On the import page, **Retry** fetches only what's missing.</Step>
+  <Step title="Still stuck?">Click **Report** on the import page, or email support with your store address.</Step>
+</Steps>
 
-Go to **Settings → Store Settings**. If the connection shows anything other than **Active**, click **Reconnect Store** and go through the WooCommerce OAuth flow again.
-
-### 2. Check the import progress screen
-
-Navigate to your dashboard home page. If an import is in progress, you'll see a progress indicator. Note which entity type is stuck and at what percentage.
-
-### 3. Check WooCommerce API
-
-Try accessing your store's WooCommerce API directly: `https://yourstore.com/wp-json/wc/v3/orders`
-
-If you see a JSON response, the API is working. If you see an error or a login page, there may be a WordPress or hosting issue blocking API access.
-
-### 4. Check for recent WooCommerce or WordPress changes
-
-- Was WooCommerce recently updated? Major updates occasionally reset API credentials.
-- Was a security plugin (Wordfence, iThemes Security) recently installed or updated? These sometimes block REST API access.
-- Was the WordPress install migrated to a new host?
-
-### 5. Report the issue
-
-If none of the above resolves it, use the **Report Issue** button on the import progress screen. This is the fastest way to get a support team member to investigate.
-
-## Detailed troubleshooting guides
-
-<CardGroup cols={2}>
-  <Card title="WooCommerce Webhooks" icon="webhook" href="/integrations/woocommerce-webhooks">
-    Verify and fix webhook configuration
-  </Card>
-  <Card title="Manual Import" icon="rotate" href="/integrations/manual-import">
-    Trigger a fresh import from WooCommerce
-  </Card>
-</CardGroup>
+<Card title="Troubleshooting imports in detail" icon="wrench" href="/integrations/troubleshooting-imports">Every import message, what it means and what to do.</Card>

@@ -1,55 +1,31 @@
 ---
-title: "Manual Import"
-description: "How to manually trigger a data import or re-sync from your WooCommerce store."
+title: "Manual import"
+description: "Re-import orders, customers, subscriptions, products, coupons or refunds from your store."
 ---
 
-## When to run a manual import
+You rarely need this: webhooks and the 15-minute check keep everything current. Re-import when:
 
-A manual import is useful when:
+- Data looks incomplete after a long outage or after restoring your store from a backup.
+- You changed many orders in bulk with a tool that doesn't fire webhooks.
+- Support asks you to.
 
-- Your WooCommerce webhooks were down for a period and you need to catch up on missed data
-- You ran a large batch operation on your WooCommerce store (bulk order import, migration, etc.) and want to sync the changes immediately
-- You cleared your SaleTides data and want to start a fresh import
-- Your data looks out of date and you suspect the webhook sync has stopped working
+## How
 
-## How to trigger a manual import
+Open **Settings → Tools**. Each data type has **Reimport**:
 
-Navigate to **Settings → Data Management** and click **Run Import**.
+| Data | Options |
+|---|---|
+| Orders | All statuses, or only the statuses you choose |
+| Customers | All customers |
+| Subscriptions | All, or chosen statuses (Active, Pending, On Hold, Cancelled, Expired) |
+| Products | All products, variations and categories |
+| Coupons | All coupons |
+| Refunds | All refunds |
 
-You can choose which entity types to import:
+## While it runs
 
-- Orders
-- Customers
-- Products & Variations
-- Coupons
-- Refunds
-- Subscriptions *(if WooCommerce Subscriptions is active)*
+Re-importing updates existing records and adds missing ones; it never creates duplicates and never deletes anything. Your reports keep working meanwhile and fill in as the import progresses. Only one import of each type runs at a time.
 
-Select all to run a full re-import, or select specific entities if you only need to catch up on one type.
+## If it stops
 
-## Import options
-
-### Full import
-
-A full import fetches all records of the selected types from WooCommerce from the beginning of your order history. This is the most thorough option but takes the longest.
-
-### Partial import (by date)
-
-You can specify a start date to only import data from a specific point in time. This is faster and useful when you only need to catch up on a recent gap in syncing.
-
-## Monitoring import progress
-
-After starting an import, you'll see a progress indicator on the dashboard showing:
-- Which entity is currently being imported
-- How many records have been processed
-- Estimated time remaining
-
-You can continue using the dashboard normally while the import runs in the background.
-
-## Import and existing data
-
-Manual imports use **upsert logic** — if a record already exists in SaleTides, it will be updated with the latest values from WooCommerce. No duplicate records are created. This means it is safe to run a full re-import without worrying about data duplication.
-
-## Reporting an import issue
-
-If an import gets stuck (no progress for more than 15 minutes), use the **Report Issue** button on the import progress screen. This notifies the SaleTides support team who can investigate and restart the import from the server side.
+A stopped import shows why. SaleTides retries automatically every few minutes when it's safe; otherwise fix the cause (see [Troubleshooting imports](/integrations/troubleshooting-imports)) and click **Retry**: only the missing pages are fetched again. **Report** sends the details to us.
