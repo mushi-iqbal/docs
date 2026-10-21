@@ -27,6 +27,37 @@ Cards average the months in your range. Charts show retention and churn month by
   <img src="/images/subscription-cohorts.png" alt="Subscription Cohort Retention: subscriptions grouped by start month and how many stayed active in each later month" />
 </Frame>
 
-**Cohorts → Subscriptions Cohorts** groups subscriptions by the month they started and shows how many were still active in each month after. Switch between counts (#) and percentages (%), and group by month, week or year. Read it like a [customer cohort](/advanced/cohort-analysis/what-is-cohort-analysis): rows are starting months, columns are months since.
+**Cohorts → Subscriptions Cohorts** groups subscriptions by the month they started and follows how many stay active. Read it like a [customer cohort](/advanced/cohort-analysis/what-is-cohort-analysis): rows are starting months, columns are time since.
 
-Healthy subscription businesses often keep 80% or more at month 3; a sharp drop in the first month usually points to onboarding or a first delivery that disappoints.
+- **Rows**: a cohort, the subscriptions that started in that month (or week, or year).
+- **Month 1**: what the cohort started with. Every later column is compared with it.
+- **Month 2, 3…**: how many are still active one, two… periods after the cohort began. A subscription drops out once it has ended or been cancelled, so values only go down along a row.
+- **Subscriptions / MRR**: count subscriptions, or add up the monthly recurring revenue of those still active.
+- **# / %**: the numbers themselves, or the share of the cohort's starting point still active.
+- **Average**: each column averaged over the cohorts old enough to reach it. In **%** mode it's the total still active divided by the total started, across those same cohorts.
+- **—**: the cohort hasn't reached that period yet.
+
+Hover any cell or column heading for an explanation. The **How to read this chart** link above the table opens the same guide in the app.
+
+<Accordion title="Worked example">
+  20 subscriptions started in March. By the start of May (two months later), 3 had been cancelled.
+
+  | | Month 1 | Month 2 | Month 3 |
+  |---|---|---|---|
+  | Mar (#) | 20 | 19 | 17 |
+  | Mar (%) | 100% | 95% | 85% |
+
+  Month 3 at 85% means 17 of March's 20 subscriptions were still active two months after March began.
+</Accordion>
+
+<Tip>
+  **MRR % above Subscriptions %** means the subscribers who stay are on bigger plans than those who leave. Below it, you're losing your most valuable subscribers first.
+</Tip>
+
+**What to look for**
+
+- **The drop from Month 1 to Month 2.** A sharp one usually means trial or first-payment churn: look at onboarding and the first renewal.
+- **Where a row levels off.** After that point subscribers tend to stay, so getting customers past it matters most.
+- **A column read top to bottom.** If newer cohorts keep a higher share at the same age, retention is improving.
+
+Healthy subscription businesses often keep 80% or more at month 3.
