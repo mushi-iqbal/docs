@@ -86,6 +86,7 @@
               "analytics/refunds",
               "analytics/discounts",
               "analytics/taxes",
+              "analytics/shipping",
               "analytics/coupons"
             ]
           },

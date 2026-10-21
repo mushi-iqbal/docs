@@ -1,0 +1,45 @@
+---
+title: "Shipping"
+description: "Shipping charged to customers by method, destination and month, and how many orders went out with no shipping charge."
+---
+
+<Frame>
+  <img src="/images/shipping.png" alt="Shipping report: shipping charged, shipped orders, paid shipping, no shipping charge, average shipping and share of gross sales, with shipping over time" />
+</Frame>
+
+**Reports → Shipping** shows what customers paid for shipping on sales orders in your dates.
+
+<Note>
+  WooCommerce knows what you **charged** the customer, not what your carrier **billed** you, so this is shipping revenue, not shipping profit. Refunds aren't split by shipping in WooCommerce, so refunded shipping isn't taken off.
+</Note>
+
+## The cards
+
+| Card | What it is |
+|---|---|
+| Shipping Charged | What customers paid for shipping on sales orders placed in these dates |
+| Shipped Orders | Orders with a shipping method, out of all orders (digital orders have none) |
+| Paid Shipping | Orders where the customer paid something for shipping |
+| No Shipping Charge | Shipped orders where the customer paid nothing: free shipping, pickup or a zero rate, with their share of shipped orders |
+| Average Shipping | Shipping charged per order that paid for shipping |
+| Share of Gross Sales | Shipping as a share of what customers paid |
+
+Shipping is part of **gross sales** and left out of **net sales**, as everywhere in SaleTides.
+
+## By method
+
+Each shipping method with its orders, shipping charged, average per order and how many of its orders had no charge. Carriers often add changing detail in brackets, such as *UPS Ground (Intransit days: 2)*; that detail is dropped so the same service is one row. The method's ID (for example `flat_rate`) is shown under its name.
+
+## By destination
+
+Shipped orders by country: the shipping address, or billing when there's none. Compare the average charge and the share with no charge by country to spot where you subsidise shipping most.
+
+## By month
+
+Orders, shipped orders, paid and no-charge orders, shipping charged and the average per paid order, one row per month. Every table has **Export CSV**.
+
+## Using it
+
+- **Check your free-shipping threshold.** A high share of orders with no shipping charge and a low average order value can mean the threshold is too low.
+- **Compare with your carrier bills.** If Average Shipping is below what you pay per parcel, shipping costs you money on every order.
+- **Shipping on the dashboard.** Add the **Shipping** widget (Add Widget → Orders) to see shipping charged at a glance; it opens this report.

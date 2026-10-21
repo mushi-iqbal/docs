@@ -1,13 +1,29 @@
 ---
 title: "Customers"
-description: "The customers who joined in your dates, what they've spent over their lifetime, and each customer's full profile."
+description: "Customers who joined, first ordered or ordered in your dates, what they've spent over their lifetime, and each customer's full profile."
 ---
 
 <Frame>
   <img src="/images/customers-overview.png" alt="Customers: customers, total spent, average LTV, total orders, orders per customer, average order value, items and active subscriptions" />
 </Frame>
 
-**Customers** lists the customers who **joined** in your dates (placed their first order in them), with what they've done over their whole lifetime since. Pick "All Time" to see everyone.
+**Customers** lists customers by your dates, with what they've done over their whole lifetime. Pick "All Time" to see everyone.
+
+## What the dates mean
+
+The selector next to the date picker decides which customers your dates pick:
+
+| Option | Customers listed |
+|---|---|
+| **Joined in these dates** (default) | Customer records created in the dates: when someone registered, or first appeared as a guest |
+| **First ordered in these dates** | Customers whose **first** sales order was in the dates: your new customers for the period |
+| **Ordered in these dates** | Anyone who placed a sales order in the dates, new or returning |
+
+Links from the dashboard, Retention, Customer Groups and the cohort reports set this for you, so the list always matches the number you clicked. **New Customers** opens with *First ordered*, **Customers** and **Returning Customer Rate** with *Ordered*.
+
+<Tip>
+  "Joined" and "first ordered" often differ: someone can register or join your newsletter months before their first purchase. For anything about buying, use one of the order options.
+</Tip>
 
 <Note>
   **Guest checkouts are grouped by email.** WooCommerce gives every guest order the same customer number, so SaleTides groups a guest's orders into one profile per email address. If that guest later registers with the same email, their guest orders join their account.
@@ -17,7 +33,7 @@ description: "The customers who joined in your dates, what they've spent over th
 
 | Card | What it is |
 |---|---|
-| Customers | Customers who joined in your dates and match your search and filters |
+| Customers | Customers in your dates (see above) who match your search and filters |
 | Total Spent | Their lifetime spend in your sales statuses, less refunds |
 | Average LTV | Total spent per customer |
 | Total Orders, Orders per Customer | Their lifetime orders, in total and per customer |
@@ -25,7 +41,7 @@ description: "The customers who joined in your dates, what they've spent over th
 | Items Purchased, Items per Order | Units in their orders |
 | Active Subscriptions | Active subscriptions these customers hold today |
 
-Filter customers with the Smart Filter (spend, order count, country, role, first and last order, products bought, categories bought from and more), choose columns, save filters and export. **Bought from Category** includes the category's sub-categories, so "Clothing" finds everyone who bought a hoodie or a T-shirt.
+Filter customers with the Smart Filter (spend, order count, country, role, first and last order, **placed an order** on given dates, products bought, categories bought from and more), choose columns, save filters and export. **Bought from Category** includes the category's sub-categories, so "Clothing" finds everyone who bought a hoodie or a T-shirt.
 
 ## A customer's profile
 
