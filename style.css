@@ -1,0 +1,5 @@
+/* The logo's wordmark needs more than the default navbar height to be legible. */
+img.nav-logo {
+  height: 2.25rem !important;
+  width: auto !important;
+}
