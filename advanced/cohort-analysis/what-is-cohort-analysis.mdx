@@ -35,10 +35,10 @@ SaleTides shows cohort data as a color-coded table. This is the **Returning Cust
     The size of the cohort: how many new customers joined that month. Each percentage in the row is a share of this number.
   </Step>
   <Step title="Month columns">
-    How many of the cohort ordered again, counted by months since their first order. **Month 2** is the month after they joined, **Month 3** the one after that, and so on. Compare a column top to bottom to see whether newer customers come back more or less than older ones.
+    How many of the cohort ordered again, counted by months since their first order. **Month 2** is the month after they joined, **Month 3** the one after that, and so on. There's no Month 1 column: that's the month of their first order, so everyone in the cohort ordered then. Compare a column top to bottom to see whether newer customers come back more or less than older ones.
   </Step>
   <Step title="Not reached yet (—)">
-    The cohort hasn't been around that long yet, so there's nothing to count. This is why the table has a diagonal edge: the newest cohorts at the top have the fewest months filled in.
+    The cohort hasn't been around that long yet, so there's nothing to count. This is why the table has a diagonal edge: the newest cohorts at the bottom have the fewest months filled in.
   </Step>
   <Step title="Weighted Avg">
     Each column averaged across all cohorts, weighted by cohort size, so a month with many new customers counts for more than a quiet one.
@@ -55,7 +55,7 @@ Color shows the same thing as the numbers: **darker cells mean more of the cohor
 
 <AccordionGroup>
   <Accordion title="Is my retention improving over time?">
-    Compare the Month 3 column across rows. If the newer cohorts (higher up the table) are darker than the older ones below them, your retention is improving: customers acquired recently are coming back more than those acquired earlier.
+    Compare the Month 3 column across rows. If the newer cohorts (lower down the table) are darker than the older ones above them, your retention is improving: customers acquired recently are coming back more than those acquired earlier.
   </Accordion>
   <Accordion title="When do customers typically stop buying?">
     Look across any row. The biggest drop is usually from the whole cohort (**Customers**) to **Month 2**: most customers who don't come back in the first month after their first order never do. If you can improve that single step, you'll have a disproportionate impact on overall LTV.

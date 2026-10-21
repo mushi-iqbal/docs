@@ -8,7 +8,7 @@ description: "A quick guide to imports that are slow, stuck or incomplete."
 | Still on the import page after 30 minutes | A large store, or a slow store server | Wait while the counts rise; [how long it takes](/getting-started/understanding-your-first-import#how-long-it-takes) |
 | An import marked **stuck** | No progress for 15 minutes | SaleTides restarts it automatically; or click **Retry** |
 | **Blocking our requests (HTTP 403)** | Firewall or security plugin | Allow SaleTides' requests, then **Retry** |
-| **REST API key is invalid** | Key deleted or permissions changed | Check the key, or contact support |
+| **REST API key is invalid** | Key deleted or permissions changed | **Settings → Store Connection → Reconnect store** |
 | Fewer orders than WooCommerce | Free trial (newest 50,000), sales statuses, or dates | See [Data discrepancies](/troubleshooting/data-discrepancies) |
 | No subscriptions | WooCommerce Subscriptions not detected | See [Subscriptions not showing](/troubleshooting/subscriptions-not-showing) |
 
@@ -16,7 +16,7 @@ description: "A quick guide to imports that are slow, stuck or incomplete."
 
 <Steps>
   <Step title="Is the store reachable?">Open your store's address in a private browser window. If it's down or behind a login, imports can't run.</Step>
-  <Step title="Is the API key there?">**WooCommerce → Settings → Advanced → REST API** should list a SaleTides key with Read/Write access.</Step>
+  <Step title="Is the API key there?">**WooCommerce → Settings → Advanced → REST API** should list a SaleTides key with Read/Write access. If it's missing, use **Reconnect store** in **Settings → Store Connection**.</Step>
   <Step title="Is something blocking requests?">Check your security plugin's and Cloudflare's blocked-request logs for SaleTides.</Step>
   <Step title="Retry">On the import page, **Retry** fetches only what's missing.</Step>
   <Step title="Still stuck?">Click **Report** on the import page, or email support with your store address.</Step>
