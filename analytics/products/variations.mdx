@@ -1,16 +1,24 @@
 ---
 title: "Variations"
-description: "Every product variation with its stock status, price and sales in your dates."
+description: "Every product variation on its own row, with its parent product and its sales in your dates."
 ---
 
 <Frame>
-  <img src="/images/variations.png" alt="Variations: each variation with its parent product, stock status and price" />
+  <img src="/images/variations.png" alt="The Variations tab on Products: each variation with its parent product, net sold and net sales" />
 </Frame>
 
-**Products → Variations** lists every variation, such as **Classic Hoodie — Navy / L**, with its SKU, parent product, stock status and price.
+Open **Products** and choose the **Variations** tab to list every variation, such as **Navy / L** of **Classic Hoodie**, on its own row. The tab only appears if your store sells variable products.
 
-- **Search** by name, SKU, price or stock status.
-- **Smart Filter** and **saved filters** work as on other lists. **Saved Filters** compares saved variation groups side by side: products, units sold and revenue.
-- **Export** sends a CSV.
+Each row shows the variation and its parent **Product**, with the variation's **Net Sold** and **Net Sales** in your dates. Click a variation to open its page, or its product name to open the parent product.
 
-On a variable product's page, the **Variations** section ranks its variations by units sold, so you can see at a glance which sizes or colours sell, and the **Attributes** panel lists the options each variation has.
+It works like the Products tab:
+
+- **Cards**: Variation Sales, Items Sold, Variations Sold and Average Item Price.
+- **Sort** by any column, including the parent product.
+- **Type**: **One-off** or **Subscription** keeps the variations of those products.
+- **Smart Filter**: SKU, price, stock, status, first and last order dates and more. **Category** matches the parent product's categories, since WooCommerce keeps categories on the product, not on each variation.
+- **Saved filters** are kept per tab: a filter saved on Variations loads there, and **Saved Filters** totals each one's variations, units sold and revenue.
+- **Export** sends a CSV with the variation, its product, SKU, price, stock status, net sold and net sales.
+- **Customize Columns** is shared with the Products tab.
+
+<Tip>To compare the sizes or colours of one product, open that product's page instead: its **Variations** section ranks its variations by units sold, and the **Attributes** panel lists the options each one has.</Tip>
