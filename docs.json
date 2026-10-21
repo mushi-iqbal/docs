@@ -55,12 +55,36 @@
             ]
           },
           {
+            "group": "Dashboard",
+            "pages": [
+              "dashboard/overview",
+              "advanced/custom-dashboard-widgets"
+            ]
+          },
+          {
+            "group": "AI Assistant",
+            "pages": [
+              "ai/assistant",
+              "ai/connect-claude-chatgpt"
+            ]
+          },
+          {
             "group": "Orders",
             "pages": [
               "analytics/orders/overview",
               "analytics/orders/filters-and-date-ranges",
               "analytics/orders/reports",
+              "advanced/traffic-sources",
               "analytics/orders/exporting"
+            ]
+          },
+          {
+            "group": "Sales",
+            "pages": [
+              "analytics/revenue",
+              "analytics/refunds",
+              "analytics/discounts",
+              "analytics/coupons"
             ]
           },
           {
@@ -77,20 +101,24 @@
             "pages": [
               "analytics/products/overview",
               "analytics/products/variations",
+              "analytics/products/categories",
+              "analytics/products/top-selling",
+              "analytics/products/stock",
               "analytics/products/frequently-bought-together"
             ]
           },
           {
-            "group": "More Analytics",
+            "group": "Subscriptions",
             "pages": [
-              "analytics/revenue",
-              "analytics/refunds",
-              "analytics/coupons",
-              "analytics/subscriptions"
+              "analytics/subscriptions",
+              "subscriptions/reports",
+              "subscriptions/plans-and-active",
+              "subscriptions/lifecycle-and-events",
+              "subscriptions/retention-and-cohorts"
             ]
           },
           {
-            "group": "Cohort Analysis",
+            "group": "Cohorts",
             "pages": [
               "advanced/cohort-analysis/what-is-cohort-analysis",
               "advanced/cohort-analysis/retention-cohorts",
@@ -98,7 +126,7 @@
             ]
           },
           {
-            "group": "Custom Segments",
+            "group": "Saved Filters",
             "pages": [
               "advanced/segments/overview",
               "advanced/segments/creating-a-segment",
@@ -106,25 +134,21 @@
             ]
           },
           {
-            "group": "Advanced Features",
+            "group": "Metrics",
             "pages": [
-              "advanced/abandoned-carts",
-              "advanced/traffic-sources",
-              "advanced/custom-dashboard-widgets"
+              "metrics/glossary"
             ]
           },
           {
-            "group": "Settings & Configuration",
+            "group": "Settings",
             "pages": [
               "settings/store-settings",
               "settings/user-management",
-              "settings/localization",
-              "settings/email-reminders",
               "settings/data-management"
             ]
           },
           {
-            "group": "Billing & Plans",
+            "group": "Billing",
             "pages": [
               "billing/plan-comparison",
               "billing/free-trial",
@@ -133,7 +157,7 @@
             ]
           },
           {
-            "group": "Integrations & Data Sync",
+            "group": "Integrations",
             "pages": [
               "integrations/how-data-syncs",
               "integrations/woocommerce-webhooks",
@@ -159,5 +183,19 @@
     "socials": {
       "x": "https://x.com/saletides"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/advanced/abandoned-carts",
+      "destination": "/dashboard/overview"
+    },
+    {
+      "source": "/settings/email-reminders",
+      "destination": "/settings/store-settings"
+    },
+    {
+      "source": "/settings/localization",
+      "destination": "/settings/store-settings"
+    }
+  ]
 }
