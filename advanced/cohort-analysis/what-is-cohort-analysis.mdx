@@ -19,6 +19,26 @@ A **cohort** is a group of customers who share a common starting point — typic
 
 By tracking what each group does *over time*, you can see whether retention is improving, which acquisition periods produced your best customers, and exactly when customers tend to stop buying.
 
+## Key terms
+
+<AccordionGroup>
+  <Accordion title="Cohort">
+    A group of customers who placed their **first** order in the same month (or week, or year). A customer belongs to one cohort forever, however many times they order later.
+  </Accordion>
+  <Accordion title="Period (Month 1, Month 2…)">
+    Time counted from each cohort's start, not on the calendar. For January's cohort, Month 2 is February; for March's cohort, Month 2 is April. This lets you compare cohorts at the same age.
+  </Accordion>
+  <Accordion title="Retention / return rate">
+    The share of a cohort that ordered again in a given period. 15% in Month 2 means 15 of every 100 new customers ordered again the month after their first order.
+  </Accordion>
+  <Accordion title="Lifetime value (LTV)">
+    What an average customer from a cohort has spent so far, after refunds. It grows with every repeat order and tells you what a new customer is worth.
+  </Accordion>
+  <Accordion title="Weighted average">
+    An average across cohorts where bigger cohorts count for more. A month with 500 new customers shapes it more than a month with 20, so one small, unusual cohort doesn't skew it.
+  </Accordion>
+</AccordionGroup>
+
 ## How to read a cohort heatmap
 
 SaleTides shows cohort data as a color-coded table. This is the **Returning Customers** report with **%** selected:
@@ -76,10 +96,10 @@ Color shows the same thing as the numbers: **darker cells mean more of the cohor
 
 <CardGroup cols={2}>
   <Card title="Retention Cohorts" icon="rotate" href="/advanced/cohort-analysis/retention-cohorts" img="/images/cohort-retention-report.png">
-    What % of each cohort returns to buy again month by month
+    Returning Customers and By Order Counts: who comes back, and how often
   </Card>
-  <Card title="LTV & AOV by Cohort" icon="chart-line" href="/advanced/cohort-analysis/ltv-and-aov" img="/images/cohort-aov-table.png">
-    Cumulative revenue per customer and AOV progression over time
+  <Card title="Value Cohorts" icon="chart-line" href="/advanced/cohort-analysis/ltv-and-aov" img="/images/cohort-aov-table.png">
+    Lifetime value, order value, orders and sales per cohort over time
   </Card>
 </CardGroup>
 

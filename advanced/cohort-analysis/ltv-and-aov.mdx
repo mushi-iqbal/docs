@@ -3,7 +3,38 @@ title: "Value cohorts"
 description: "Lifetime Value, Average Order Value, Orders per Customer, Orders Over Time and Sales Over Time, by the month customers first ordered."
 ---
 
-Five cohort reports follow what each cohort spends and orders over time. All group customers by the period of their first order in your dates; rows are cohorts and columns are periods since.
+Five cohort reports follow what each cohort spends and orders over time. New to cohorts? Start with [What is cohort analysis?](/advanced/cohort-analysis/what-is-cohort-analysis)
+
+## Read any cohort table in 30 seconds
+
+Every report under **Cohorts** is laid out the same way, so once you can read one, you can read them all.
+
+<CardGroup cols={2}>
+  <Card title="A row is a group of customers" icon="users">
+    Everyone whose **first order** fell in that month (or week, or year). The row's label is when they joined, not when they ordered.
+  </Card>
+  <Card title="A column is time since joining" icon="clock">
+    **Month 1** is the month they joined, **Month 2** the month after, and so on. It's counted per customer group, not on the calendar.
+  </Card>
+  <Card title="Customers is the group's size" icon="hashtag">
+    How many new customers joined that period. It never changes as time passes, so you can compare rows fairly.
+  </Card>
+  <Card title="Weighted Average is your benchmark" icon="scale-balanced">
+    The top row combines every cohort, giving bigger cohorts more weight. Compare a row against it to spot a good or bad month.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Read columns, not just rows.** Going down a column compares cohorts at the same age: "how did January's customers do in their third month, compared with March's in theirs?" That's a fair comparison. Comparing cells on the same calendar month isn't, because the cohorts are different ages.
+</Tip>
+
+A few things are the same on every report:
+
+- **—** (Period not yet reached) means the cohort isn't that old yet, which gives the table its diagonal edge. It isn't zero.
+- **The last filled cell in each row is a period still in progress**, so it's usually low. Judge cohorts on completed periods.
+- **Click a cohort's name** to open the Customers list filtered to exactly those customers, for example to email them or check where they came from.
+- **Who's counted**: customers whose first counted order falls in your date range. Guest orders are grouped by email, and a customer whose only orders were refunded isn't counted.
+- **Refunds** come off in the period the refund was issued, not the period of the original order.
 
 ## Lifetime Value
 
@@ -11,9 +42,34 @@ Five cohort reports follow what each cohort spends and orders over time. All gro
   <img src="/images/cohort-ltv-table.png" alt="Lifetime value cohort table: cumulative spend per customer rising month by month" />
 </Frame>
 
-**Cohorts → LifeTime Value** shows the **cumulative** spend per customer, after refunds, for each cohort: Month 1 is what they spent in the month they joined, Month 6 what they'd spent by their sixth month, and so on.
+**Cohorts → LifeTime Value** answers: *on average, how much has a customer from this month spent with you so far?*
 
-Use it to decide what a new customer is worth. If customers typically reach $250 by month 12, you can afford to spend a good share of that to acquire one, and you can tell which months' customers were worth more.
+Each cell is the cohort's **total sales to date, after refunds, divided by the number of customers in it**. It's **cumulative**: Month 6 includes everything spent in Months 1 to 5 too, so values only grow along a row (unless refunds outweigh new sales that month).
+
+<Accordion title="Worked example">
+  100 customers first ordered in March. Together they spent $5,000 in March, $1,200 in April and $800 in May.
+
+  | | Customers | Month 1 | Month 2 | Month 3 |
+  |---|---|---|---|---|
+  | Mar | 100 | $50.00 | $62.00 | $70.00 |
+
+  Month 1 is $5,000 ÷ 100. Month 2 adds April: $6,200 ÷ 100. Month 3 adds May: $7,000 ÷ 100. The divisor stays 100 even though most of them didn't come back: it's value per customer *acquired*, which is what you need for acquisition budgets.
+</Accordion>
+
+**The cards** show the weighted average lifetime value at Month 3, 6, 12 and 24 across all cohorts old enough to have reached it. **Not enough history yet** means no cohort in your range is that old.
+
+<Tip>
+  **How much can I spend to get a customer?** Take the Month 12 card and multiply by your profit margin. If customers reach $120 in a year at a 40% margin, each one earns you about $48, so paying $30 to acquire one is profitable; paying $60 isn't.
+</Tip>
+
+<Note>
+  Lifetime Value always groups by month and goes up to 24 months; the other reports also let you group by week or year.
+</Note>
+
+**What to look for**
+
+- **How steep the row is after Month 1.** A big jump from Month 1 to Month 3 means repeat purchases make up much of a customer's value. A flat row means most customers buy once.
+- **Newer cohorts lower down a column** than older ones at the same age: recent customers are worth less. Check what changed (discounts, a new ad channel, prices).
 
 ## Average Order Value
 
@@ -21,7 +77,18 @@ Use it to decide what a new customer is worth. If customers typically reach $250
   <img src="/images/cohort-aov-table.png" alt="Average order value cohort table" />
 </Frame>
 
-**Cohorts → Average Order Value** shows the average order value of each cohort's orders in each period after they joined. Rising values mean returning customers buy more per order.
+**Cohorts → Average Order Value** answers: *when this cohort orders, how big are their orders?*
+
+Each cell is the cohort's **sales in that period, after refunds, divided by the number of orders they placed in that period**. It isn't cumulative, and it only looks at customers who actually ordered that period.
+
+<Warning>
+  **A $0 cell means nobody in the cohort ordered that period**, not that they placed $0 orders. With small cohorts, one or two orders can swing a cell a lot, so lean on the Weighted Average row and on cohorts with plenty of customers.
+</Warning>
+
+**What to look for**
+
+- **Month 1 against later months.** Month 1 includes the first order, often made with a welcome discount. If later months are higher, returning customers trust you with bigger baskets. If they're lower, they may be coming back only for small top-ups or sale items.
+- **Read it with Lifetime Value.** A high AOV with a flat Lifetime Value means people buy big once and leave; a modest AOV with a rising Lifetime Value means a healthy repeat habit.
 
 ## Orders per Customer
 
@@ -29,18 +96,74 @@ Use it to decide what a new customer is worth. If customers typically reach $250
   <img src="/images/cohort-orders-per-customer.png" alt="Orders per Customer cohort report: average orders per customer by month" />
 </Frame>
 
-**Cohorts → Order Per Customer** shows the average number of orders per customer in each period, so you can see whether customers order more or less often as time goes on.
+**Cohorts → Order Per Customer** answers: *in each period, how many orders did this cohort place for every customer in it?*
 
-## Orders Over Time and Sales Over Time
+Each cell is the cohort's **orders in that period divided by the cohort's full size** (everyone, not just those who ordered). It isn't cumulative.
+
+<Accordion title="Worked example">
+  100 customers joined in March. In March they placed 108 orders; in April, 15.
+
+  Month 1 is **1.08**: everyone placed their first order, and a few ordered twice that month. Month 2 is **0.15**: roughly 15 orders for every 100 customers.
+
+  Month 1 is always at least 1.00, because everyone in the cohort ordered that month.
+</Accordion>
+
+<Tip>
+  Read a later-month value as "orders per 100 customers": **0.15 ≈ 15 orders for every 100 customers acquired**. Adding up a row gives the average number of orders a customer places over that time.
+</Tip>
+
+**What to look for**
+
+- **Month 1 well above 1.00** means customers often come back within their first month, a sign of a strong first experience or a fast-consumed product.
+- **Later months that hold steady** rather than sliding toward zero point to a buying habit, which is what subscriptions, replenishment emails and loyalty schemes aim for.
+
+## Orders Over Time
+
+**Cohorts → Orders Over Time** answers: *how many orders did this cohort place in each period?*
+
+Each cell is a **plain count of the cohort's orders in that period**, not divided by anything, so big cohorts show big numbers.
+
+<Warning>
+  **The cells are totals, but the Weighted Average row and the cards are per customer.** A cell of 42 means 42 orders; a Weighted Average of 0.18 means 0.18 orders per customer. To compare cohorts of different sizes, use **Orders per Customer** instead.
+</Warning>
+
+**What to look for**
+
+- **How much work old customers do.** Pick a recent calendar month and add up the cells for it across rows (they fall on a diagonal). That shows how many of that month's orders came from customers acquired months or years ago.
+
+## Sales Over Time
 
 <Frame>
   <img src="/images/cohort-sales-over-time.png" alt="Sales Over Time cohort report: sales by month for each cohort" />
 </Frame>
 
-**Cohorts → Orders Over Time** counts each cohort's orders per period; **Cohorts → Sales Over Time** shows its sales (revenue less refunds) per period. Together they show how much of your monthly sales come from customers acquired long ago against recent ones.
+**Cohorts → Sales Over Time** answers: *how much did this cohort spend in each period?*
+
+Each cell is the cohort's **total sales in that period, after refunds**. Like Orders Over Time, it's a total, not cumulative and not per customer. The **Weighted Average** row and the **Avg Revenue per Customer** cards divide by customers.
+
+<Tip>
+  Sales Over Time is the per-period version of Lifetime Value. A row's cells added up from Month 1, then divided by **Customers**, give that cohort's Lifetime Value.
+</Tip>
+
+**What to look for**
+
+- **Revenue you can count on.** If older cohorts keep producing steady sales month after month, that's recurring revenue you'd lose if you stopped serving them, which makes a good case for spending on retention.
+- **A cohort that drops off a cliff after Month 1** usually came in through a one-off promotion. Check whether the campaign that brought them was worth it.
+
+## Which report should I use?
+
+| Your question | Report |
+|---|---|
+| How much is a new customer worth? | **Lifetime Value** at Month 6 or 12 |
+| Do returning customers spend more per order? | **Average Order Value** |
+| How often do customers come back and order? | **Orders per Customer** |
+| How many of my orders come from older customers? | **Orders Over Time** |
+| How much revenue comes from each cohort, month by month? | **Sales Over Time** |
+| What share of customers come back at all? | [Returning Customers](/advanced/cohort-analysis/retention-cohorts) |
 
 ## Using value cohorts
 
-- **Budget acquisition** with Lifetime Value at month 6 or 12, not first-order value.
+- **Budget acquisition** with Lifetime Value at Month 6 or 12, not first-order value.
 - **Spot a weak cohort early**: if a cohort's Month 2 is well below others, look at what was different when it joined (a deep discount, a new channel).
-- **Holiday cohorts** often spend a lot at first and return less; compare their month 6 value with other months before repeating the campaign.
+- **Holiday cohorts** often spend a lot at first and return less; compare their Month 6 value with other months before repeating the campaign.
+- **Group by Week** for fast-repeat products (coffee, pet food) to see behaviour in the first weeks; **group by Year** for a long-term view of slow-repeat products.

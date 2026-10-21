@@ -11,15 +11,42 @@ Both reports group customers by the month (or week, or year) of their **first** 
   <img src="/images/cohort-heatmap.png" alt="Returning Customers cohort heatmap" />
 </Frame>
 
-**Cohorts → Returning Customers** shows, for each cohort, how many customers ordered again in each period after they joined.
+**Cohorts → Returning Customers** answers: *of the customers who first ordered in this month, how many ordered again in each month after?*
 
 - **Rows**: cohorts, oldest at the top, as in every cohort report. **Customers** is the cohort's size.
 - **Columns**: **Month 2** is the month after joining, **Month 3** the one after that, and so on. Month 1, the month of the first order, isn't shown because every customer in the cohort ordered then.
 - **#** shows customer counts; **%** shows them as a share of the cohort.
 - **—** means the cohort hasn't reached that period yet, which gives the table its diagonal edge.
-- **Weighted Avg** averages each column across cohorts, weighted by cohort size.
+- **Weighted Avg** averages each column across cohorts, weighted by cohort size (in **#** mode the row shows totals instead).
 
-The cards above show the average return rate at Month 4, 7, 13 and 25 ("Not enough history yet" until your data reaches that far), and the bar chart compares cohorts' return rates.
+<Accordion title="Worked example">
+  200 customers first ordered in January. In February, 30 of them ordered again; in March, 22; in April, 18.
+
+  | | Customers | Month 2 | Month 3 | Month 4 |
+  |---|---|---|---|---|
+  | Jan (#) | 200 | 30 | 22 | 18 |
+  | Jan (%) | 200 | 15% | 11% | 9% |
+
+  Month 3 at 11% means 11% of January's customers placed an order **in March**. Some of them may also have ordered in February; they're counted in both columns.
+</Accordion>
+
+<Warning>
+  **Each column counts one period on its own; it isn't cumulative.** Month 6 at 8% doesn't mean only 8% ever came back: it means 8% ordered in their sixth month. That's why the columns don't add up to the share who returned. For "did they ever come back?", use the bar chart (below) or **By Order Counts**.
+</Warning>
+
+**The cards** show the average return rate at **Month 4, 7, 13 and 25**: 3, 6, 12 and 24 months after the first order (Week 4, 7, 13, 25 when grouped by week; Year 2–5 by year). **Not enough history yet** means no cohort in your range is that old.
+
+**The bar chart** shows, per cohort, the share of customers who came back at least once (in any later period). It's the quickest way to spot your most and least loyal cohorts.
+
+<Tip>
+  The page has its own **How to read this chart** guide above the table, and **Export CSV** downloads the table for a spreadsheet.
+</Tip>
+
+**What to look for**
+
+- **The drop from Customers to Month 2.** It's nearly always the biggest. Most customers who don't come back soon after their first order never do, so a post-purchase email, a thank-you discount or a fast delivery that improves Month 2 lifts every column after it.
+- **The shape of a row after Month 2.** If it flattens instead of falling to zero, you have a core of regulars. If it keeps sliding, customers aren't forming a habit.
+- **A column read top to bottom.** If newer cohorts (lower down) are darker than older ones at the same column, retention is improving.
 
 ## By Order Counts
 
@@ -27,13 +54,39 @@ The cards above show the average return rate at Month 4, 7, 13 and 25 ("Not enou
   <img src="/images/cohort-order-counts.png" alt="By Order Counts: how many customers in each cohort placed 1, 2, 3 or more orders" />
 </Frame>
 
-**Cohorts → By Order Counts** breaks each cohort down by how many orders its customers have placed so far: how many stopped at 1, how many reached 2, 3, 4 or more. It shows which cohorts produced your most loyal, frequent buyers.
+**Cohorts → By Order Counts** answers: *of the customers who joined this month, how many have placed 1 order, 2 orders, 3 orders, and so on, in total?*
+
+- **Rows**: cohorts. **Customers** is the cohort's size.
+- **Columns**: **1 Order**, **2 Orders** … up to **10+ Orders**, which groups everyone with ten or more.
+- **Cells**: how many of the cohort have placed exactly that many orders so far, counting all their orders to date, including those after your date range.
+
+Unlike the other cohort reports, columns here are order counts, not time, so every cohort's cells add up to its **Customers**.
+
+<Accordion title="Worked example">
+  | | Customers | 1 Order | 2 Orders | 3 Orders | 4 Orders |
+  |---|---|---|---|---|---|
+  | Jan | 200 | 150 | 30 | 12 | 8 |
+
+  150 of January's 200 customers (75%) have only ever ordered once. The other 50 (25%) are repeat customers: that's January's repeat-purchase rate.
+</Accordion>
+
+**The cards and bar chart** show the average number of customers per cohort with 1, 2, 3 and 4 orders (and up to 10+ in the chart), so you can see a typical cohort's shape at a glance.
+
+<Tip>
+  **Repeat-purchase rate** for a cohort = everything except the **1 Order** column, divided by **Customers**. Older cohorts have had longer to reorder, so compare cohorts of similar age, or expect older rows to look better.
+</Tip>
+
+**What to look for**
+
+- **The 1 Order column.** It's usually the largest. Turning one-time buyers into two-time buyers is the single biggest lever on lifetime value.
+- **Customers in the right-hand columns.** These are your most loyal buyers. Click the cohort name to open those customers and look for what they have in common.
 
 ## Choosing a range
 
 - **Group by** month, week or year. Months suit most stores; weeks suit high-frequency products like coffee or pet food.
-- Use **Last 12 months** or longer: cohorts need time to show a pattern.
+- Use **Last 12 months** or longer: cohorts need time to show a pattern. A one-month range gives you a single cohort with almost no history.
 - The newest cell in each row is a period still in progress, so it's usually lower. Judge cohorts on completed periods.
+- **Click a cohort's name** to open the Customers list filtered to that cohort.
 
 ## What good retention looks like
 
