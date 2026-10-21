@@ -1,0 +1,57 @@
+---
+title: "Taxes"
+description: "Tax collected and refunded by month, location and tax rate, for VAT and sales tax returns."
+---
+
+<Frame>
+  <img src="/images/taxes.png" alt="Taxes report: tax collected, refunded, net tax, shipping tax, taxed orders and effective tax rate, with tax over time" />
+</Frame>
+
+**Reports → Taxes** shows the tax your store charged and gave back in the dates you pick, in the form a tax return asks for.
+
+## The cards
+
+| Card | What it is |
+|---|---|
+| Tax Collected | Tax on orders in your sales statuses placed in these dates, on products and shipping |
+| Tax Refunded | Tax in refunds issued in these dates, whenever the order was placed |
+| Net Tax | Collected less refunded: the figure a return for the period usually starts from |
+| Shipping Tax | The part of Tax Collected charged on shipping |
+| Taxed Orders | Orders with any tax, and their share of all orders |
+| Effective Tax Rate | Tax as a share of the taxed orders' totals before tax |
+
+Each card compares with the previous period (or the same period last year) like the other reports.
+
+<Note>
+  Refunded tax counts in the month the refund was issued, not the month of the order, which is how most tax returns treat it. It's the same rule net sales follow.
+</Note>
+
+## By month
+
+One row per calendar month: orders, taxed orders, sales excluding tax, tax collected (and how much of it was on shipping), tax refunded and net tax. **Export CSV** downloads it with plain numbers for a spreadsheet or your accountant.
+
+## By location
+
+Net tax by country and state or region. The location is the order's **shipping address**, or its billing address when it ships nowhere (digital products, collection), which is how WooCommerce works out tax by default. The **Rate** column is tax as a share of sales before tax, a quick check that each place was taxed at the rate you expect.
+
+## By tax rate
+
+When your orders carry WooCommerce's tax lines, a third table splits tax by rate (for example *VAT 20%* or a state rate): product tax, shipping tax and total. Stores whose orders only have a tax total don't see this table. Refunds aren't split by rate.
+
+## Filing a return
+
+<Steps>
+  <Step title="Pick the filing period">
+    Set the dates to the month or quarter you're filing.
+  </Step>
+  <Step title="Check the totals">
+    Compare **Net Tax** with what you expect. An **Effective Tax Rate** well below your standard rate usually means tax-free products, reduced rates or orders from outside your tax region.
+  </Step>
+  <Step title="Export">
+    Export **By Month** and **By Location** for your records or your accountant.
+  </Step>
+</Steps>
+
+<Warning>
+  These figures are what WooCommerce charged and refunded. They're a starting point for your return, not tax advice; check them against your accounts.
+</Warning>
